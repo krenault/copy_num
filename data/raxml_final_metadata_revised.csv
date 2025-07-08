@@ -1,0 +1,367 @@
+"","X","Scientific_name","maximum_longevity_y","adult_body_mass_g","order","common_name","MLres"
+"1",1,"Acinonyx_jubatus",20.5,53500,"Carnivora","Cheetah",-0.140195596812757
+"2",2,"Acomys_cahirinus",5.9,45.2,"Rodentia","Spiny mouse",-0.204745650739394
+"3",3,"Acomys_dimidiatus",7.483333333,45.2,"Rodentia","Eastern Spiny Mouse",-0.101502571781209
+"4",4,"Acomys_russatus",5,54.4,"Rodentia","Golden spiny mouse",-0.289099119555483
+"5",5,"Aepyceros_melampus",25.6,52500,"Artiodactyla","Impala",-0.042439339261024
+"6",6,"Ailuropoda_melanoleuca",36.8,117500,"Carnivora","Giant panda",0.0609369478243361
+"7",7,"Ailurus_fulgens",19,4325,"Carnivora","Red panda",-0.00387765358384482
+"8",8,"Alces_alces",27,386000,"Artiodactyla","Moose",-0.153612843867697
+"9",9,"Allenopithecus_nigroviridis",27,4702.5,"Primates","Allen's swamp monkey",0.143099351892716
+"10",10,"Alouatta_palliata",24,7000,"Primates","Mantled howler monkey",0.0651674058201493
+"11",11,"Ammotragus_lervia",21.7,92500,"Artiodactyla","Aoudad",-0.15234712074372
+"12",12,"Antechinus_flavipes",3.9,45,"Dasyuromorphia","Yellow-footed antechinus",-0.384234535453302
+"13",13,"Antidorcas_marsupialis",19.8,39000,"Artiodactyla","Springbok",-0.134004292850562
+"14",14,"Antilocapra_americana",15.5,46100,"Artiodactyla","Pronghorn",-0.251596495042043
+"15",15,"Antrozous_pallidus",14.8,20.8,"Chiroptera","Pallid bat",0.246911068235636
+"16",16,"Aotus_nancymaae",11.39166667,791.03,"Primates","Nancy Ma's Night Monkey",-0.111685226265688
+"17",17,"Aplodontia_rufa",10,1125,"Rodentia","Mountain beaver",-0.191981397993906
+"18",18,"Apodemus_sylvaticus",6.3,23.4,"Rodentia","Long-tailed field mouse",-0.131938795554271
+"19",19,"Arctocephalus_gazella",30.6,84500,"Carnivora","Antarctic fur seal",0.00300379425208841
+"20",20,"Artibeus_jamaicensis",19.2,42.2,"Chiroptera","Jamaican fruit-eating bat",0.312326626977965
+"21",21,"Arvicanthis_niloticus",6.7,110,"Rodentia","Nile kusu",-0.209392697905441
+"22",22,"Arvicola_amphibius",2.5,120,"Rodentia","European water vole",-0.643384760883793
+"23",23,"Ateles_belzebuth",37,7535,"Primates","White-bellied spider monkey",0.248200144037101
+"24",24,"Ateles_chamek",42.8,6000,"Primates","Chamek spider monkey",0.326776759943039
+"25",25,"Ateles_geoffroyi",47.1,7267.5,"Primates","Central American spider monkey",0.355452568063876
+"26",26,"Ateles_marginatus",44,6000,"Primates","White-whiskered spider monkey",0.338785667416055
+"27",27,"Ateles_paniscus",46,7887.5,"Primates","Black spider monkey",0.339678531658261
+"28",28,"Axis_porcinus",22.9,43000,"Artiodactyla","Hog deer",-0.0774066444407196
+"29",29,"Babyrousa_celebensis",24,92950.09,"Artiodactyla","North Sulawesi Babirusa",-0.108922367915679
+"30",30,"Balaena_mysticetus",211,1e+08,"Cetacea","Bowhead whale",0.36522419636607
+"31",31,"Balaenoptera_edeni",72,1.6e+07,"Cetacea","Bryde's whale",0.0216365250133568
+"32",32,"Balaenoptera_musculus",110,1.36e+08,"Cetacea","Blue whale",0.061635746966369
+"33",33,"Balaenoptera_physalus",114,7e+07,"Cetacea","Fin whale",0.121856568416017
+"34",34,"Bassariscus_astutus",19,1015,"Carnivora","Ringtail",0.0936986570701545
+"35",35,"Bassariscus_sumichrasti",24,900,"Carnivora","Cacomistle",0.203251003474358
+"36",36,"Beatragus_hunteri",23.6,159000,"Artiodactyla","Hirola",-0.15235969886415
+"37",37,"Bos_frontalis",26.2,825000,"Artiodactyla","Gaur",-0.217805013239688
+"38",38,"Bos_grunniens",26.3,667000,"Artiodactyla","Yak",-0.201839595655051
+"39",39,"Bos_taurus",20,750000,"Artiodactyla","Domestic cattle",-0.328660396677309
+"40",40,"Bradypus_torquatus",12,3875,"Pilosa","Maned three-toed sloth",-0.196054222673645
+"41",41,"Cacajao_calvus",35.8,3165,"Primates","Red uakari",0.292271844479623
+"42",42,"Cacajao_melanocephalus",20.45833333,2935,"Primates","Black uakari",0.054337773963063
+"43",43,"Callimico_goeldii",22.2,555,"Primates","Goeldi's monkey",0.20193514620538
+"44",44,"Callithrix_jacchus",22.8,255.2,"Primates","White-tufted-ear marmoset",0.26581630240218
+"45",45,"Callorhinus_ursinus",35,165500,"Carnivora","Northern fur seal",0.0160991877328223
+"46",46,"Camelus_bactrianus",35.4,475000,"Artiodactyla","Bactrian camel",-0.0499399234449662
+"47",47,"Camelus_dromedarius",28.4,434000,"Artiodactyla","Dromedary",-0.139548200421103
+"48",48,"Canis_latrans",21.8,13250,"Carnivora","Coyote",-0.0195409153046958
+"49",49,"Capra_hircus",20.8,61000,"Artiodactyla","Domestic goat",-0.142717474462669
+"50",50,"Capra_ibex",20.9,82500,"Artiodactyla","Ibex",-0.16095890669113
+"51",51,"Capra_sibirica",22.3,130000,"Artiodactyla","Siberian ibex",-0.16341140689662
+"52",52,"Capreolus_pygargus",17.5,39450,"Artiodactyla","Eastern roe deer",-0.188403712045454
+"53",53,"Carollia_perspicillata",17,15,"Chiroptera","Seba's short-tailed bat",0.329104103823035
+"54",54,"Castor_canadensis",23.4,20250,"Rodentia","American beaver",-0.0173341744330834
+"55",55,"Catagonus_wagneri",14.64166667,34750,"Artiodactyla","Chacoan peccary",-0.257311893150063
+"56",56,"Cavia_aperea",6,341,"Rodentia","Brazilian guinea pig",-0.333477859041861
+"57",57,"Cavia_porcellus",12,728,"Rodentia","Guinea pig",-0.0835016646148314
+"58",58,"Cavia_tschudii",6.3,637.5,"Rodentia","Montane guinea pig",-0.354406362632654
+"59",59,"Cebus_albifrons",40.4,2467.5,"Primates","White-fronted capuchin",0.361528368862528
+"60",60,"Cephalorhynchus_commersonii",25.8,50000,"Cetacea","Commerson's dolphin",-0.035775233696446
+"61",61,"Cercocebus_atys",46,8778,"Primates","Sooty Mangabey",0.33247776835044
+"62",62,"Cercopithecus_mona",30,4500,"Primates","Mona monkey",0.191819888725362
+"63",63,"Cercopithecus_neglectus",30.8,5945,"Primates","De Brazza's monkey",0.184503617548149
+"64",64,"Cheirogaleus_medius",29,380,"Primates","Fat-tailed dwarf lemur",0.343479307456609
+"65",65,"Chinchilla_lanigera",17.2,642.5,"Rodentia","Long-tailed chinchilla",0.0812556249000967
+"66",66,"Chlorocebus_aethiops",30.8,5620,"Primates","Vervet",0.188288053917082
+"67",67,"Chlorocebus_sabaeus",46,5104.25,"Primates","Green Monkey",0.368974894182488
+"68",68,"Chrysochloris_asiatica",2.408333333,36.93,"Afrosoricida","Cape Golden Mole",-0.580278303456022
+"69",69,"Chrysocyon_brachyurus",16.8,21500,"Carnivora","Maned wolf",-0.165272861054548
+"70",70,"Coendou_prehensilis",26.6,3900,"Rodentia","Prehensile-tailed porcupine",0.149213265276224
+"71",71,"Colobus_guereza",35,9950,"Primates","Guereza",0.20535165735227
+"72",72,"Condylura_cristata",2.5,55.3,"Soricomorpha","Star-nosed mole",-0.591233689041115
+"73",73,"Connochaetes_taurinus",24.3,164500,"Artiodactyla","Blue wildebeest",-0.141954605239899
+"74",74,"Cricetomys_gambianus",8.4,1500,"Rodentia","Gambian rat",-0.287067755007857
+"75",75,"Crocuta_crocuta",41.1,63000,"Carnivora","Spotted hyena",0.150889336135489
+"76",76,"Cryptoprocta_ferox",23.1,9500,"Carnivora","Fossa",0.0280110339356926
+"77",77,"Ctenodactylus_gundi",5.8,288.8,"Rodentia","Gundi",-0.337016671176579
+"78",78,"Cynomys_gunnisoni",6.075,900,"Rodentia","Gunnison's prairie dog",-0.393413955966898
+"79",79,"Cynopterus_brachyotis",10.1,45,"Chiroptera","Lesser short-nosed fruit bat",0.0290222313028418
+"80",80,"Damaliscus_lunatus",23.6,110000,"Artiodactyla","Topi",-0.12755883290791
+"81",81,"Dasyprocta_punctata",13.8,2150,"Rodentia","Central American agouti",-0.0957019446219243
+"82",82,"Daubentonia_madagascariensis",32.3,2277.5,"Primates","Aye-aye",0.269743375003796
+"83",83,"Delphinapterus_leucas",40,1430000,"Cetacea","Beluga",-0.0710733025922112
+"84",84,"Diceros_bicornis",49,1100000,"Perissodactyla","Black rhinoceros",0.0347241323932477
+"85",85,"Didelphis_virginiana",6.6,3000,"Didelphimorphia","Virginia opossum",-0.438463089528067
+"86",86,"Dinomys_branickii",12.8,12250,"Rodentia","Pacarana",-0.245505033989276
+"87",87,"Dipodomys_ordii",9.9,57,"Rodentia","Ord's kangaroo rat",0.00442327498808839
+"88",88,"Dipodomys_stephensi",2.083333333,66.495,"Rodentia","Stephens's Kangaroo Rat",-0.682824922322601
+"89",89,"Dolichotis_patagonum",14.4,12500,"Rodentia","Patagonian mara",-0.195712479564032
+"90",90,"Dromiciops_gliroides",3.491666667,24.05,"Microbiotheria","Monito del monte",-0.390090960888225
+"91",91,"Dugong_dugon",73,360000,"Sirenia","Dugong",0.283040430368315
+"92",92,"Echinops_telfairi",19,180,"Afrosoricida","Lesser hedgehog tenrec",0.210134490472634
+"93",93,"Eidolon_dupreanum",21.8325,297.58,"Chiroptera","Malagasy Straw-colored Fruit Bat",0.236642774297423
+"94",94,"Eidolon_helvum",21.8,306.25,"Chiroptera","Straw-colored fruit bat",0.234062569725104
+"95",95,"Elaphurus_davidianus",27.5,186500,"Artiodactyla","Pere David's deer",-0.0966777503611988
+"96",96,"Elephantulus_edwardii",5.658333333,50,"Macroscelidea","Cape elephant shrew",-0.229703076180635
+"97",97,"Elephas_maximus",65.5,3178000,"Proboscidea","Asiatic elephant",0.0893508529063681
+"98",98,"Eliomys_quercinus",5.5,82.5,"Rodentia","Garden dormouse",-0.27573916803619
+"99",99,"Ellobius_talpinus",5,40,"Rodentia","Northern mole vole",-0.26840044029525
+"100",100,"Eonycteris_spelaea",5,55.15,"Chiroptera","Lesser Dawn Bat",-0.290020851813773
+"101",101,"Eptesicus_fuscus",19,23,"Chiroptera","Big brown bat",0.348634907585683
+"102",102,"Equus_caballus",57,3e+05,"Perissodactyla","Horse",0.187865607088056
+"103",103,"Equus_zebra",33.2,296000,"Perissodactyla","Mountain zebra",-0.0459675791319492
+"104",104,"Erignathus_barbatus",31.4525,373000,"Carnivora","Bearded seal",-0.0850152571685973
+"105",105,"Erinaceus_europaeus",11.7,750,"Erinaceomorpha","Western European hedgehog",-0.0965011953233797
+"106",106,"Erythrocebus_patas",28.3,7750,"Primates","Patas monkey",0.129890982802823
+"107",107,"Eschrichtius_robustus",77,28500000,"Cetacea","Gray whale",0.0119321190197193
+"108",108,"Eubalaena_australis",70,4.5e+07,"Cetacea","Southern right whale",-0.060207773009042
+"109",109,"Eubalaena_glacialis",67,2.3e+07,"Cetacea","North atlantic right whale",-0.0340505612098174
+"110",110,"Eudorcas_thomsonii",20,25000,"Artiodactyla","Thomson's gazelle",-0.0997049599954979
+"111",111,"Eulemur_fulvus",35.5,2485,"Primates","Brown lemur",0.304899622476987
+"112",112,"Eulemur_macaco",37.5,2467,"Primates","Black lemur",0.329191913414541
+"113",113,"Eulemur_mongoz",36.2,1555,"Primates","Mongoose lemur",0.344937446258894
+"114",114,"Eumetopias_jubatus",32.8,415000,"Carnivora","Steller sea lion",-0.073979222058021
+"115",115,"Felis_catus",30,3900,"Carnivora","Domestic cat",0.201452883364819
+"116",116,"Felis_nigripes",15.6,2125,"Carnivora","Black-footed cat",-0.0416691005644622
+"117",117,"Galago_moholi",16.6,169.2,"Primates","South African galago",0.15565419012721
+"118",118,"Galago_senegalensis",17.1,192.2,"Primates","Senegal galago",0.159962432122607
+"119",119,"Giraffa_camelopardalis",39.5,8e+05,"Artiodactyla","Giraffe",-0.0374377800340047
+"120",120,"Glis_glis",8.7,125,"Rodentia","Fat dormouse",-0.104553495526164
+"121",121,"Globicephala_melas",60,1060000,"Cetacea","Long-finned pilot whale",0.125172777716502
+"122",122,"Gorilla_beringei",55.4,139842,"Primates","Eastern Gorilla",0.226880847039397
+"123",123,"Gorilla_gorilla",60.1,139842,"Primates","Gorilla",0.262245554313707
+"124",124,"Gracilinanus_agilis",6.1,22,"Didelphimorphia","Paraguayan slender mouse opossum",-0.141796537838447
+"125",125,"Grampus_griseus",42.5,425000,"Cetacea","Risso's dolphin",0.0369330236166912
+"126",126,"Graphiurus_murinus",6.9,24,"Rodentia","Woodland dormouse",-0.0941345510615227
+"127",127,"Gulo_gulo",19.5,16333.3,"Carnivora","Wolverine",-0.0820458979704672
+"128",128,"Gymnobelideus_leadbeateri",14.1,127,"Diprotodontia","Leadbeater's possum",0.104077832114543
+"129",129,"Halichoerus_grypus",42.9,268000,"Carnivora","Gray seal",0.0720409994684275
+"130",130,"Helarctos_malayanus",35.9,46000,"Carnivora","Sun bear",0.113312435939227
+"131",131,"Helogale_parvula",18,274.8,"Carnivora","Dwarf mongoose",0.158172835735087
+"132",132,"Heterocephalus_glaber",31,35,"Rodentia","Naked mole-rat",0.532980065457513
+"133",133,"Heterohyrax_brucei",14,2456.7,"Hyracoidea","Bush hyrax",-0.0984296779480915
+"134",134,"Hippopotamus_amphibius",61.2,3750000,"Artiodactyla","Hippopotamus",0.0487199020472181
+"135",135,"Hippotragus_equinus",25.9,225000,"Artiodactyla","Roan antelope",-0.13534384142735
+"136",136,"Hyaena_hyaena",25,40000,"Carnivora","Striped hyena",-0.0344337712309803
+"137",137,"Hydrochoerus_hydrochaeris",15.1,55000,"Rodentia","Capybara",-0.27483390458465
+"138",138,"Hydropotes_inermis",13.9,11500,"Artiodactyla","Chinese water deer",-0.205447244384602
+"139",139,"Hylobates_agilis",49,5925,"Primates","Agile gibbon",0.386375825865528
+"140",140,"Hylobates_moloch",45,6207.5,"Primates","Silvery gibbon",0.346256839223925
+"141",141,"Hylobates_pileatus",38,5735,"Primates","Pileated gibbon",0.278157372719625
+"142",142,"Hystrix_cristata",28,20000,"Rodentia","African porcupine",0.0614442354393983
+"143",143,"Ictidomys_tridecemlineatus",7.9,172.7,"Rodentia","Thirteen-lined ground squirrel",-0.168205073232116
+"144",144,"Jaculus_jaculus",7.3,55,"Rodentia","Lesser Egyptian jerboa",-0.125484656485614
+"145",145,"Kobus_ellipsiprymnus",30,175333,"Artiodactyla","Waterbuck",-0.0547328079430566
+"146",146,"Lama_glama",28.9,140000,"Artiodactyla","Llama",-0.0558070888923557
+"147",147,"Lasiurus_borealis",2.575,13,"Chiroptera","Eastern Red Bat",-0.480934589538573
+"148",148,"Lemur_catta",37.3,2555,"Primates","Ring-tailed lemur",0.324510088550559
+"149",149,"Leontopithecus_chrysomelas",21.3,535,"Primates","Golden-headed lion tamarin",0.186432369084726
+"150",150,"Leontopithecus_rosalia",31.6,654.5,"Primates","Golden lion tamarin",0.34416859124936
+"151",151,"Leptonychotes_weddellii",25,425000,"Carnivora","Weddell seal",-0.193515897761583
+"152",152,"Leptonycteris_yerbabuenae",10.1,24.26,"Chiroptera","Lesser Long-nosed Bat",0.0706123957843986
+"153",153,"Lepus_americanus",8,1600,"Lagomorpha","Snowshoe hare",-0.312601537396969
+"154",154,"Lepus_timidus",18,4175,"Lagomorpha","Mountain hare",-0.0249826394334503
+"155",155,"Litocranius_walleri",17.3,43500,"Artiodactyla","Gerenuk",-0.199974253446857
+"156",156,"Lontra_canadensis",27,9000,"Carnivora","Northern river otter",0.0994024141644901
+"157",157,"Lophocebus_aterrimus",36.68333333,6768.75,"Primates","Black Crested Mangabey",0.251686355195794
+"158",158,"Loris_tardigradus",21.6,238.2,"Primates","Slender loris",0.246975771337328
+"159",159,"Loxodonta_africana",65,4800000,"Proboscidea","African bush elephant",0.0582641720576318
+"160",160,"Lutra_lutra",18.2,6750,"Carnivora","European otter",-0.0525243189335899
+"161",161,"Lycaon_pictus",17,26500,"Carnivora","African wild dog",-0.174208471531224
+"162",162,"Lynx_canadensis",26.8,10100,"Carnivora","Canada lynx",0.0884111643855368
+"163",163,"Lynx_pardinus",13,11000,"Carnivora","Spanish lynx",-0.23152637181393
+"164",164,"Macaca_arctoides",29.2,9275,"Primates","Stump-tailed macaque",0.131395418550285
+"165",165,"Macaca_assamensis",31.4,9100,"Primates","Assam macaque",0.164224465896851
+"166",166,"Macaca_cyclopis",21.45833333,6032.805,"Primates","Formosan Rock Macaque",0.0265619297714911
+"167",167,"Macaca_fascicularis",39,6362.5,"Primates","Long-tailed macaque",0.282448705163651
+"168",168,"Macaca_fuscata",38.5,8882.5,"Primates","Japanese macaque",0.254384016317212
+"169",169,"Macaca_mulatta",40,8235,"Primates","Rhesus monkey",0.276078414643544
+"170",170,"Macaca_nemestrina",37.6,7912.5,"Primates","Pigtail macaque",0.251895519006554
+"171",171,"Macaca_nigra",34,7965,"Primates","Celebes crested macaque",0.207741419075798
+"172",172,"Macaca_silenus",40,7875,"Primates","Liontail macaque",0.279087457587974
+"173",173,"Macroglossus_sobrinus",6,21.8,"Chiroptera","Greater Long-nosed Fruit Bat",-0.148360359037405
+"174",174,"Macropus_fuliginosus",23.2,28250,"Diprotodontia","Western gray kangaroo",-0.043474188518854
+"175",175,"Macropus_giganteus",25,49500,"Diprotodontia","Eastern gray kangaroo",-0.0487783812976547
+"176",176,"Macrotus_californicus",17,11.6,"Chiroptera","California leaf-nosed bat",0.34640738475559
+"177",177,"Madoqua_kirkii",17.3,5000,"Artiodactyla","Kirk's dik-dik",-0.0543477247736311
+"178",178,"Mandrillus_leucophaeus",39,18250,"Primates","Drill",0.21151476000015
+"179",179,"Mandrillus_sphinx",40,23000,"Primates","Mandrill",0.206937962689067
+"180",180,"Manis_javanica",6.075,4540.855,"Pholidota","Sunda Pangolin",-0.502363481737332
+"181",181,"Manis_pentadactyla",15.225,2350,"Pholidota","Chinese pangolin",-0.0590113300299663
+"182",182,"Marmota_flaviventris",21.2,3500,"Rodentia","Yellow-bellied marmot",0.057952009037492
+"183",183,"Marmota_monax",14,4000,"Rodentia","Woodchuck",-0.13124463246753
+"184",184,"Marmota_vancouverensis",12.1,4750,"Rodentia","Vancouver marmot",-0.206155591639805
+"185",185,"Martes_zibellina",18.4,1066.7,"Carnivora","Sable",0.0764185359488712
+"186",186,"Mastomys_coucha",2.908333333,53.81,"Rodentia","Southern African Mastomys",-0.523690872078532
+"187",187,"Megaderma_lyra",14,38.6,"Chiroptera","Greater false vampire bat",0.181155874680553
+"188",188,"Megaderma_spasma",14,38.6,"Chiroptera","Lesser False Vampire Bat",0.181155874680553
+"189",189,"Mellivora_capensis",31.3,10000,"Carnivora","Honey badger",0.156490525643825
+"190",190,"Meriones_unguiculatus",6.3,53.2,"Rodentia","Mongolian jird",-0.187227037220545
+"191",191,"Mesocricetus_auratus",3.9,105,"Rodentia","Golden hamster",-0.441271346274822
+"192",192,"Microcebus_murinus",18.2,64.8,"Primates","Gray mouse lemur",0.260225883169862
+"193",193,"Microgale_talazaci",5.8,50,"Afrosoricida","Talazac's shrew tenrec",-0.21896361082499
+"194",194,"Microtus_agrestis",4.8,46,"Rodentia","Field vole",-0.295537439991756
+"195",195,"Microtus_arvalis",4.8,27.5,"Rodentia","Common vole",-0.260906295230286
+"196",196,"Microtus_fortis",2.166666667,63,"Rodentia","Reed Vole",-0.662157048478823
+"197",197,"Microtus_ochrogaster",5.3,40,"Rodentia","Prairie vole",-0.24309457503048
+"198",198,"Microtus_oeconomus",2.166666667,58,"Rodentia","Tundra vole",-0.656590562389729
+"199",199,"Miniopterus_natalensis",22,11.185,"Chiroptera","Natal Long-fingered Bat",0.460833571912858
+"200",200,"Miniopterus_schreibersii",22,13,"Chiroptera","Schreibers's long-fingered bat",0.450710857906424
+"201",201,"Mirounga_angustirostris",20.29166667,1600000,"Carnivora","Northern elephant seal",-0.373377140086292
+"202",202,"Mirounga_leonina",23,1400000,"Carnivora","Southern elephant seal",-0.30997820738856
+"203",203,"Mirza_coquereli",17.4,311.2,"Primates","Giant mouse lemur",0.135075975564903
+"204",204,"Molossus_molossus",5.6,14,"Chiroptera","Pallas's mastiff bat",-0.148512457613704
+"205",205,"Monodelphis_domestica",5.1,105,"Didelphimorphia","Gray short-tailed opossum",-0.324765777203385
+"206",206,"Moschus_moschiferus",13.89166667,10000,"Artiodactyla","Siberian musk deer",-0.196299458018033
+"207",207,"Mungos_mungo",17.4,1331.5,"Carnivora","Banded mongoose",0.0372235284299088
+"208",208,"Muntiacus_crinifrons",11.975,18590,"Artiodactyla","Black muntjac",-0.302516894603981
+"209",209,"Muntiacus_muntjak",18.8,21000,"Artiodactyla","Indian muntjac",-0.114840311552338
+"210",210,"Muntiacus_reevesi",23.2,18000,"Artiodactyla","Reeves's muntjac",-0.0131333491037948
+"211",211,"Mus_caroli",6,11.2,"Rodentia","Ryukyu mouse",-0.103528074479603
+"212",212,"Mus_musculus",4,20.5,"Rodentia","House mouse",-0.320312680361169
+"213",213,"Mus_spicilegus",3.5,19.9,"Rodentia","Mound-building mouse",-0.376304991376178
+"214",214,"Mus_spretus",6,19.9,"Rodentia","Western Mediterranean Mouse",-0.14222178534281
+"215",215,"Muscardinus_avellanarius",5.3,27.3,"Rodentia","Hazel dormouse",-0.217380302228388
+"216",216,"Mustela_erminea",12.5,110.3,"Carnivora","Ermine",0.0612591728580679
+"217",217,"Mustela_putorius",11.1,809,"Carnivora","European polecat",-0.12446163986972
+"218",218,"Myocastor_coypus",8.5,7850,"Rodentia","Nutria",-0.393339566104424
+"219",219,"Myodes_glareolus",4.9,20.8,"Rodentia","Bank vole",-0.233154567130808
+"220",220,"Myotis_brandtii",41,7,"Chiroptera","Brandt's bat",0.762743356100028
+"221",221,"Myotis_davidii",24,5.3,"Chiroptera","David's Myotis",0.54889831183091
+"222",222,"Myotis_lucifugus",34,10,"Chiroptera","Little brown bat",0.65742844041138
+"223",223,"Myotis_myotis",37.1,28.55,"Chiroptera","Mouse-eared bat",0.624703979010583
+"224",224,"Myotis_septentrionalis",19,6,"Chiroptera","Northern Myotis",0.439089927154445
+"225",225,"Nanger_granti",19.7,67000,"Artiodactyla","Grant's gazelle",-0.17263009855431
+"226",226,"Nasalis_larvatus",25.1,14617.5,"Primates","Proboscis monkey",0.0350643953906027
+"227",227,"Nasua_narica",26.4,3750,"Carnivora","White-nosed coati",0.148575742043237
+"228",228,"Neofelis_nebulosa",19.8,19500,"Carnivora","Clouded leopard",-0.0873443088503648
+"229",229,"Neotoma_lepida",10.5,236,"Rodentia","Desert woodrat",-0.0656640643661757
+"230",230,"Neotragus_pygmaeus",11.1,2250,"Artiodactyla","Royal antelope",-0.193318403207446
+"231",231,"Neovison_vison",11.4,925,"Carnivora","American mink",-0.121899779741277
+"232",232,"Noctilio_leporinus",11.8,50,"Chiroptera","Greater bulldog bat",0.0894904029181983
+"233",233,"Nomascus_leucogenys",44.1,6000,"Primates","White-cheeked gibbon",0.339771580397706
+"234",234,"Nyctereutes_procyonoides",16.6,6500,"Carnivora","Raccoon dog",-0.0899470861472791
+"235",235,"Nycticebus_bengalensis",26.5,959.75,"Primates","Bengal Slow Loris",0.241958684904909
+"236",236,"Nycticebus_coucang",25.8,890.5,"Primates","Slow loris",0.235373803623821
+"237",237,"Nycticeius_humeralis",6,9.75,"Chiroptera","Evening bat",-0.0941949294563061
+"238",238,"Ochotona_princeps",7,100,"Lagomorpha","American pika",-0.183953548373868
+"239",239,"Octodon_degus",14,235,"Rodentia","Degu",0.0595605161006085
+"240",240,"Odobenus_rosmarus",40,1012500,"Carnivora","Walrus",-0.0478322800295661
+"241",241,"Odocoileus_virginianus",23,87000,"Artiodactyla","White-tailed deer",-0.122952504558257
+"242",242,"Okapia_johnstoni",33.5,225000,"Artiodactyla","Okapi",-0.0235987984717572
+"243",243,"Ondatra_zibethicus",10,1362,"Rodentia","Muskrat",-0.204850300992145
+"244",244,"Onychomys_torridus",4.6,22,"Rodentia","Southern grasshopper mouse",-0.26436854116764
+"245",245,"Oreamnos_americanus",20.8,90000,"Artiodactyla","Mountain goat",-0.168899126788985
+"246",246,"Oreotragus_oreotragus",25.9,12000,"Artiodactyla","Klipspringer",0.0619727710109219
+"247",247,"Ornithorhynchus_anatinus",22.6,1250,"Monotremata","Duck-billed platypus",0.155034579245369
+"248",248,"Oryctolagus_cuniculus",9,1800,"Lagomorpha","European rabbit",-0.26937771279812
+"249",249,"Oryx_dammah",27.5,177500,"Artiodactyla","Scimitar-horned oryx",-0.0933482522733138
+"250",250,"Oryx_gazella",23.8,170000,"Artiodactyla","Gemsbok",-0.153197805620253
+"251",251,"Otocyon_megalotis",17,4150,"Carnivora","Bat-eared fox",-0.0494019208769267
+"252",252,"Otolemur_crassicaudatus",22.7,1094.5,"Primates","Greater galago",0.165894669734224
+"253",253,"Otolemur_garnettii",20,1300,"Primates","Small-eared galago",0.0993159492336994
+"254",254,"Ovis_ammon",16.8,160000,"Artiodactyla","Argali",-0.30038446617755
+"255",255,"Ovis_aries",22.8,80000,"Artiodactyla","Domestic sheep or mouflon",-0.121098916902761
+"256",256,"Ovis_canadensis",20.6,70275,"Artiodactyla","Bighorn sheep",-0.156441665383778
+"257",257,"Pachyuromys_duprasi",8.3,40,"Rodentia","Fat-tailed gerbil",-0.048292352255195
+"258",258,"Pan_paniscus",55,39925,"Primates","Pygmy chimpanzee or bonobo",0.308115245807585
+"259",259,"Pan_troglodytes",59.4,44983.5,"Primates","Chimpanzee",0.333508654335982
+"260",260,"Panthera_leo",27,175000,"Carnivora","Lion",-0.100362327246574
+"261",261,"Panthera_onca",28,81150,"Carnivora","Jaguar",-0.0328365127136622
+"262",262,"Panthera_pardus",27.3,53750,"Carnivora","Leopard",-0.0161006394965099
+"263",263,"Papio_anubis",45,17728.56,"Primates","Olive Baboon",0.27561403887257
+"264",264,"Papio_hamadryas",37.5,18000,"Primates","Hamadryas baboon",0.195409933733024
+"265",265,"Papio_papio",45,18000,"Primates","Guinea Baboon",0.274591179780649
+"266",266,"Paradoxurus_hermaphroditus",24.5,3100,"Carnivora","Asian palm civet",0.128951775399921
+"267",267,"Pedetes_capensis",20,3500,"Rodentia","Springhare",0.0326461437727218
+"268",268,"Peromyscus_crinitus",7.7,16.5,"Rodentia","Canyon mouse",-0.0212700046009
+"269",269,"Peromyscus_eremicus",7.4,25,"Rodentia","Cactus mouse",-0.0664999006567539
+"270",270,"Peromyscus_leucopus",7.9,23,"Rodentia","White-footed mouse",-0.0324916020767042
+"271",271,"Peromyscus_nasutus",5.4,28,"Rodentia","Northern Rock Deermouse",-0.210966708797133
+"272",272,"Petromus_typicus",7.066666667,200,"Rodentia","Dassie rat",-0.226496966158747
+"273",273,"Phalanger_gymnotis",18.9,2400,"Diprotodontia","Ground cuscus",0.0334759388599667
+"274",274,"Phascolarctos_cinereus",22.1,9300,"Diprotodontia","Koala",0.0102236397959375
+"275",275,"Philantomba_maxwellii",18.3,7000,"Artiodactyla","Maxwell's duiker",-0.0525927461610271
+"276",276,"Phoca_largha",47.6,85000,"Carnivora","Spotted seal",0.194492174043925
+"277",277,"Phoca_vitulina",47.6,115000,"Carnivora","Harbor seal",0.174143796324546
+"278",278,"Phyllostomus_discolor",9,43.4,"Chiroptera","Pale spear-nosed bat",-0.0186195839998174
+"279",279,"Pipistrellus_kuhlii",8,6,"Chiroptera","Kuhl's pipistrelle",0.0634263131935597
+"280",280,"Pipistrellus_pipistrellus",16.6,5,"Chiroptera","Common pipistrelle",0.392717595409378
+"281",281,"Pithecia_pithecia",36,1480,"Primates","Guianan saki",0.345859045445998
+"282",282,"Plecotus_auritus",30,7.8,"Chiroptera","Brown big-eared bat",0.619796234636371
+"283",283,"Pongo_abelii",60,53408.29,"Primates","Sumatran Orangutan",0.326317285215832
+"284",284,"Pongo_pygmaeus",59,64475,"Primates","Orangutan",0.306341640517272
+"285",285,"Potos_flavus",38.4,3000,"Carnivora","Kinkajou",0.326324199297595
+"286",286,"Procapra_przewalskii",5.6,25348.83,"Artiodactyla","Przewalski's Gazelle",-0.65347971142071
+"287",287,"Procavia_capensis",14.8,3600,"Hyracoidea","Rock hyrax",-0.100018490842684
+"288",288,"Procyon_lotor",21,6000,"Carnivora","Common raccoon",0.0175522856637865
+"289",289,"Prolemur_simus",17.6,1737.5,"Primates","Greater bamboo lemur",0.0242713548749918
+"290",290,"Propithecus_coquereli",30.5,3622.695,"Primates","Coquerel's Sifaka",0.213596593082631
+"291",291,"Psammomys_obesus",3.2,212,"Rodentia","Fat sand rat",-0.574484031318434
+"292",292,"Pteronura_brasiliensis",17.3,24000,"Carnivora","Giant otter",-0.159940873941732
+"293",293,"Pteropus_alecto",19.7,672.1,"Chiroptera","Black flying fox",0.137161464080716
+"294",294,"Pteropus_giganteus",40,1175,"Chiroptera","Indian flying fox",0.40715134399328
+"295",295,"Pteropus_rufus",9.9,776.345,"Chiroptera","Malagasy Flying Fox",-0.171375871162515
+"296",296,"Pteropus_vampyrus",20.9,872,"Chiroptera","Large flying fox",0.145313596932361
+"297",297,"Puma_concolor",23.8,63000,"Carnivora","Cougar",-0.0863755286840677
+"298",298,"Pygathrix_nemaeus",26,9720,"Primates","Douc langur",0.077831278716741
+"299",299,"Pygathrix_nigripes",26.78333333,10104.16,"Primates","Black-shanked Douc Langur",0.0881132761442061
+"300",300,"Rangifer_tarandus",21.8,101250,"Artiodactyla","Caribou and reindeer",-0.156434665995674
+"301",301,"Raphicerus_campestris",9.3,13000,"Artiodactyla","Steenbok",-0.388232209633596
+"302",302,"Rattus_norvegicus",3.8,300,"Rodentia","Norway rat",-0.523222316695876
+"303",303,"Rattus_rattus",4.2,200,"Rodentia","Rat",-0.452462281990421
+"304",304,"Redunca_redunca",18,45500,"Artiodactyla","Bohar reedbuck",-0.185773804830111
+"305",305,"Rhinoceros_unicornis",43.5,1602330,"Perissodactyla","Indian rhinoceros",-0.0423035605085067
+"306",306,"Rhinolophus_ferrumequinum",30.5,22.875,"Chiroptera","Greater horseshoe bat",0.554547992269135
+"307",307,"Rhinolophus_hipposideros",29.4,4.6,"Chiroptera","Lesser horseshoe bat",0.646569764802064
+"308",308,"Rhinolophus_sinicus",5,10.255,"Chiroptera","Chinese Rufous Horseshoe Bat",-0.17677551248184
+"309",309,"Rhinopithecus_bieti",29.5,9960,"Primates","Black snub-nosed monkey",0.131038008555059
+"310",310,"Rhinopithecus_roxellana",29.5,14750,"Primates","Golden snub-nosed monkey",0.104605253271089
+"311",311,"Rhombomys_opimus",4.5,285,"Rodentia","Great gerbil",-0.44634053359117
+"312",312,"Rousettus_aegyptiacus",22.9,125,"Chiroptera","Egyptian rousette",0.315762734195105
+"313",313,"Rousettus_leschenaultii",14,108.25,"Chiroptera","Leschenault's rousette",0.111740083735703
+"314",314,"Saguinus_imperator",23.7,518.5,"Primates","Emperor tamarin",0.234909905082479
+"315",315,"Saguinus_midas",21,553.8,"Primates","Midas tamarin",0.177947172449281
+"316",316,"Saguinus_oedipus",26.2,445.5,"Primates","Cotton-top tamarin",0.288677586772679
+"317",317,"Saiga_tatarica",12,37500,"Artiodactyla","Saiga",-0.348848050536219
+"318",318,"Saimiri_boliviensis",30.3,615,"Primates","Bolivian squirrel monkey",0.330114520131362
+"319",319,"Saimiri_sciureus",30.2,925,"Primates","South American squirrel monkey",0.3012023118794
+"320",320,"Sapajus_apella",46,2642.5,"Primates","Brown capuchin",0.413292337981152
+"321",321,"Sarcophilus_harrisii",13,6500,"Dasyuromorphia","Tasmanian devil",-0.196111821880498
+"322",322,"Scalopus_aquaticus",6.2,90,"Soricomorpha","Eastern mole",-0.229567436981744
+"323",323,"Sciurus_carolinensis",23.6,533,"Rodentia","Eastern gray squirrel",0.23121688923862
+"324",324,"Sciurus_niger",16,800,"Rodentia","Eastern fox squirrel",0.035088442267209
+"325",325,"Sciurus_vulgaris",14.8,600,"Rodentia","Eurasian red squirrel",0.0205958180820744
+"326",326,"Semnopithecus_entellus",29,13516.5,"Primates","Hanuman langur",0.103060081951518
+"327",327,"Sigmodon_hispidus",5.2,185,"Rodentia","Hispid cotton rat",-0.354460159685898
+"328",328,"Solenodon_paradoxus",12.1,1000,"Soricomorpha","Hispaniolan solenodon",-0.101267329828924
+"329",329,"Sorex_araneus",3.2,9,"Soricomorpha","Eurasian shrew",-0.361808036402842
+"330",330,"Spermophilus_dauricus",2.083333333,200,"Rodentia","Daurian Ground Squirrel",-0.756952809833396
+"331",331,"Spilogale_gracilis",14,612,"Carnivora","Western Spotted Skunk",-0.00487089781904573
+"332",332,"Suncus_etruscus",3.2,2.1,"Soricomorpha","White-toothed pygmy shrew",-0.263843735467113
+"333",333,"Suricata_suricatta",20.6,776,"Carnivora","Meerkat",0.14688607587579
+"334",334,"Sus_scrofa",27,130000,"Artiodactyla","Wild boar",-0.0803525057857938
+"335",335,"Sylvicapra_grimmia",15.4,18500,"Artiodactyla","Bush duiker",-0.192945005998734
+"336",336,"Sylvilagus_floridanus",9.8,1150,"Lagomorpha","Eastern cottontail",-0.202234857188953
+"337",337,"Symphalangus_syndactylus",43,10900,"Primates","Siamang",0.288613494886986
+"338",338,"Syncerus_caffer",32.8,7e+05,"Artiodactyla","African buffalo",-0.109172215694277
+"339",339,"Tachyglossus_aculeatus",49.5,3500,"Monotremata","Short-beaked echidna",0.426221347042309
+"340",340,"Tadarida_brasiliensis",12,12.5,"Chiroptera","Brazilian free-tailed bat",0.190109609660092
+"341",341,"Talpa_occidentalis",7,87.53,"Soricomorpha","Spanish Mole",-0.174987807978874
+"342",342,"Tapirus_indicus",36.5,296250,"Perissodactyla","Malayan Tapir",-0.00486962922081374
+"343",343,"Tapirus_terrestris",39.6,250000,"Perissodactyla","Brazilian tapir",0.0419591185087836
+"344",344,"Theropithecus_gelada",36,16200,"Primates","Gelada baboon",0.184773628680719
+"345",345,"Thryonomys_swinderianus",5.4,6600,"Rodentia","Greater cane rat",-0.578689161465307
+"346",346,"Trachypithecus_francoisi",26.3,7325,"Primates","Fran?ois's leaf monkey",0.10185690438918
+"347",347,"Trachypithecus_germaini",33.9,7071.5,"Primates","Indochinese Lutung",0.214471764022022
+"348",348,"Tragelaphus_imberbis",19.8,82500,"Artiodactyla","Lesser kudu",-0.184440002540652
+"349",349,"Tragelaphus_scriptus",15.3,60000,"Artiodactyla","Bushbuck",-0.274976690009784
+"350",350,"Tragelaphus_strepsiceros",23.5,217500,"Artiodactyla","Greater kudu",-0.175293622060969
+"351",351,"Tragulus_javanicus",14,2850,"Artiodactyla","Lesser mouse-deer",-0.108426123445526
+"352",352,"Tragulus_kanchil",16.7,3850,"Artiodactyla","Lesser Mouse-deer",-0.0520832929618188
+"353",353,"Trichechus_manatus",69,322000,"Sirenia","West Indian manatee",0.266075942352081
+"354",354,"Trichosurus_vulpecula",15.9,2395,"Diprotodontia","Brush-tailed possum",-0.0414483527719219
+"355",355,"Tupaia_belangeri",11.1,200,"Scandentia","Northern tree shrew",-0.0303885936016642
+"356",356,"Tupaia_tana",11.6,197.8,"Scandentia","Large tree shrew",-0.0105090030184083
+"357",357,"Ursus_americanus",34,154250,"Carnivora","American black bear",0.00824888235236303
+"358",358,"Ursus_maritimus",43.8,475000,"Carnivora","Polar bear",0.0425309250333455
+"359",359,"Varecia_variegata",39.4,3482.3,"Primates","Ruffed lemur",0.327453660915635
+"360",360,"Vicugna_pacos",25.8,62000,"Artiodactyla","Alpaca",-0.0502556987588281
+"361",361,"Vombatus_ursinus",30,25500,"Diprotodontia","Coarse-haired wombat",0.0750532628757826
+"362",362,"Vulpes_lagopus",16.3,5200,"Carnivora","Arctic fox",-0.0828464100267181
+"363",363,"Vulpes_vulpes",21.3,4131.7,"Carnivora","Red fox",0.0488262573832798
+"364",364,"Xerus_inauris",11.5,588,"Rodentia","South African ground squirrel",-0.0876080889371343
+"365",365,"Zalophus_californianus",35.7,180000,"Carnivora","California sea lion",0.019045770360249
+"366",366,"Zapus_hudsonius",5.6,18,"Rodentia","Meadow jumping mouse",-0.165429971716745
