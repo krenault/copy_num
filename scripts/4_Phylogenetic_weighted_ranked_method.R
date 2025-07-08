@@ -28,13 +28,6 @@ gene_copy_data <- read.csv("/Users/katiarenault/PhD/TOGA/orthology/All_Species_O
 # For testing: Use subset (remove this line for full analysis)
 # IMPORTANT: Uncomment the next line to use only 1000 genes for testing
 #gene_copy_data <- head(gene_copy_data, 1000)
-cat("Filtering out OR genes...\n")
-# or_genes <- rownames(gene_copy_data)[grepl("^OR", rownames(gene_copy_data))]
-# cat("  Removing", length(or_genes), "OR genes\n")
-# gene_copy_data <- gene_copy_data[!grepl("^OR", rownames(gene_copy_data)), ]
-
-# Filter and clean data
-#gene_copy_data <- gene_copy_data[apply(gene_copy_data, 1, function(x) sum(x == 0, na.rm=TRUE)/sum(!is.na(x))) <= 0.5, ]
 gene_copy_data <- gene_copy_data %>% dplyr::select(-t_gene)
 
 metadata <- read.csv("/Users/katiarenault/PhD/TOGA/revised_results/data/raxml_final_metadata_revised.csv")

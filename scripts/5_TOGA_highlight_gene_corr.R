@@ -58,7 +58,7 @@ identify_top_outliers <- function(x, y, n_outliers = 10) {
 
 # Load data
 # PGLS results to get gene list
-file_path <- "/Users/katiarenault/PhD/TOGA/revised_results/results/max_longevity_simple_phylo_ranking_results_w_or.csv"
+file_path <- "/Users/katiarenault/Documents/GitHub/copy_num/results/max_longevity_simple_phylo_ranking_results_w_or.csv"
 pgls_results <- read.csv(file_path)
 
 # DEBUG: Print column names to identify the correct gene column
@@ -77,7 +77,7 @@ cat("  Removing", length(or_genes), "OR genes\n")
 gene_copy_data <- gene_copy_data[!grepl("^OR", rownames(gene_copy_data)), ]
 
 # Read metadata
-metadata <- read.csv("/Users/katiarenault/PhD/TOGA/revised_results/data/raxml_final_metadata_revised.csv")
+metadata <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/data/raxml_final_metadata_revised.csv")
 
 # Clean up gene copy data if needed
 if("X" %in% colnames(gene_copy_data)) {
