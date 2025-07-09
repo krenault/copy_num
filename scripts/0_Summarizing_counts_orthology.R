@@ -1,10 +1,13 @@
 ## Katia Renault
-###############################################################################
-###################### 1. Summarizing the ortholog counts ###################### 
-# Using the downloaded files from the base directory to assemble a df of gene counts for each species 
+## Summarizing counts of genes to identify genes whose copy number correlates with longevity of species
+
+########################################################################################################
+# 1. Summarizing the ortholog counts
+########################################################################################################
+# Using the downloaded files from the base directory to assemble a df of gene counts for each species ##
 # by counting the number of unique q_gene corresponding to a single t_gene
 # Output: produces a list of dfs of counts of unique t_genes from each species
-###############################################################################
+########################################################################################################
 
 library(dplyr)
 library(tidyr)
@@ -71,12 +74,13 @@ for (file_path in ortholog_files) {
   })
 }
 
-###############################################################################
-###################### 2. Add gene symbols ###################### 
-###############################################################################
+
+########################################################################################################
+# 2. Add gene symbols
+########################################################################################################
 # merging in the gene symbols for each species
-# Output: gene counts with gene names for each species (All_Species_Orthologous_CopyNumber_Annotated.tsv)
-###############################################################################
+# Output: gene counts with symbols for each species (All_Species_Orthologous_CopyNumber_Annotated.tsv) 
+########################################################################################################
 
 # re-scan ortholog files to extract gene symbol mapping
 ortholog_files <- list.files(base_dir, pattern = "orthologsClassification.tsv.gz$", full.names = TRUE, recursive = TRUE)
@@ -124,13 +128,15 @@ if (length(ortholog_dfs) > 0) {
   warning("No ortholog data frames available to merge.")
 }
 
-###############################################################################
-###################### 3. Identifying intact transcripts ###################### 
-# not all genes may have intact transcripts, so cross-checking with loss_sum files to identify if there
+
+#########################################################################################################
+# 3. Identifying intact transcripts
+#########################################################################################################
+# not all genes may have intact transcripts, so cross-checking with loss_sum files to identify if there #
 # are at least one intact transcript or partially intact transcript per gene
-# Output: Mammalia_all_species_copynumber.csv with count of intact or partially intact transcripts from 
+# Output: Mammalia_all_species_copynumber.csv with count of intact or partially intact transcripts from #
 # a given gene
-###############################################################################
+#########################################################################################################
 
 library(dplyr)
 library(tidyr)
@@ -303,13 +309,15 @@ if (length(dfcn) > 0) {
   warning("No copy number data frames available to merge.")
 }
 
-######################################################################################
-################### 4. Only keeping the orthologs with intact transcripts ###############
-######################################################################################
+
+
+#########################################################################################################
+# 4. Only keeping the orthologs with intact transcripts
+#########################################################################################################
 # replacing counts from gene copy number table with zero if there are no intact or partially 
 # intact transcripts for that gene in the query species by using the intactness csv
 # produces a revised All_Species_Orthologous_CopyNumber_Annotated.tsv file
-######################################################################################
+#########################################################################################################
 
 library(dplyr)
 library(readr)
