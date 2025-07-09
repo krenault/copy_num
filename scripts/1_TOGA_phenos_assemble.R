@@ -136,8 +136,8 @@ final_metadata <- all_final_data %>%
 cat("\nFinal matching verification:\n")
 cat("Number of species in pruned tree:", length(final_tree_species), "\n")
 cat("Number of species in final metadata:", nrow(final_metadata), "\n")
-#write.tree(trimmed_tree, "/Users/katiarenault/PhD/TOGA/revised_results/data/raxml_final_species_tree_revised.nwk")
-#write.csv(final_metadata, "/Users/katiarenault/PhD/TOGA/revised_results/data/raxml_final_metadata_revised.csv", row.names = FALSE)
+#write.tree(trimmed_tree, "/Users/katiarenault/Documents/Github/copy_num/data/raxml_final_species_tree_revised.nwk")
+#write.csv(final_metadata, "/Users/katiarenault/Documents/Github/copy_num/data/raxml_final_metadata_revised.csv", row.names = FALSE)
 
 
 ########################################################################################################
@@ -147,61 +147,9 @@ cat("Number of species in final metadata:", nrow(final_metadata), "\n")
 ########################################################################################################
 
 species_data <- read.csv("/Users/katiarenault/Documents/Github/copy_num/data/raxml_final_metadata_revised.csv")
-
-################################################################################
-# Color mapping 
-# Define your palette
-sophisticated_jewels_palette <- c(
-  "#9b383a", "#64a590", "#AA4839", "#AF6C36", "#945a87",
-  "#b68ab9", "#9c6e5a", "#9fbd8b", "#a85472", "#86acb9",
-  "#20854c", "#9c534a", "#2c6e5f", "#31a6ad", "#f0a0a3",
-  "#c57251", "#856890", "#7e9960", "#7d9a9e", "#B65B32",
-  "#c07a7a", "#8a7c6d", "#5c4d8b", "#4878a0", "#3D7B68"
-)
-fixed_color_mapping <- c(
-  "Carnivora" = "#9b383a",
-  "Rodentia" = "#64a590",
-  "Artiodactyla" = "#AA4839",
-  "Primates" = "#AF6C36",
-  "Dasyuromorphia" = "#945a87",
-  "Chiroptera" = "#b68ab9",
-  "Cetacea" = "#9c6e5a",
-  "Pilosa" = "#9fbd8b",
-  "Afrosoricida" = "#a85472",
-  "Soricomorpha" = "#86acb9",
-  "Perissodactyla" = "#20854c",
-  "Didelphimorphia" = "#9c534a",
-  "Microbiotheria" = "#2c6e5f",
-  "Sirenia" = "#31a6ad",
-  "Macroscelidea" = "#f0a0a3",
-  "Proboscidea" = "#c57251",
-  "Erinaceomorpha" = "#856890",
-  "Diprotodontia" = "#7e9960",
-  "Hyracoidea" = "#7d9a9e",
-  "Lagomorpha" = "#B65B32",
-  "Pholidota" = "#c07a7a",
-  "Monotremata" = "#8a7c6d",
-  "Scandentia" = "#5c4d8b"
-)
-orders <- unique(species_data$order)
-orders <- orders[!is.na(orders)] 
-cat("Number of unique orders in your data:", length(orders), "\n")
-cat("Orders found:", paste(orders, collapse = ", "), "\n")
-color_mapping <- fixed_color_mapping[names(fixed_color_mapping) %in% orders]
-new_orders <- setdiff(orders, names(fixed_color_mapping))
-if (length(new_orders) > 0) {
-  # Assign remaining colors from the palette to new orders
-  remaining_colors <- setdiff(sophisticated_jewels_palette, color_mapping)
-  if (length(new_orders) > length(remaining_colors)) {
-    warning("Not enough unique colors for all orders. Some colors will be recycled.")
-    remaining_colors <- rep(remaining_colors, length.out = length(new_orders))
-  }
-  new_mapping <- setNames(remaining_colors[1:length(new_orders)], new_orders)
-  color_mapping <- c(color_mapping, new_mapping)
-}
-cat("Color mapping created for", length(color_mapping), "orders\n")
+source("/Users/katiarenault/Documents/Github/copy_num/scripts/FUN_color_mappings.R")
+color_mapping <- create_color_mapping(species_data$order)
 print(color_mapping)
-################################################################################
 
 species_data$log_longevity <- log10(species_data$maximum_longevity_y)
 species_data$log_mass <- log10(species_data$adult_body_mass_g)
