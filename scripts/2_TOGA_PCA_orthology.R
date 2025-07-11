@@ -1,6 +1,8 @@
 ## Katia Renault
 ## Visualizing data using various methods
 
+source("/Users/katiarenault/Documents/Github/copy_num/scripts/FUN_color_mappings.R")
+color_mapping <- create_color_mapping(species_data$order)
 ########################################################################################################
 # 1. PCA
 ########################################################################################################
@@ -9,9 +11,6 @@ library(ggplot2)
 library(FactoMineR)
 library(factoextra)
 library(ggrepel)
-
-source("/Users/katiarenault/Documents/Github/copy_num/scripts/FUN_color_mappings.R")
-color_mapping <- create_color_mapping(species_data$order)
 gene_copy_data <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/data/All_Species_Orthologous_CopyNumber_Annotated.tsv", row.names = "t_gene", sep = '\t')
 rownames(gene_copy_data) <- gene_copy_data$t_symbol
 gene_copy_data <- gene_copy_data %>% select(-t_symbol)

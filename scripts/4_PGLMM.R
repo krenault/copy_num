@@ -1,5 +1,9 @@
+## Katia Renault
+## PGLMM to identify genes associated with longevity   
 
-# COMPLETE ZERO-FILTERED POISSON PGLMM PIPELINE
+########################################################################################################
+# 1. Zero filtered poisson PGLMM pipeline
+########################################################################################################
 # Excludes species with 0 copies and uses Poisson family for count data
 # Model: copy_number ~ longevity + (1|species__) [only for species with copy_number > 0]
 
@@ -11,10 +15,8 @@ library(parallel)
 library(foreach)
 library(doParallel)
 
-# ===== PROGRESS TRACKING =====
 OUTPUT_DIR <- "/Nori_1/krenault/copy_num/results/phyr_pglmm_zero_filtered_poisson"
 CHECKPOINT_DIR <- file.path(OUTPUT_DIR, "checkpoints")
-
 log_progress <- function(message, timestamp = TRUE) {
   if(timestamp) {
     cat("[", format(Sys.time(), "%Y-%m-%d %H:%M:%S"), "] ", message, "\n", sep = "")
@@ -23,7 +25,6 @@ log_progress <- function(message, timestamp = TRUE) {
   }
   flush.console()
 }
-
 log_gene_result <- function(gene_name, trait, result, current_count, total_count) {
   status <- "Unknown"
   p_val <- NA
@@ -33,8 +34,6 @@ log_gene_result <- function(gene_name, trait, result, current_count, total_count
   n_nonzero <- 0
   n_zeros_excluded <- 0
   mean_copy <- NA
-  
-  # Safely extract values
   if(!is.null(result) && is.data.frame(result) && nrow(result) > 0) {
     status <- as.character(result$status[1])
     if("p_value_longevity" %in% colnames(result)) p_val <- result$p_value_longevity[1]
@@ -45,10 +44,8 @@ log_gene_result <- function(gene_name, trait, result, current_count, total_count
     if("n_zeros_excluded" %in% colnames(result)) n_zeros_excluded <- result$n_zeros_excluded[1]
     if("mean_copy_number" %in% colnames(result)) mean_copy <- result$mean_copy_number[1]
   }
-  
   if(!is.na(status) && status == "success" && !is.na(p_val)) {
     significance <- if(p_val < 0.001) "***" else if(p_val < 0.01) "**" else if(p_val < 0.05) "*" else ""
-    
     cat(sprintf("[%s] %d/%d ✓ %s vs %s | β=%.3f, p=%.2e%s | Mean=%.2f | N=%d/%d (-%d zeros)\n",
                 format(Sys.time(), "%H:%M:%S"), current_count, total_count,
                 gene_name, trait, 
@@ -64,35 +61,26 @@ log_gene_result <- function(gene_name, trait, result, current_count, total_count
   flush.console()
 }
 
-# ===== ZERO-FILTERED DATA PREPARATION =====
+############################################
+# A. Data preparation 
+############################################
+
 prepare_zero_filtered_pglmm_data <- function(gene_row, metadata, tree, trait_column = "MLres") {
-  
-  # Get species present in ALL datasets (gene data, metadata, tree)
   species_in_all <- intersect(
     intersect(names(gene_row), metadata$Scientific_name),
     tree$tip.label
   )
-  
-  # Total species shared by all datasets (BEFORE any filtering)
   total_shared_species <- length(species_in_all)
-  
-  # Filter gene data to only shared species
   gene_df <- data.frame(
     species = species_in_all,
     copy_number = as.integer(gene_row[species_in_all]),
     stringsAsFactors = FALSE
   ) %>%
-    filter(!is.na(copy_number), copy_number >= 0)  # Remove NAs, keep zeros for counting
-  
-  # Count zeros before filtering them out
+    filter(!is.na(copy_number), copy_number >= 0)  
   n_zeros <- sum(gene_df$copy_number == 0)
-  
-  # FILTER OUT ZEROS - this is the key difference
+  # FILTER OUT ZEROS 
   gene_df_nonzero <- gene_df %>% filter(copy_number > 0)
-  
-  # Count species after zero filtering
   nonzero_species_count <- nrow(gene_df_nonzero)
-  
   if(nonzero_species_count < 10) {
     return(list(
       data = data.frame(),
@@ -103,8 +91,6 @@ prepare_zero_filtered_pglmm_data <- function(gene_row, metadata, tree, trait_col
       status = "Insufficient nonzero species"
     ))
   }
-  
-  # Check for variation in nonzero copy numbers
   if(var(gene_df_nonzero$copy_number) == 0) {
     return(list(
       data = data.frame(),
@@ -115,13 +101,8 @@ prepare_zero_filtered_pglmm_data <- function(gene_row, metadata, tree, trait_col
       status = "No variation in nonzero copy numbers"
     ))
   }
-  
-  # Merge with metadata
   merged <- merge(gene_df_nonzero, metadata, by.x = "species", by.y = "Scientific_name")
-  
-  # Remove species with missing trait data
   merged <- merged[!is.na(merged[[trait_column]]), ]
-  
   if(nrow(merged) < 10) {
     return(list(
       data = data.frame(),
@@ -132,10 +113,8 @@ prepare_zero_filtered_pglmm_data <- function(gene_row, metadata, tree, trait_col
       status = "Insufficient species after metadata merge"
     ))
   }
-  
-  # Prune tree to final species set (only nonzero species)
+  # prune tree to final species set (only nonzero species)
   final_tree <- keep.tip(tree, merged$species)
-  
   return(list(
     data = merged,
     tree = final_tree,
@@ -146,11 +125,12 @@ prepare_zero_filtered_pglmm_data <- function(gene_row, metadata, tree, trait_col
   ))
 }
 
-# ===== ZERO-FILTERED POISSON PGLMM FUNCTION =====
+############################################
+# B. PGLMM function
+############################################
+
 run_zero_filtered_poisson_pglmm <- function(gene_name, gene_row, metadata, tree, trait_column = "MLres") {
-  
   pglmm_input <- prepare_zero_filtered_pglmm_data(gene_row, metadata, tree, trait_column)
-  
   if (pglmm_input$status != "success" || nrow(pglmm_input$data) < 10) {
     return(data.frame(
       gene = gene_name,
@@ -167,35 +147,22 @@ run_zero_filtered_poisson_pglmm <- function(gene_name, gene_row, metadata, tree,
       status = pglmm_input$status
     ))
   }
-  
   tryCatch({
-    # ZERO-FILTERED POISSON MODEL: copy_number ~ longevity + (1|species__)
-    # Only includes species with copy_number > 0
     formula_str <- paste("copy_number ~", trait_column, "+ (1|species__)")
-    
-    # Run POISSON PGLMM (appropriate for count data)
     model <- pglmm(
       as.formula(formula_str),
       data = pglmm_input$data,
       cov_ranef = list(species = pglmm_input$tree),
-      family = "poisson",  # Poisson family for count data
-      REML = FALSE,        # Use ML for non-Gaussian families
+      family = "poisson",  
+      REML = FALSE,        
       verbose = FALSE
     )
-    
-    # Extract results
     if ("B" %in% names(model)) {
       fixed_effects <- model$B
-      
-      # Extract coefficients (should be: intercept, longevity)
       if (length(fixed_effects) >= 2) {
-        estimate_longevity <- fixed_effects[2]  # longevity coefficient
-        
-        # Get standard errors and p-values
+        estimate_longevity <- fixed_effects[2]  
         std_error_longevity <- if ("B.se" %in% names(model)) model$B.se[2] else NA
         p_value_longevity <- if ("B.pvalue" %in% names(model)) model$B.pvalue[2] else NA
-        
-        # Calculate summary statistics
         mean_copy <- mean(pglmm_input$data$copy_number, na.rm = TRUE)
         copy_range <- paste(min(pglmm_input$data$copy_number), "-", max(pglmm_input$data$copy_number))
         
@@ -215,8 +182,6 @@ run_zero_filtered_poisson_pglmm <- function(gene_name, gene_row, metadata, tree,
         ))
       }
     }
-    
-    # If we couldn't extract coefficients
     return(data.frame(
       gene = gene_name,
       trait = trait_column,
@@ -250,7 +215,9 @@ run_zero_filtered_poisson_pglmm <- function(gene_name, gene_row, metadata, tree,
   })
 }
 
-# ===== PARALLEL ANALYSIS =====
+############################################
+# C. Parallel runner
+############################################
 run_parallel_zero_filtered_poisson <- function(gene_copy_data, metadata, tree,
                                                trait_columns = c("MLres"),
                                                n_cores = 10) {
@@ -264,116 +231,76 @@ run_parallel_zero_filtered_poisson <- function(gene_copy_data, metadata, tree,
   log_progress(paste("Analyzing", nrow(gene_copy_data), "genes"))
   log_progress(paste("Traits:", paste(trait_columns, collapse = ", ")))
   log_progress(paste("Using", n_cores, "cores"))
-  
-  # Create gene-trait combinations
+
   gene_names <- rownames(gene_copy_data)
   gene_trait_combinations <- expand.grid(
     gene = gene_names,
     trait = trait_columns,
     stringsAsFactors = FALSE
   )
-  
   total_combinations <- nrow(gene_trait_combinations)
   log_progress(paste("Total combinations:", total_combinations))
-  
-  # Setup parallel processing
   cl <- makeCluster(n_cores)
   registerDoParallel(cl)
-  
-  # Export everything to workers
   clusterExport(cl, c("gene_copy_data", "metadata", "tree", "trait_columns",
                       "prepare_zero_filtered_pglmm_data", "run_zero_filtered_poisson_pglmm"),
                 envir = environment())
-  
-  # Load libraries on workers
   clusterEvalQ(cl, {
     library(ape)
     library(dplyr)
     library(phyr)
   })
-  
-  # Process in batches
   batch_size <- 50
   n_batches <- ceiling(total_combinations / batch_size)
-  
   log_progress(paste("Processing in", n_batches, "batches"))
   log_progress("Real-time results (β = effect of longevity on copy number, excluding zeros):")
   log_progress(strrep("-", 100))
-  
   all_results <- list()
   current_count <- 0
   analysis_start_time <- Sys.time()
-  
   for(batch_num in 1:n_batches) {
     start_idx <- (batch_num - 1) * batch_size + 1
     end_idx <- min(batch_num * batch_size, total_combinations)
     batch_combinations <- gene_trait_combinations[start_idx:end_idx, ]
-    
-    # Run batch in parallel
     batch_results <- foreach(i = 1:nrow(batch_combinations),
                              .combine = 'rbind',
                              .packages = c('ape', 'dplyr', 'phyr'),
                              .errorhandling = 'pass') %dopar% {
-                               
                                gene_name <- batch_combinations$gene[i]
                                trait_col <- batch_combinations$trait[i]
-                               
-                               # Extract gene row
                                gene_row <- gene_copy_data[gene_name, , drop = FALSE]
-                               
-                               # Run analysis
                                run_zero_filtered_poisson_pglmm(gene_name, gene_row, metadata, tree, trait_col)
                              }
-    
-    # Display results
     if(is.data.frame(batch_results)) {
       for(i in 1:nrow(batch_results)) {
         current_count <- current_count + 1
         result <- batch_results[i, ]
         log_gene_result(result$gene, result$trait, result, current_count, total_combinations)
       }
-      
       all_results[[batch_num]] <- batch_results
-      
-      # Progress update every 10 batches
       if(batch_num %% 10 == 0 || batch_num == n_batches) {
         elapsed <- round(as.numeric(Sys.time() - analysis_start_time, units = "mins"), 1)
         rate <- round(current_count / elapsed, 1)
         remaining <- round((total_combinations - current_count) / rate, 1)
-        
         log_progress(sprintf("PROGRESS: %d/%d (%.1f%%) | %.1f/min | ETA: %.1f min",
                              current_count, total_combinations,
                              100 * current_count / total_combinations, rate, remaining))
       }
-      
-      # Progressive saving every 20 batches
       if(batch_num %% 20 == 0) {
         temp_results <- do.call(rbind, all_results)
-        
-        # Create output directory if needed
         if(!dir.exists(OUTPUT_DIR)) dir.create(OUTPUT_DIR, recursive = TRUE)
         if(!dir.exists(CHECKPOINT_DIR)) dir.create(CHECKPOINT_DIR, recursive = TRUE)
-        
-        # Save progressive checkpoint
         checkpoint_file <- file.path(CHECKPOINT_DIR, paste0("progress_batch_", batch_num, "_of_", n_batches, ".csv"))
         write.csv(temp_results, checkpoint_file, row.names = FALSE)
-        
-        # Also save as "latest" for easy access
         latest_file <- file.path(OUTPUT_DIR, "latest_results.csv")
         write.csv(temp_results, latest_file, row.names = FALSE)
-        
         log_progress(paste("✓ Progress saved:", nrow(temp_results), "results so far"))
-        
-        # Quick stats
         successful_so_far <- sum(temp_results$status == "success", na.rm = TRUE)
         if(successful_so_far > 0) {
           significant_so_far <- sum(temp_results$status == "success" & temp_results$p_value_longevity < 0.05, na.rm = TRUE)
-          
           log_progress(sprintf("  Current stats: %d successful, %d significant (%.1f%%)", 
                                successful_so_far, significant_so_far,
                                100 * significant_so_far / successful_so_far))
-          
-          # Add species count summary
           avg_species <- round(mean(temp_results$n_species, na.rm = TRUE), 1)
           avg_total <- round(mean(temp_results$n_total_species, na.rm = TRUE), 1)
           avg_zeros_excluded <- round(mean(temp_results$n_zeros_excluded, na.rm = TRUE), 1)
@@ -383,65 +310,47 @@ run_parallel_zero_filtered_poisson <- function(gene_copy_data, metadata, tree,
       }
     }
   }
-  
-  # Clean up
   stopCluster(cl)
-  
-  # Combine results
   if(length(all_results) > 0) {
     final_results <- do.call(rbind, all_results)
-    
-    # Add FDR correction
     successful_results <- final_results[final_results$status == "success" & 
                                           !is.na(final_results$p_value_longevity), ]
     if(nrow(successful_results) > 0) {
       final_results$adjusted_p_longevity <- NA
-      
       final_results[final_results$status == "success" & !is.na(final_results$p_value_longevity), "adjusted_p_longevity"] <-
         p.adjust(successful_results$p_value_longevity, method = "BH")
     }
-    
     return(final_results)
   } else {
     return(data.frame())
   }
 }
 
-# ===== RESULTS SUMMARY =====
+############################################
+# D. Results summary
+############################################
 summarize_zero_filtered_results <- function(results) {
   log_progress("=== RESULTS SUMMARY: ZERO-FILTERED POISSON PGLMM ===")
-  
   if(nrow(results) == 0) {
     log_progress("No results to summarize")
     return(NULL)
   }
-  
   successful <- results[results$status == "success" & 
                           !is.na(results$p_value_longevity), ]
-  
   if(nrow(successful) > 0) {
-    # Basic stats
     log_progress(paste("Successful analyses:", nrow(successful)))
     log_progress(paste("Significant (p < 0.05):", sum(successful$p_value_longevity < 0.05, na.rm = TRUE)))
     log_progress(paste("FDR significant (q < 0.05):", sum(successful$adjusted_p_longevity < 0.05, na.rm = TRUE)))
-    
-    # Effect direction summary
     positive_effects <- sum(successful$estimate_longevity > 0, na.rm = TRUE)
     negative_effects <- sum(successful$estimate_longevity < 0, na.rm = TRUE)
     log_progress(sprintf("Effect directions: %d positive, %d negative", positive_effects, negative_effects))
-    
-    # Species count summary
     avg_species <- round(mean(successful$n_species, na.rm = TRUE), 1)
     avg_total <- round(mean(successful$n_total_species, na.rm = TRUE), 1)
     avg_zeros_excluded <- round(mean(successful$n_zeros_excluded, na.rm = TRUE), 1)
     log_progress(sprintf("Average per gene: %.1f analyzed / %.1f total (%.1f zeros excluded)", 
                          avg_species, avg_total, avg_zeros_excluded))
-    
-    # Copy number summary
     avg_mean_copy <- round(mean(successful$mean_copy_number, na.rm = TRUE), 2)
     log_progress(sprintf("Average copy number among nonzero species: %.2f", avg_mean_copy))
-    
-    # Top hits
     top_hits <- head(successful[order(successful$p_value_longevity), ], 10)
     log_progress("\nTop 10 associations:")
     for(i in 1:nrow(top_hits)) {
@@ -454,7 +363,6 @@ summarize_zero_filtered_results <- function(results) {
                            top_hits$n_species[i],
                            top_hits$n_zeros_excluded[i]))
     }
-    
     # FDR significant results
     fdr_sig <- successful[successful$adjusted_p_longevity < 0.05, ]
     if(nrow(fdr_sig) > 0) {
@@ -474,25 +382,22 @@ summarize_zero_filtered_results <- function(results) {
   return(successful)
 }
 
-# ===== MAIN EXECUTION =====
-
-# Load data (using your existing paths)
+########################################################################################################
+# 2. Main analysis 
+########################################################################################################
+############################################
+# A. Data loading
+############################################
 log_progress("=== LOADING DATA ===")
-
 metadata <- read.csv("/Nori_1/krenault/copy_num/data/raxml_final_metadata_revised.csv", sep = '\t')
 log_progress("✓ Metadata loaded")
-
 gene_copy_data <- read.csv("/Nori_1/krenault/copy_num/data/All_Species_Orthologous_CopyNumber_Annotated.tsv",
                            row.names = "t_gene", sep = '\t')
 log_progress("✓ Gene copy data loaded")
 
-
-# Handle t_symbol column if present
 gene_copy_raw <- read.csv("/Nori_1/krenault/copy_num/data/All_Species_Orthologous_CopyNumber_Annotated.tsv", sep = '\t')
 if("t_symbol" %in% colnames(gene_copy_raw)) {
   gene_name_mapping <- setNames(gene_copy_raw$t_symbol, gene_copy_raw$t_gene)
-  
-  # Use gene symbols as row names if available
   valid_symbols <- gene_name_mapping[rownames(gene_copy_data)]
   valid_symbols <- valid_symbols[!is.na(valid_symbols) & valid_symbols != ""]
   
@@ -504,17 +409,12 @@ if("t_symbol" %in% colnames(gene_copy_raw)) {
   }
 }
 
-# Filter high-zero genes (you may want to be more lenient since we're excluding zeros anyway)
-original_count <- nrow(gene_copy_data)
-gene_copy_data <- gene_copy_data[apply(gene_copy_data, 1, function(x) sum(x == 0, na.rm=TRUE)/sum(!is.na(x))) <= 0.8, ]
-gene_copy_data <- head(gene_copy_data)
-log_progress(paste("Filtered genes:", original_count, "→", nrow(gene_copy_data)))
-
-# Load tree
+#original_count <- nrow(gene_copy_data)
+#gene_copy_data <- gene_copy_data[apply(gene_copy_data, 1, function(x) sum(x == 0, na.rm=TRUE)/sum(!is.na(x))) <= 0.8, ]
+#gene_copy_data <- head(gene_copy_data)
+#log_progress(paste("Filtered genes:", original_count, "→", nrow(gene_copy_data)))
 tree <- read.tree("/Nori_1/krenault/copy_num/data/raxml_final_species_tree_revised.nwk")
 log_progress("✓ Tree loaded")
-
-# Prepare metadata (consistent with your zero-filtered approach)
 metadata_processed <- metadata %>%
   dplyr::select(Scientific_name, MLres, order) %>%
   distinct() %>%
@@ -523,11 +423,8 @@ metadata_processed <- metadata %>%
     Scientific_name = stringr::str_replace_all(Scientific_name, " ", "_"),
     MLres = MLres  # Log transform
   )
-
 log_progress("=== DATA LOADED ===")
 log_progress(paste("Dataset:", nrow(gene_copy_data), "genes x", ncol(gene_copy_data), "species"))
-
-# Test with first gene
 log_progress("Testing with first gene...")
 test_gene <- gene_copy_data[1, , drop = FALSE]
 test_result <- prepare_zero_filtered_pglmm_data(test_gene, metadata_processed, tree, "MLres")
@@ -538,7 +435,9 @@ if(test_result$status == "success") {
   log_progress(paste("  - Copy range:", min(test_result$data$copy_number), "-", max(test_result$data$copy_number)))
 }
 
-# ===== RUN ANALYSIS =====
+############################################
+# B. Run analysis
+############################################
 log_progress(strrep("=", 80))
 log_progress("STARTING ZERO-FILTERED POISSON PGLMM ANALYSIS")
 log_progress("Model: copy_number ~ longevity + (1|species__)")
@@ -551,7 +450,6 @@ log_progress("  β_longevity < 0: Longer-lived species have FEWER copies (among 
 log_progress("Conservative approach: Avoids uncertain gene loss calls")
 log_progress(strrep("=", 80))
 
-# Run the analysis
 results <- run_parallel_zero_filtered_poisson(
   gene_copy_data = gene_copy_data,
   metadata = metadata_processed,
@@ -559,21 +457,14 @@ results <- run_parallel_zero_filtered_poisson(
   trait_columns = c("MLres"),
   n_cores = 20
 )
-
-# Summarize and save
 if(nrow(results) > 0) {
   summary_results <- summarize_zero_filtered_results(results)
-  
-  # Save results
   for(dir in c(OUTPUT_DIR)) {
     if(!dir.exists(dir)) dir.create(dir, recursive = TRUE)
   }
-  
   timestamp <- format(Sys.time(), "%Y%m%d_%H%M%S")
   results_file <- file.path(OUTPUT_DIR, paste0("zero_filtered_poisson_pglmm_", timestamp, ".csv"))
   write.csv(results, results_file, row.names = FALSE)
-  
-  # Save FDR significant results
   if(!is.null(summary_results)) {
     fdr_sig <- summary_results[summary_results$adjusted_p_longevity < 0.05, ]
     if(nrow(fdr_sig) > 0) {
@@ -582,7 +473,6 @@ if(nrow(results) > 0) {
       log_progress(paste("✓ FDR significant results saved:", fdr_file))
     }
   }
-  
   log_progress(paste("✓ All results saved:", results_file))
 }
 
@@ -590,7 +480,9 @@ log_progress(strrep("=", 80))
 log_progress("ZERO-FILTERED POISSON ANALYSIS COMPLETE")
 log_progress(strrep("=", 80))
 
-# ===== INTERPRETATION GUIDE =====
+############################################
+# C. Interpretation guide
+############################################
 log_progress("\n=== INTERPRETATION GUIDE ===")
 log_progress("Model: copy_number ~ longevity + (1|species__) [Poisson family, zeros excluded]")
 log_progress("")
@@ -630,33 +522,24 @@ log_progress("  - More powerful than threshold methods (uses full count range)")
 log_progress("  - More appropriate than Gaussian (respects count data nature)")
 log_progress("  - Complements gene presence/absence analyses")
 
-# ===== ADDITIONAL ANALYSIS FUNCTIONS =====
-
-# Function to examine genes with many zero exclusions
+############################################
+# D. Additional functions
+############################################
 examine_high_loss_genes <- function(results, loss_threshold = 10) {
   log_progress(paste("\n=== GENES WITH HIGH ZERO EXCLUSIONS (>", loss_threshold, ") ==="))
-  
   high_loss <- results[results$n_zeros_excluded > loss_threshold & !is.na(results$n_zeros_excluded), ]
-  
   if(nrow(high_loss) > 0) {
-    # Sort by number of zeros excluded
     high_loss <- high_loss[order(high_loss$n_zeros_excluded, decreasing = TRUE), ]
-    
     log_progress(paste("Found", nrow(high_loss), "genes with >", loss_threshold, "zero exclusions"))
-    
-    # Show top examples
     for(i in 1:min(10, nrow(high_loss))) {
       gene_info <- high_loss[i, ]
       status_note <- if(gene_info$status == "success") {
         if(!is.na(gene_info$p_value_longevity) && gene_info$p_value_longevity < 0.05) "SIGNIFICANT" else "non-sig"
       } else "failed"
-      
       log_progress(sprintf("  %2d. %s: %d zeros excluded, %d analyzed, %s", 
                            i, gene_info$gene, gene_info$n_zeros_excluded, 
                            gene_info$n_species, status_note))
     }
-    
-    # Summary stats
     successful_high_loss <- high_loss[high_loss$status == "success", ]
     if(nrow(successful_high_loss) > 0) {
       sig_rate <- mean(successful_high_loss$p_value_longevity < 0.05, na.rm = TRUE)
@@ -666,24 +549,18 @@ examine_high_loss_genes <- function(results, loss_threshold = 10) {
   } else {
     log_progress("No genes found with high zero exclusions")
   }
-  
   return(high_loss)
 }
 
-# Function to compare effect sizes across copy number ranges
 analyze_copy_number_effects <- function(results) {
   log_progress("\n=== COPY NUMBER RANGE ANALYSIS ===")
-  
   successful <- results[results$status == "success" & !is.na(results$mean_copy_number), ]
-  
   if(nrow(successful) > 0) {
     # Categorize genes by mean copy number
     successful$copy_category <- cut(successful$mean_copy_number,
                                     breaks = c(0, 1.5, 2.5, 5, Inf),
                                     labels = c("Low (1-1.5)", "Medium (1.5-2.5)", "High (2.5-5)", "Very High (5+)"),
                                     include.lowest = TRUE)
-    
-    # Summary by category
     category_summary <- successful %>%
       group_by(copy_category) %>%
       summarise(
@@ -695,17 +572,12 @@ analyze_copy_number_effects <- function(results) {
         avg_sample_size = round(mean(n_species), 1),
         .groups = 'drop'
       )
-    
     log_progress("Effect sizes by copy number range:")
     print(category_summary)
-    
-    # Test for differences between categories
     if(nrow(successful) > 20) {
-      # Simple ANOVA on effect sizes
       tryCatch({
         aov_result <- aov(estimate_longevity ~ copy_category, data = successful)
         p_value <- summary(aov_result)[[1]][["Pr(>F)"]][1]
-        
         if(!is.na(p_value)) {
           log_progress(sprintf("ANOVA p-value for category differences: %.4f %s", 
                                p_value, if(p_value < 0.05) "(significant)" else "(not significant)"))
@@ -715,36 +587,24 @@ analyze_copy_number_effects <- function(results) {
       })
     }
   }
-  
   return(successful)
 }
 
-# Function to identify potential gene families or pathways
 identify_gene_patterns <- function(results, pattern_analysis = TRUE) {
   log_progress("\n=== GENE PATTERN ANALYSIS ===")
-  
   successful <- results[results$status == "success", ]
   significant <- successful[successful$p_value_longevity < 0.05, ]
-  
   if(nrow(significant) > 0) {
     log_progress(paste("Analyzing", nrow(significant), "significant genes for patterns"))
-    
-    # Direction analysis
     positive_genes <- significant[significant$estimate_longevity > 0, ]
     negative_genes <- significant[significant$estimate_longevity < 0, ]
-    
     log_progress(sprintf("Direction split: %d positive effects, %d negative effects", 
                          nrow(positive_genes), nrow(negative_genes)))
-    
     if(pattern_analysis && nrow(significant) > 5) {
-      # Look for gene name patterns (simplified)
       gene_names <- significant$gene
-      
-      # Common prefixes (gene families)
       prefixes <- substr(gene_names, 1, 3)
       prefix_counts <- table(prefixes)
       common_prefixes <- prefix_counts[prefix_counts >= 2]
-      
       if(length(common_prefixes) > 0) {
         log_progress("\nPotential gene family enrichment (≥2 genes with same 3-letter prefix):")
         for(i in 1:min(5, length(common_prefixes))) {
@@ -755,22 +615,16 @@ identify_gene_patterns <- function(results, pattern_analysis = TRUE) {
                                paste(head(genes_with_prefix, 3), collapse = ", ")))
         }
       }
-      
-      # Look for numerical patterns (gene clusters)
       numeric_genes <- gene_names[grepl("\\d", gene_names)]
       if(length(numeric_genes) > 2) {
         log_progress(sprintf("\nGenes with numbers (potential clusters): %d", length(numeric_genes)))
         log_progress(paste("  Examples:", paste(head(numeric_genes, 5), collapse = ", ")))
       }
     }
-    
-    # Effect size distribution
     effect_quartiles <- quantile(significant$estimate_longevity, c(0.25, 0.5, 0.75))
     log_progress(sprintf("\nEffect size distribution (significant genes):"))
     log_progress(sprintf("  Q1: %.4f, Median: %.4f, Q3: %.4f", 
                          effect_quartiles[1], effect_quartiles[2], effect_quartiles[3]))
-    
-    # Strongest effects
     strongest_positive <- head(positive_genes[order(positive_genes$estimate_longevity, decreasing = TRUE), ], 3)
     strongest_negative <- head(negative_genes[order(negative_genes$estimate_longevity), ], 3)
     
@@ -798,13 +652,12 @@ identify_gene_patterns <- function(results, pattern_analysis = TRUE) {
   return(significant)
 }
 
-# ===== COMPLETE ANALYSIS WRAPPER =====
+############################################
+# E. Complete analysis wrapper
+############################################
 
 run_complete_zero_filtered_analysis <- function(gene_copy_data, metadata_processed, tree, n_cores = 20) {
-  
   log_progress("=== STARTING COMPLETE ZERO-FILTERED POISSON ANALYSIS ===")
-  
-  # Run main analysis
   results <- run_parallel_zero_filtered_poisson(
     gene_copy_data = gene_copy_data,
     metadata = metadata_processed,
@@ -812,30 +665,20 @@ run_complete_zero_filtered_analysis <- function(gene_copy_data, metadata_process
     trait_columns = c("MLres"),
     n_cores = n_cores
   )
-  
   if(nrow(results) > 0) {
-    # Main summary
     summary_results <- summarize_zero_filtered_results(results)
-    
-    # Additional analyses
     high_loss_genes <- examine_high_loss_genes(results, loss_threshold = 10)
     copy_analysis <- analyze_copy_number_effects(results)
     pattern_analysis <- identify_gene_patterns(results)
-    
-    # Final recommendations
     log_progress("\n=== FINAL RECOMMENDATIONS ===")
-    
     successful <- results[results$status == "success", ]
     if(nrow(successful) > 0) {
       success_rate <- 100 * nrow(successful) / nrow(results)
       sig_rate <- 100 * sum(successful$p_value_longevity < 0.05, na.rm = TRUE) / nrow(successful)
-      
       log_progress(sprintf("Analysis completed successfully: %.1f%% success rate", success_rate))
       log_progress(sprintf("Significance rate: %.1f%% (reasonable for multiple testing)", sig_rate))
-      
       avg_zeros_excluded <- mean(successful$n_zeros_excluded, na.rm = TRUE)
       log_progress(sprintf("Average zeros excluded per gene: %.1f (gene loss frequency)", avg_zeros_excluded))
-      
       if(exists("summary_results") && !is.null(summary_results)) {
         fdr_sig_count <- sum(summary_results$adjusted_p_longevity < 0.05, na.rm = TRUE)
         if(fdr_sig_count > 0) {
@@ -843,14 +686,12 @@ run_complete_zero_filtered_analysis <- function(gene_copy_data, metadata_process
           log_progress("→ Focus on these for follow-up studies")
         }
       }
-      
       log_progress("\nNext steps:")
       log_progress("1. Examine FDR significant genes for biological relevance")
       log_progress("2. Consider pathway/GO enrichment analysis")
       log_progress("3. Validate key findings with independent data")
       log_progress("4. Compare with gene presence/absence analysis")
     }
-    
     return(list(
       results = results,
       summary = summary_results,
@@ -864,6 +705,9 @@ run_complete_zero_filtered_analysis <- function(gene_copy_data, metadata_process
   }
 }
 
+############################################
+# COMPLETE ANALYSIS
+############################################
 log_progress("\n=== ZERO-FILTERED POISSON PGLMM PIPELINE READY ===")
 log_progress("Complete pipeline loaded with all analysis functions")
 log_progress("")
@@ -876,38 +720,22 @@ log_progress("  summary <- summarize_zero_filtered_results(results)")
 log_progress("  patterns <- identify_gene_patterns(results)")
 metadata <- read.csv("/Nori_1/krenault/copy_num/data/raxml_final_metadata_revised.csv", sep = '\t')
 log_progress("✓ Metadata loaded")
-
 gene_copy_data <- read.csv("/Nori_1/krenault/copy_num/data/All_Species_Orthologous_CopyNumber_Annotated.tsv",
                            row.names = "t_gene", sep = '\t')
 log_progress("✓ Gene copy data loaded")
-
-# Handle t_symbol column
 if("t_symbol" %in% colnames(gene_copy_data)) {
   rownames(gene_copy_data) <- gene_copy_data$t_symbol
   gene_copy_data <- gene_copy_data %>% dplyr::select(-t_symbol)
 }
-
-# Filter high-zero genes (optional - you might want to keep more genes for this analysis)
-original_count <- nrow(gene_copy_data)
-gene_copy_data <- gene_copy_data[apply(gene_copy_data, 1, function(x) sum(x == 0, na.rm=TRUE)/sum(!is.na(x))) <= 0.7, ]
-log_progress(paste("Filtered genes:", original_count, "→", nrow(gene_copy_data)))
-
-# Load tree
 tree <- read.tree("/Nori_1/krenault/copy_num/data/raxml_final_species_tree_revised.nwk")
 log_progress("✓ Tree loaded")
-
-# Prepare metadata
 metadata <- metadata %>%
   mutate(
     adult_body_mass_g = log10(adult_body_mass_g),
     maximum_longevity_y = log10(maximum_longevity_y)
   )
-
 log_progress("=== DATA LOADED ===")
 log_progress(paste("Dataset:", nrow(gene_copy_data), "genes x", ncol(gene_copy_data), "species"))
-
-# WITH THIS CORRECTED VERSION:
-# Test with first gene
 log_progress("Testing with first gene...")
 test_gene <- gene_copy_data[1, , drop = FALSE]
 test_result <- prepare_zero_filtered_pglmm_data(test_gene, metadata_processed, tree, "MLres")  # ✅ CORRECT FUNCTION
@@ -918,16 +746,12 @@ if(test_result$status == "success") {
   log_progress(paste("  - Copy range:", min(test_result$data$copy_number), "-", max(test_result$data$copy_number)))
 }
 
-# Just the main analysis
-# Run the analysis
 results <- run_parallel_zero_filtered_poisson(
   gene_copy_data = gene_copy_data,
   metadata = metadata_processed,  # ✅ Use processed metadata
   tree = tree,
   trait_columns = c("MLres"),
-  n_cores = 10  # Reduced from 20 to avoid hanging
+  n_cores = 10  
 )
-
-# Examine results
 summary <- summarize_zero_filtered_results(results)
 significant_genes <- results[results$adjusted_p_longevity < 0.05 & !is.na(results$adjusted_p_longevity), ]
