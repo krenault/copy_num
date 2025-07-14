@@ -12,8 +12,8 @@ library(dplyr)
 library(readr)
 library(ggrepel)
 
-volcano_data <- read.csv('/Users/katiarenault/Documents/GitHub/copy_num/results/max_longevity_zero_filtered_poisson_pglmm_20250702_110253.csv')
-#volcano_data <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/results/mlres_zero_filtered_poisson_pglmm_20250707_075917.csv")
+#volcano_data <- read.csv('/Users/katiarenault/Documents/GitHub/copy_num/results/max_longevity_zero_filtered_poisson_pglmm_20250702_110253.csv')
+volcano_data <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/results/mlres_zero_filtered_poisson_pglmm_20250707_075917.csv")
 
 volcano_data$p_value <- as.numeric(volcano_data$p_value_longevity)
 volcano_data$FDR <- volcano_data$adjusted_p_longevity
@@ -32,7 +32,7 @@ volcano_data <- volcano_data %>%
       significance_level == "p_significant" ~ estimate * 0.5,  # Lighter version
       TRUE ~ NA_real_
     ),
-    log_p = -log10(p_value)
+    log_p = -log(p_value)
   ) %>%
   mutate(significance_rank = rank(-(abs(estimate) * log_p))) %>%
   mutate(to_label = ifelse(significance_level == "FDR_significant" & significance_rank <= 15, gene, NA))
@@ -61,11 +61,11 @@ volcano_plot <- ggplot(volcano_data, aes(x = estimate, y = log_p)) +
                        midpoint = 0, name = "Estimated coefficient",
                        guide = guide_colorbar(barheight = unit(5, "cm"))) +
   scale_color_identity() +
-  geom_hline(yintercept = -log10(0.05), linetype = "dashed", color = "gray40", alpha = 0.7) +
+  geom_hline(yintercept = -log(0.05), linetype = "dashed", color = "gray40", alpha = 0.7) +
   geom_vline(xintercept = 0, linetype = "dashed", color = "gray40", alpha = 0.7) +
   labs(title = "Volcano Plot of GO Pathway PGLS Results",
        x = "Estimated coefficient",
-       y = "-log10(p-value)") +
+       y = "-log(p-value)") +
   
   theme_bw() +
   theme(
@@ -79,7 +79,7 @@ volcano_plot <- ggplot(volcano_data, aes(x = estimate, y = log_p)) +
 
 print(volcano_plot)
 table(volcano_data$significance_level, useNA = "ifany")
-ggsave("/Users/katiarenault/Documents/GitHub/copy_num/plots/max_longevity_volcano.png",
+ggsave("/Users/katiarenault/Documents/GitHub/copy_num/plots/mlres_volcano.png",
        volcano_plot, width = 12, height = 8, dpi = 300)
 
 
@@ -87,8 +87,8 @@ ggsave("/Users/katiarenault/Documents/GitHub/copy_num/plots/max_longevity_volcan
 # 2. Pathways result plot
 ########################################################################################################
 
-#cors_pathways <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/results/mlres_zero_filtered_poisson_pglmm_20250707_075917.csv")
-cors_pathways <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/results/max_longevity_zero_filtered_poisson_pglmm_20250702_110253.csv")
+cors_pathways <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/results/mlres_zero_filtered_poisson_pglmm_20250707_075917.csv")
+#cors_pathways <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/results/max_longevity_zero_filtered_poisson_pglmm_20250702_110253.csv")
 pathways.reactome <- gmtPathways("/Users/katiarenault/Desktop/PhD/Human_GSEA/h.all.v2023.2.Hs.symbols.gmt")
 pathways.hallmark <- gmtPathways("/Users/katiarenault/Desktop/PhD/Human_GSEA/c2.cp.kegg_medicus.v2023.2.Hs.symbols.gmt")
 pathways.kegg <- gmtPathways("/Users/katiarenault/Desktop/PhD/Human_GSEA/c2.cp.reactome.v2023.2.Hs.symbols.gmt")
@@ -108,8 +108,8 @@ positive_fgsea_results <- data.frame(positive_fgsea_results)
 positive_fgsea_results <- positive_fgsea_results %>% select(-leadingEdge)
 #write.csv(positive_fgsea_results, "/Users/katiarenault/Documents/GitHub/copy_num/results/mlres_zero_filtered_poisson_pglmm_20250707_075917_pathways.csv")
 
-#volcano_data <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/results/mlres_zero_filtered_poisson_pglmm_20250707_075917_pathways.csv")
-volcano_data <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/results/max_longevity_zero_filtered_poisson_pglmm_20250702_110253_pathways.csv")
+volcano_data <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/results/mlres_zero_filtered_poisson_pglmm_20250707_075917_pathways.csv")
+#volcano_data <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/results/max_longevity_zero_filtered_poisson_pglmm_20250702_110253_pathways.csv")
 volcano_data <- volcano_data %>% mutate(
   pathway = stringr::str_replace_all(pathway, "_", " "))
 volcano_data$p_value <- as.numeric(volcano_data$pval)
@@ -128,7 +128,7 @@ volcano_data <- volcano_data %>%
       significance_level == "p_significant" ~ estimate * 0.5,  # Lighter version
       TRUE ~ NA_real_
     ),
-    log_p = -log10(p_value),
+    log_p = -log(p_value),
     log_p_transformed = case_when(
       log_p <= 10 ~ log_p,                    # Keep 0-10 as is
       log_p > 10 ~ 10 + (log_p - 10) * 0.3   # Compress 10+ range
@@ -188,12 +188,12 @@ volcano_plot <- ggplot(volcano_data, aes(x = estimate, y = log_p_transformed)) +
     minor_breaks = seq(0, 10, by = 1),
     expand = c(0.02, 0.02)
   ) +
-  geom_hline(yintercept = -log10(0.05), linetype = "dashed", color = "gray40", alpha = 0.7) +
+  geom_hline(yintercept = -log(0.05), linetype = "dashed", color = "gray40", alpha = 0.7) +
   geom_vline(xintercept = 0, linetype = "dashed", color = "gray40", alpha = 0.7) +
   labs(title = "Volcano Plot of GO Pathway PGLS Results",
        subtitle = "Y-axis: 0-10 shown in detail, 10+ compressed (top 5 positive & negative pathways labeled)",
        x = "Estimated coefficient",
-       y = "-log10(p-value)") +
+       y = "-log(p-value)") +
   
   theme_bw() +
   theme(
@@ -224,7 +224,7 @@ print(labeled_pathways)
 
 cat("\nSummary of significance levels:\n")
 table(volcano_data$significance_level, useNA = "ifany")
-ggsave("/Users/katiarenault/Documents/GitHub/copy_num/plots/max_longevity_pathway_volcano.png",
+ggsave("/Users/katiarenault/Documents/GitHub/copy_num/plots/mlres_pathway_volcano.png",
        volcano_plot, width = 12, height = 8, dpi = 300)
 
 
@@ -265,7 +265,7 @@ ggsave("/Users/katiarenault/Documents/GitHub/copy_num/plots/max_longevity_pathwa
 #     head(n_pathways) %>%  # Use the parameter for number of pathways      
 #     mutate(
 #       pathway = factor(pathway, levels = pathway),
-#       log_p_adj = -log10(padj)
+#       log_p_adj = -log(padj)
 #     )
 #   
 #   # Create the plot
@@ -278,7 +278,7 @@ ggsave("/Users/katiarenault/Documents/GitHub/copy_num/plots/max_longevity_pathwa
 #       high = "#9b383a",  
 #       midpoint = 0
 #     ) +
-#     scale_size_continuous(range = c(3, 10), name = "-log10(adj.P)") +
+#     scale_size_continuous(range = c(3, 10), name = "-log(adj.P)") +
 #     labs(
 #       title = "Pathway enrichment analysis",
 #       x = "NES",
@@ -410,7 +410,7 @@ plot_gene_results_top_bottom <- function(gene_data_file, keywords = NULL, n_gene
   if (!is.null(p_col)) {
     plot_data <- plot_data %>%
       mutate(
-        log_p = -log10(.data[[p_col]]),
+        log_p = -log(.data[[p_col]]),
         p_intensity = (log_p - min(log_p, na.rm = TRUE)) / (max(log_p, na.rm = TRUE) - min(log_p, na.rm = TRUE))
       )
     plot_data$p_intensity <- pmax(plot_data$p_intensity, 0.3)

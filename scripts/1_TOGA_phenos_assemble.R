@@ -81,8 +81,8 @@ analysis_data <- final_data[!is.na(final_data$maximum_longevity_y) &
                               !is.na(final_data$adult_body_mass_g) &
                               final_data$adult_body_mass_g > 0 &
                               final_data$maximum_longevity_y > 0, ]
-analysis_data$log_longevity <- log10(analysis_data$maximum_longevity_y)
-analysis_data$log_mass <- log10(analysis_data$adult_body_mass_g)
+analysis_data$log_longevity <- log(analysis_data$maximum_longevity_y)
+analysis_data$log_mass <- log(analysis_data$adult_body_mass_g)
 lm_model <- lm(log_longevity ~ log_mass, data = analysis_data)
 analysis_data$MLres <- residuals(lm_model)
 final_data$MLres <- NA
@@ -151,8 +151,8 @@ source("/Users/katiarenault/Documents/Github/copy_num/scripts/FUN_color_mappings
 color_mapping <- create_color_mapping(species_data$order)
 print(color_mapping)
 
-species_data$log_longevity <- log10(species_data$maximum_longevity_y)
-species_data$log_mass <- log10(species_data$adult_body_mass_g)
+species_data$log_longevity <- log(species_data$maximum_longevity_y)
+species_data$log_mass <- log(species_data$adult_body_mass_g)
 
 mass_longevity_df <- data.frame(
   log_mass = species_data$log_mass,
@@ -175,8 +175,8 @@ p_mass_longevity <- ggplot(mass_longevity_df, aes(x = log_mass, y = log_longevit
     title = "Relationship between body mass and longevity",
     subtitle = paste0("Pearson's r = ", round(mass_longevity_cor, 3),
                       ", Spearman's ρ = ", round(mass_longevity_rho, 3)),
-    x = "Body mass (g, log10)",
-    y = "Maximum longevity (yrs, log10)"
+    x = "Body mass (g, log)",
+    y = "Maximum longevity (yrs, log)"
   ) +
   theme_bw() + 
   labs(fill = "Order", color = "Order") +

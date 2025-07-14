@@ -370,7 +370,7 @@ identify_top_outliers <- function(x, y, n_outliers = 5) {
 
 # Load data
 # PGLS results to get gene list
-file_path <- "/Users/katiarenault/Downloads/fdr_significant_zero_filtered.csv"
+file_path <- "/Users/katiarenault/Documents/GitHub/copy_num/results/max_longevity_zero_filtered_poisson_pglmm_20250702_110253.csv"
 pgls_results <- read.csv(file_path)
 
 # DEBUG: Print column names to identify the correct gene column
@@ -378,7 +378,7 @@ cat("Column names in pgls_results:\n")
 print(colnames(pgls_results))
 cat("\n")
 
-gene_copy_data <- read.csv("/Users/katiarenault/PhD/TOGA/orthology/All_Species_Orthologous_CopyNumber_Annotated.tsv",
+gene_copy_data <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/data/All_Species_Orthologous_CopyNumber_Annotated.tsv",
                            row.names = "t_symbol", sep = '\t')
 gene_copy_data <- gene_copy_data %>% dplyr::select(-t_gene)
 
@@ -393,7 +393,7 @@ cat("  Removing", length(or_genes), "OR genes\n")
 gene_copy_data <- gene_copy_data[!grepl("^ZNF", rownames(gene_copy_data)), ]
 
 # Read metadata
-metadata <- read.csv("/Users/katiarenault/PhD/TOGA/revised_results/data/raxml_final_metadata_revised.csv")
+metadata <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/data/raxml_final_metadata_revised.csv")
 
 # Clean up gene copy data if needed
 if("X" %in% colnames(gene_copy_data)) {
@@ -416,8 +416,9 @@ if (!"order" %in% names(metadata)) {
 }
 
 # Specify genes you want to plot
-specific_genes <- head(pgls_results %>% arrange(pgls_results$adjusted_p_longevity), 10)$gene
-#specific_genes <- c("LYZ")
+#specific_genes <- head(pgls_results %>% arrange(pgls_results$adjusted_p_longevity), 10)$gene
+specific_genes <- c("ZIK1", "REG3A")
+#specific_genes <- common_high_genes[29:33]
 
 # Alternative: Use top significant genes from PGLS results
 # Get top 5 most significant genes

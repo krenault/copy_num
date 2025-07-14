@@ -1,7 +1,7 @@
 ## Katia Renault
 ## Prediction of species lifespan based on gene copy number  
 
-#seed = 13
+seed = 13
 ########################################################################################################
 # 1. Elastic net model based on copy number
 ########################################################################################################
@@ -41,7 +41,7 @@ species_data <- gene_copy_by_species %>%
   inner_join(metadata[, c("Scientific_name", "maximum_longevity_y", "order")], 
              by = c("species" = "Scientific_name")) %>%
   filter(!is.na(maximum_longevity_y)) %>%
-  mutate(log_longevity = log10(maximum_longevity_y))
+  mutate(log_longevity = log(maximum_longevity_y))
 
 print(paste("Number of species after merging:", nrow(species_data)))
 species_data$longevity_bin <- cut(species_data$log_longevity,
@@ -223,7 +223,7 @@ print(paste("Features actually used:", n_features_used))
 print(paste("Features zeroed out by L1:", n_features_input - n_features_used))
 print(paste("Feature usage rate:", round(n_features_used/n_features_input * 100, 1), "%"))
 non_zero_features <- var_importance[var_importance != 0]
-top_features_to_show <- min(15, length(non_zero_features))
+top_features_to_show <- min(17, length(non_zero_features))
 top_genes_indices <- order(abs(var_importance), decreasing = TRUE)[1:top_features_to_show]
 
 top_important_genes <- data.frame(
@@ -266,8 +266,8 @@ p_test <- ggplot(test_plot_data, aes(x = actual, y = predicted, color = Order)) 
        subtitle = paste0("R² = ", round(test_r2, 3),
                          ", ρ = ", round(test_rho, 3),
                          ", Features used = ", n_features_used, "/", n_features_input),
-       x = "Actual maximum lifespan (log10)",
-       y = "Predicted maximum lifespan (log10)") +
+       x = "Actual maximum lifespan (log)",
+       y = "Predicted maximum lifespan (log)") +
   theme_bw() +
   theme(
     legend.position = "right",
@@ -348,8 +348,8 @@ species_data <- gene_copy_by_species %>%
   inner_join(metadata[, c("Scientific_name", "maximum_longevity_y", "order", "adult_body_mass_g")],
              by = c("species" = "Scientific_name")) %>%
   filter(!is.na(maximum_longevity_y)) %>%
-  mutate(log_longevity = log10(maximum_longevity_y),
-         log_mass = log10(adult_body_mass_g))
+  mutate(log_longevity = log(maximum_longevity_y),
+         log_mass = log(adult_body_mass_g))
 species_data$longevity_bin <- cut(species_data$log_longevity,
                                   breaks = quantile(species_data$log_longevity,
                                                     probs = seq(0, 1, 0.2)),
@@ -401,7 +401,7 @@ feature_matrix_genes_only <- species_with_mass %>%
 rownames(feature_matrix_genes_only) <- species_with_mass$species
 
 # MODEL 2: Genes + body mass
-feature_matrix_with_mass <- cbind("Mass (log10)" = species_with_mass$log_mass,
+feature_matrix_with_mass <- cbind("Mass (log)" = species_with_mass$log_mass,
                                   feature_matrix_genes_only)
 rownames(feature_matrix_with_mass) <- species_with_mass$species
 print(paste("Genes-only matrix dimensions:", nrow(feature_matrix_genes_only), "x", ncol(feature_matrix_genes_only)))
@@ -603,8 +603,8 @@ print(comparison_df)
 coef_matrix_mass <- as.matrix(coef(final_model_mass, s = best_lambda_mass))
 var_importance_mass <- coef_matrix_mass[-1, 1]
 names(var_importance_mass) <- rownames(coef_matrix_mass)[-1]
-mass_importance <- var_importance_mass["Mass (log10)"]
-mass_rank <- which(names(sort(abs(var_importance_mass), decreasing = TRUE)) == "Mass (log10)")
+mass_importance <- var_importance_mass["Mass (log)"]
+mass_rank <- which(names(sort(abs(var_importance_mass), decreasing = TRUE)) == "Mass (log)")
 print(paste("Body mass coefficient:", mass_importance))
 print(paste("Body mass rank among all predictors:", mass_rank, "out of", length(var_importance_mass)))
 top_predictors_indices <- order(abs(var_importance_mass), decreasing = TRUE)[1:10]
@@ -634,8 +634,8 @@ p_comparison <- ggplot(test_plot_data, aes(x = actual, y = predicted, color = or
                          ", ρ = ", round(test_rho_genes, 3), "\n",
                          "Genes copy number + body mass: R² = ", round(test_r2_mass, 3),
                          ", ρ = ", round(test_rho_mass, 3)),
-       x = "Actual maximum lifespan (log10)",
-       y = "Predicted maximum lifespan (log10)") +
+       x = "Actual maximum lifespan (log)",
+       y = "Predicted maximum lifespan (log)") +
   theme_bw() + labs(fill = "Order", color = "Order") +
   theme(
     legend.position = "right",
