@@ -66,15 +66,15 @@ cat("Column names in pgls_results:\n")
 print(colnames(pgls_results))
 cat("\n")
 
-gene_copy_data <- read.csv("/Users/katiarenault/PhD/TOGA/orthology/All_Species_Orthologous_CopyNumber_Annotated.tsv",
-                           row.names = "t_symbol", sep = '\t')
-gene_copy_data <- gene_copy_data %>% dplyr::select(-t_gene)
+gene_copy_data <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/data/All_Species_Orthologous_CopyNumber_Annotated.tsv", row.names = "t_gene", sep = '\t')
+rownames(gene_copy_data) <- gene_copy_data$t_symbol
+gene_copy_data <- gene_copy_data %>% dplyr::select(-t_symbol)
 
 # Filter out OR genes
-cat("Filtering out OR genes...\n")
-or_genes <- rownames(gene_copy_data)[grepl("^OR", rownames(gene_copy_data))]
-cat("  Removing", length(or_genes), "OR genes\n")
-gene_copy_data <- gene_copy_data[!grepl("^OR", rownames(gene_copy_data)), ]
+# cat("Filtering out OR genes...\n")
+# or_genes <- rownames(gene_copy_data)[grepl("^OR", rownames(gene_copy_data))]
+# cat("  Removing", length(or_genes), "OR genes\n")
+# gene_copy_data <- gene_copy_data[!grepl("^OR", rownames(gene_copy_data)), ]
 
 # Read metadata
 metadata <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/data/raxml_final_metadata_revised.csv")
@@ -417,7 +417,7 @@ if (!"order" %in% names(metadata)) {
 
 # Specify genes you want to plot
 #specific_genes <- head(pgls_results %>% arrange(pgls_results$adjusted_p_longevity), 10)$gene
-specific_genes <- c("ZIK1", "REG3A")
+specific_genes <- c("FBXO31")
 #specific_genes <- common_high_genes[29:33]
 
 # Alternative: Use top significant genes from PGLS results
