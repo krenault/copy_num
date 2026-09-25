@@ -1,0 +1,426 @@
+accession,organism_name,common_name,order,family,genus,scaffold_n50,contig_n50,max_lifespan,body_mass,LQ,protein_coding_count,submission_date
+GCF_019279795.1,Protopterus annectens,West African lungfish,Ceratodontiformes,Protopteridae,Protopterus,1974114035,1603140,,,,22039,2021-07-20
+GCF_037176945.1,Latimeria chalumnae,coelacanth,Coelacanthiformes,Coelacanthidae,Latimeria,188107785,42076942,48.0,52250.0,,19735,2024-03-18
+GCF_030867095.1,Alligator mississippiensis,American alligator,Crocodylia,Alligatoridae,Alligator,255078640,38556409,77.0,150000.0,0.13284251884178144,20269,2023-08-24
+GCF_033958435.1,Carettochelys insculpta,pitted-shelled turtle,Testudines,Carettochelyidae,Carettochelys,130115908,126464372,,,,18883,2023-11-27
+GCF_965140235.1,Caretta caretta,loggerhead turtle,Testudines,Cheloniidae,Caretta,137541926,124322749,37.0,156500.0,-0.18827478344847592,20304,2025-02-13
+GCF_965140265.1,Lepidochelys kempii,Atlantic ridley,Testudines,Cheloniidae,Lepidochelys,136811586,59796335,,,,19286,2025-03-26
+GCF_965140285.1,Lepidochelys kempii,Atlantic ridley,Testudines,Cheloniidae,Lepidochelys,136730895,52784435,,,,19713,2025-03-26
+GCF_965152235.1,Eretmochelys imbricata,hawksbill sea turtle,Testudines,Cheloniidae,Eretmochelys,136542973,80323000,,,,18974,2025-04-10
+GCF_015237465.2,Chelonia mydas,Green sea turtle,Testudines,Cheloniidae,Chelonia,134428053,39415510,75.0,160000.0,0.11711010337450167,19752,2021-07-15
+GCF_965152275.1,Natator depressus,flatback sea turtle,Testudines,Cheloniidae,Natator,134157645,77014821,,,,19872,2025-02-16
+GCF_023653815.2,Caretta caretta,loggerhead turtle,Testudines,Cheloniidae,Caretta,130956235,18214114,37.0,156500.0,-0.18827478344847592,20259,2022-06-07
+GCF_009764565.3,Dermochelys coriacea,leatherback sea turtle,Testudines,Dermochelyidae,Dermochelys,137568771,7029801,30.0,420000.0,-0.34517439795406246,18775,2021-08-25
+GCF_028017835.1,Emys orbicularis,European pond turtle,Testudines,Emydidae,Emys,146456333,91255289,,,,19783,2023-01-30
+GCF_027887155.1,Malaclemys terrapin pileata,,Testudines,Emydidae,Malaclemys,144565223,75591180,,,,20938,2023-01-18
+GCF_013100865.1,Trachemys scripta elegans,,Testudines,Emydidae,Trachemys,140411086,204575,,,,18662,2020-05-15
+GCF_011386835.1,Chrysemys picta bellii,western painted turtle,Testudines,Emydidae,Chrysemys,133555881,13370154,,,,25216,2023-09-08
+GCF_020497125.1,Mauremys mutica,yellowpond turtle,Testudines,Geoemydidae,Mauremys,135065811,15010728,,,,23281,2021-10-14
+GCF_016161935.1,Mauremys reevesii,Reeves's turtle,Testudines,Geoemydidae,Mauremys,130473029,33352699,,,,22618,2020-12-22
+GCF_025201925.1,Gopherus flavomarginatus,Mexican gopher tortoise,Testudines,Testudinidae,Gopherus,162938067,6917139,,,,20882,2022-09-15
+GCF_003597395.2,Chelonoidis abingdonii,Abingdon island giant tortoise,Testudines,Testudinidae,Chelonoidis,148185065,119261,,,,19060,2025-04-29
+GCF_007399415.2,Gopherus evgoodei,Goodes thornscrub tortoise,Testudines,Testudinidae,Gopherus,147425149,13026736,,,,20174,2019-07-25
+GCF_049634645.1,Pelodiscus sinensis,Chinese soft-shelled turtle,Testudines,Trionychidae,Pelodiscus,129579767,107607917,,,,21463,2025-04-15
+GCF_048569485.1,Anomaloglossus baeobatrachus,,Anura,Aromobatidae,Anomaloglossus,707508717,2835192,,,,23328,2025-03-13
+GCF_040206685.1,Ascaphus truei,coastal tailed frog,Anura,Ascaphidae,Ascaphus,424004025,981472,,,,22575,2024-06-17
+GCF_027579735.1,Bombina bombina,fire-bellied toad,Anura,Bombinatoridae,Bombina,1241340601,3759931,,,,22468,2023-01-09
+GCF_905171765.1,Bufo bufo,common toad,Anura,Bufonidae,Bufo,635713434,3959750,,,,21517,2021-01-28
+GCF_014858855.1,Bufo gargarizans,Asiatic toad,Anura,Bufonidae,Bufo,539822115,1738317,,,,22033,2020-10-21
+GCF_051348905.1,Ranitomeya variabilis,Zimmermann's poison frog,Anura,Dendrobatidae,Ranitomeya,788740125,68175871,,,,24270,2025-07-15
+GCF_032444005.1,Ranitomeya imitator,mimic poison frog,Anura,Dendrobatidae,Ranitomeya,725832262,13907627,,,,23747,2023-10-16
+GCF_035609145.1,Eleutherodactylus coqui,Puerto Rican coqui,Anura,Eleutherodactylidae,Eleutherodactylus,277440397,10388966,,,,21776,2024-01-12
+GCF_029499605.1,Hyla sarda,,Anura,Hylidae,Hyla,384967061,3809262,,,,22847,2023-04-07
+GCF_027789765.1,Dendropsophus ebraccatus,hourglass treefrog,Anura,Hylidae,Dendropsophus,153439414,8808153,,,,22271,2023-01-13
+GCF_040937935.1,Hyperolius riggenbachi,Riggenbach's reed frog,Anura,Hyperoliidae,Hyperolius,451034413,2674826,,,,24147,2024-07-30
+GCF_031893055.1,Leptodactylus fuscus,rufous frog,Anura,Leptodactylidae,Leptodactylus,226021100,5334240,,,,20214,2023-09-26
+GCF_040894005.1,Engystomops pustulosus,Tungara frog,Anura,Leptodactylidae,Engystomops,214838416,21805561,,,,21963,2024-07-30
+GCF_038048845.1,Mixophyes fleayi,Fleay's barred frog,Anura,Limnodynastidae,Mixophyes,346624570,4050021,,,,21250,2024-04-17
+GCF_028390025.1,Pseudophryne corroboree,corroboree frog,Anura,Myobatrachidae,Pseudophryne,846894890,6819095,,,,24591,2023-02-06
+GCF_036172605.1,Pelobates fuscus,common spadefoot toad,Anura,Pelobatidae,Pelobates,387735018,29412599,,,,20977,2024-01-26
+GCF_027358695.1,Spea bombifrons,plains spadefoot toad,Anura,Pelobatidae,Spea,114150385,21170366,,,,19086,2022-12-27
+GCF_017654675.1,Xenopus laevis,African clawed frog,Anura,Pipidae,Xenopus,155250555,22451507,30.3,130.0,0.14305427117875635,34476,2021-04-12
+GCF_000004195.4,Xenopus tropicalis,tropical clawed frog,Anura,Pipidae,Xenopus,153961319,14634335,,,,21826,2019-11-14
+GCF_001663975.1,Xenopus laevis,African clawed frog,Anura,Pipidae,Xenopus,136570856,19713,30.3,130.0,0.14305427117875635,31332,2016-08-09
+GCF_032062135.1,Pyxicephalus adspersus,,Anura,Pyxicephalidae,Pyxicephalus,147930044,79604,,,,19416,2023-09-27
+GCF_042186555.1,Aquarana catesbeiana,American bullfrog,Anura,Ranidae,Aquarana,691824178,3396515,,,,24438,2024-09-24
+GCF_905171775.1,Rana temporaria,common frog,Anura,Ranidae,Rana,481763206,6264810,,,,23707,2021-01-28
+GCF_050947455.1,Rhinoderma darwinii,,Anura,Rhinodermatidae,Rhinoderma,410882874,8675653,,,,20964,2025-06-17
+GCF_040938575.1,Ambystoma mexicanum,axolotl,Caudata,Ambystomatidae,Ambystoma,1489131749,23068610,,,,24121,2024-07-30
+GCF_964261635.1,Lissotriton helveticus,palmate newt,Caudata,Salamandridae,Lissotriton,2132484007,7795245,,,,26911,2024-10-17
+GCF_031143425.1,Pleurodeles waltl,Iberian ribbed newt,Caudata,Salamandridae,Pleurodeles,1360680797,20474000,,,,22339,2024-03-19
+GCF_902459505.2,Geotrypetes seraphini,Gabon caecilian,Gymnophiona,Dermophiidae,Geotrypetes,272612222,20656571,,,,19212,2021-04-24
+GCF_901001135.2,Rhinatrema bivittatum,two-lined caecilian,Gymnophiona,Rhinatrematidae,Rhinatrema,486875112,3216284,,,,21544,2021-04-24
+GCF_901765095.2,Microcaecilia unicolor,,Gymnophiona,Siphonopidae,Microcaecilia,376147139,3661507,,,,20858,2021-04-24
+GCF_036417845.1,Apteryx mantelli,North Island brown kiwi,Apterygiformes,Apterygidae,Apteryx,88095958,19797665,,,,17430,2024-02-06
+GCF_036370855.1,Dromaius novaehollandiae,emu,Casuariiformes,Dromaiidae,Dromaius,77929039,24239989,16.6,38925.0,-0.4938924647340943,17857,2024-02-26
+GCF_028389875.1,Rhea pennata,,Rheiformes,Rheidae,Rhea,82467789,19335416,,,,16410,2023-02-06
+GCF_040807025.1,Struthio camelus,African ostrich,Struthioniformes,Struthionidae,Struthio,84633522,28829471,50.0,111000.0,-0.11097140403982308,17572,2024-07-22
+GCF_048418815.1,Hemitrygon akajei,red stingray,Myliobatiformes,Dasyatidae,Hemitrygon,175234968,8940806,,,,21646,2025-03-05
+GCF_030144855.1,Hypanus sabinus,Atlantic stingray,Myliobatiformes,Dasyatidae,Hypanus,112262883,4266932,,,,22522,2023-06-05
+GCF_963921235.1,Mobula hypostoma,lesser devil ray,Myliobatiformes,Myliobatidae,Mobula,152437164,23327000,,,,18916,2024-01-06
+GCF_030028105.1,Mobula birostris,giant manta,Myliobatiformes,Myliobatidae,Mobula,148671352,7300797,,,,20172,2023-05-22
+GCF_053455715.1,Rhinoraja longicauda,white-bellied softnose skate,Rajiformes,Arhynchobatidae,Rhinoraja,53501714,1663054,,,,18472,2025-11-13
+GCF_963514005.1,Raja brachyura,blonde ray,Rajiformes,Rajidae,Raja,68366687,2048057,8.0,7865.0,-0.31576788696563285,18971,2023-09-28
+GCF_010909765.2,Amblyraja radiata,thorny skate,Rajiformes,Rajidae,Amblyraja,62052929,1462921,16.0,2337.5,0.06714871355121077,18474,2020-02-21
+GCF_028641065.1,Leucoraja erinaceus,little skate,Rajiformes,Rajidae,Leucoraja,57189699,5310386,,,,18970,2023-02-22
+GCF_009764475.1,Pristis pectinata,smalltooth sawfish,Rhinopristiformes,Pristidae,Pristis,101699621,17009522,,,,17434,2019-12-19
+GCF_036971445.1,Narcine bancroftii,Caribbean electric ray,Torpediniformes,Narcinidae,Narcine,257710454,5195315,,,,18559,2024-03-06
+GCF_900747795.2,Erpetoichthys calabaricus,reedfish,Polypteriformes,Polypteridae,Erpetoichthys,217689105,6772339,,,,22075,2021-07-07
+GCF_016835505.1,Polypterus senegalus,gray bichir,Polypteriformes,Polypteridae,Polypterus,189689183,4528139,,,,21953,2021-02-09
+GCF_047335585.1,Pogona vitticeps,central bearded dragon,Squamata,Agamidae,Pogona,274873533,202516942,12.0,500.0,-0.29418071582469874,19105,2025-01-31
+GCF_051106095.1,Pogona vitticeps,central bearded dragon,Squamata,Agamidae,Pogona,266210064,134074000,12.0,500.0,-0.29418071582469874,19760,2025-06-26
+GCF_023053635.1,Elgaria multicarinata webbii,,Squamata,Anguidae,Elgaria,121985326,85762895,,,,19563,2024-01-04
+GCF_035149785.1,Candoia aspera,,Squamata,Boidae,Candoia,209480725,55640180,,,,18397,2024-01-18
+GCF_028640845.1,Ahaetulla prasina,,Squamata,Colubridae,Ahaetulla,231952326,23873608,,,,18292,2023-02-22
+GCF_009769535.1,Thamnophis elegans,Western terrestrial garter snake,Squamata,Colubridae,Thamnophis,100851885,4620601,,,,18900,2019-12-23
+GCF_027244095.1,Hemicordylus capensis,graceful crag lizard,Squamata,Cordylidae,Hemicordylus,359646233,160691000,,,,21239,2022-12-28
+GCF_035594765.1,Anolis carolinensis,green anole,Squamata,Dactyloidae,Anolis,288964324,26091274,,,,20447,2024-01-12
+GCF_037176765.1,Anolis sagrei,brown anole,Squamata,Dactyloidae,Anolis,249210491,43146625,,,,20130,2024-03-15
+GCF_031021105.1,Erythrolamprus reginae,royal ground snake,Squamata,Dipsadidae,Erythrolamprus,259117534,3064756,,,,19996,2023-08-31
+GCF_028583425.1,Eublepharis macularius,,Squamata,Eublepharidae,Eublepharis,145573841,80105973,,,,20469,2023-02-10
+GCF_032191835.1,Heteronotia binoei,common prickly gecko,Squamata,Gekkonidae,Heteronotia,150619664,14376057,,,,20682,2023-09-29
+GCF_049243985.1,Paroedura picta,,Squamata,Gekkonidae,Paroedura,129360563,52451795,,,,20165,2025-04-02
+GCF_963506605.1,Zootoca vivipara,common lizard,Squamata,Lacertidae,Zootoca,96056580,3447840,,,,20197,2023-09-20
+GCF_951804945.1,Podarcis cretensis,,Squamata,Lacertidae,Podarcis,94621998,65743000,,,,20094,2023-06-02
+GCF_027172205.1,Podarcis raffonei,Aeolian wall lizard,Squamata,Lacertidae,Podarcis,93623253,61439401,,,,20895,2022-12-27
+GCF_011800845.1,Zootoca vivipara,common lizard,Squamata,Lacertidae,Zootoca,92810032,219893,,,,20278,2020-04-01
+GCF_004329235.1,Podarcis muralis,Common wall lizard,Squamata,Lacertidae,Podarcis,92398148,714612,,,,21258,2019-03-07
+GCF_964188315.1,Podarcis muralis,Common wall lizard,Squamata,Lacertidae,Podarcis,91987695,3229453,,,,20953,2024-06-21
+GCF_009819535.1,Lacerta agilis,Sand lizard,Squamata,Lacertidae,Lacerta,86565987,6613248,,,,20325,2019-12-31
+GCF_019175285.1,Sceloporus undulatus,fence lizard,Squamata,Phrynosomatidae,Sceloporus,275632209,75501,,,,19905,2021-07-08
+GCF_030035675.1,Rhineura floridana,,Squamata,Rhineuridae,Rhineura,188683971,18156940,,,,20552,2023-05-22
+GCF_035046505.1,Tiliqua scincoides,,Squamata,Scincidae,Tiliqua,242160784,33113817,26.6,493.0,0.05245968729025319,18882,2024-01-04
+GCF_021028975.2,Sphaerodactylus townsendi,,Squamata,Sphaerodactylidae,Sphaerodactylus,133801376,9459502,,,,18976,2022-04-08
+GCF_029931775.1,Euleptes europaea,tarantolino,Squamata,Sphaerodactylidae,Euleptes,102317683,26991305,,,,18633,2023-05-15
+GCF_050624435.1,Tenrec ecaudatus,tailess tenrec,Afrosoricida,Tenrecidae,Tenrec,163958880,41601014,8.7,900.0,-0.20090869373752773,21285,2025-05-30
+GCF_028564815.1,Eubalaena glacialis,North Atlantic right whale,Artiodactyla,Balaenidae,Eubalaena,129620717,37467374,67.0,23000000.0,-0.00953159704954043,20149,2023-02-09
+GCF_028023285.1,Balaenoptera ricei,Rice's whale,Artiodactyla,Balaenopteridae,Balaenoptera,122071569,36541936,,,,19788,2023-01-30
+GCF_949987535.1,Balaenoptera acutorostrata,minke whale,Artiodactyla,Balaenopteridae,Balaenoptera,116513105,3015723,50.0,7500000.0,-0.059876045643793674,20286,2023-05-01
+GCF_009873245.2,Balaenoptera musculus,blue whale,Artiodactyla,Balaenopteridae,Balaenoptera,110314666,6315640,110.0,136000000.0,0.08405101283528249,19686,2020-10-02
+GCF_029407905.1,Bubalus kerabau,carabao,Artiodactyla,Bovidae,Bubalus,121846921,91172394,,,,21871,2023-03-31
+GCF_019923925.1,Bubalus bubalis,water buffalo,Artiodactyla,Bovidae,Bubalus,117225556,5359742,34.9,725000.0,-0.05597159459938328,21379,2021-09-10
+GCF_003121395.1,Bubalus bubalis,water buffalo,Artiodactyla,Bovidae,Bubalus,117219835,22441509,34.9,725000.0,-0.05597159459938328,20801,2018-05-14
+GCF_019923935.1,Bubalus bubalis,water buffalo,Artiodactyla,Bovidae,Bubalus,116997125,9586610,34.9,725000.0,-0.05597159459938328,21359,2021-09-10
+GCF_032405125.1,Capricornis sumatraensis,Sumatran serow,Artiodactyla,Bovidae,Capricornis,112748084,100934918,18.5,95000.0,-0.19241336867635095,20155,2024-03-13
+GCF_023091745.1,Budorcas taxicolor,takin,Artiodactyla,Bovidae,Budorcas,109747698,68053581,21.9,180000.0,-0.1629178755508971,20434,2022-04-22
+GCF_002742125.1,Ovis aries,sheep,Artiodactyla,Bovidae,Ovis,107697089,2572683,22.8,80000.0,-0.08987853004027935,21160,2017-11-02
+GCF_000247795.1,Bos indicus,zebu cattle,Artiodactyla,Bovidae,Bos,106310653,28375,,,,19786,2014-11-25
+GCF_042477335.2,Ovis canadensis,bighorn sheep,Artiodactyla,Bovidae,Ovis,105224494,105224494,20.6,70275.0,-0.1250678532122389,20615,2024-10-18
+GCF_029378745.1,Bos indicus,zebu cattle,Artiodactyla,Bovidae,Bos,104596815,42080189,,,,20976,2023-03-24
+GCF_003369695.1,Bos indicus x Bos taurus,hybrid cattle,Artiodactyla,Bovidae,Bos,104466507,26764281,,,,20846,2018-11-30
+GCF_027580195.1,Bos mutus,wild yak,Artiodactyla,Bovidae,Bos,103902138,38284421,,,,20029,2023-01-09
+GCF_002263795.3,Bos taurus,domestic cattle,Artiodactyla,Bovidae,Bos,103308737,26402946,20.0,750000.0,-0.30008927773370253,21667,2023-07-01
+GCF_016772045.2,Ovis aries,sheep,Artiodactyla,Bovidae,Ovis,101274418,43178051,22.8,80000.0,-0.08987853004027935,21300,2023-07-20
+GCF_000298735.2,Ovis aries,sheep,Artiodactyla,Bovidae,Ovis,100009711,150472,22.8,80000.0,-0.08987853004027935,20545,2015-11-20
+GCF_032452875.1,Bos javanicus,banteng,Artiodactyla,Bovidae,Bos,87549292,47146240,27.1,700000.0,-0.16342397988394364,21582,2023-10-11
+GCF_001704415.2,Capra hircus,goat,Artiodactyla,Bovidae,Capra,87277232,26244591,20.8,61000.0,-0.11117611289615903,20572,2016-08-24
+GCF_048773025.1,Camelus bactrianus,Bactrian camel,Artiodactyla,Camelidae,Camelus,79915242,54723239,35.4,475000.0,-0.02082812076509355,19886,2025-03-21
+GCF_009834535.1,Camelus ferus,Wild Bactrian camel,Artiodactyla,Camelidae,Camelus,76025729,5365398,,,,20222,2020-01-08
+GCF_048564905.1,Vicugna pacos,alpaca,Artiodactyla,Camelidae,Vicugna,75404351,40278543,25.8,62000.0,-0.01873358544069359,21233,2025-03-12
+GCF_036321535.1,Camelus dromedarius,Arabian camel,Artiodactyla,Camelidae,Camelus,72991593,31216184,28.4,434000.0,-0.11032954110420956,19771,2024-01-31
+GCF_000803125.2,Camelus dromedarius,Arabian camel,Artiodactyla,Camelidae,Camelus,70369702,236391,28.4,434000.0,-0.11032954110420956,20062,2019-10-07
+GCF_963930625.1,Muntiacus reevesi,Reeves' muntjac,Artiodactyla,Cervidae,Muntiacus,114544513,5780196,23.2,18000.0,0.019852771082012888,21410,2024-01-31
+GCF_910594005.1,Cervus elaphus,red deer,Artiodactyla,Cervidae,Cervus,83473711,68741660,31.5,200000.0,-0.012268618092037498,22941,2021-07-07
+GCF_019320065.1,Cervus canadensis,elk,Artiodactyla,Cervidae,Cervus,77654944,914577,,,,22348,2021-07-26
+GCF_033118175.1,Dama dama,fallow deer,Artiodactyla,Cervidae,Dama,77069784,68791581,21.1,70000.0,-0.11438403887852822,22157,2023-11-02
+GCF_023699985.2,Odocoileus virginianus,white-tailed deer,Artiodactyla,Cervidae,Odocoileus,66396233,21769372,23.0,87000.0,-0.0918314116636898,20237,2024-10-17
+GCF_937001465.1,Orcinus orca,killer whale,Artiodactyla,Delphinidae,Orcinus,114219206,45583382,90.0,3987500.0,0.23867046736515962,19396,2022-05-03
+GCF_949774975.1,Lagenorhynchus albirostris,white-beaked dolphin,Artiodactyla,Delphinidae,Lagenorhynchus,110721866,3398034,,,,19117,2023-04-08
+GCF_039906515.1,Pseudorca crassidens,false killer whale,Artiodactyla,Delphinidae,Pseudorca,110095734,58817648,62.5,748000.0,0.1949436542519163,18472,2024-05-31
+GCF_011762595.2,Tursiops truncatus,common bottlenose dolphin,Artiodactyla,Delphinidae,Tursiops,108430135,9729386,51.6,200000.0,0.20207052974557338,18550,2024-12-12
+GCF_949987515.2,Delphinus delphis,saddleback dolphin,Artiodactyla,Delphinidae,Delphinus,107080983,3627551,,,,18393,2024-09-07
+GCF_951394435.1,Stenella coeruleoalba,striped dolphin,Artiodactyla,Delphinidae,Stenella,105253534,3590204,57.5,112500.0,0.28850104119893416,19169,2023-06-16
+GCF_963455315.2,Globicephala melas,long-finned pilot whale,Artiodactyla,Delphinidae,Globicephala,105087932,3290841,60.0,1060000.0,0.1533343802336551,18508,2024-09-07
+GCF_028021215.1,Eschrichtius robustus,grey whale,Artiodactyla,Eschrichtiidae,Eschrichtius,126538682,39209000,77.0,28500000.0,0.03619727738310696,18965,2023-01-31
+GCF_030028045.1,Hippopotamus amphibius kiboko,,Artiodactyla,Hippopotamidae,Hippopotamus,149218186,50348260,,,,22139,2023-05-18
+GCF_008692025.1,Phocoena sinus,vaquita,Artiodactyla,Phocoenidae,Phocoena,115469292,20218762,,,,19069,2019-09-26
+GCF_963924675.1,Phocoena phocoena,harbor porpoise,Artiodactyla,Phocoenidae,Phocoena,110192646,3726689,20.4,52500.0,-0.1093301425548514,18252,2024-01-29
+GCF_026419965.1,Kogia breviceps,pygmy sperm whale,Artiodactyla,Physeteridae,Kogia,122394096,42780423,17.0,424600.0,-0.33169901918671263,18349,2022-11-27
+GCF_002837175.3,Physeter macrocephalus,sperm whale,Artiodactyla,Physeteridae,Physeter,122182240,42877,77.0,28500000.0,0.03619727738310696,20412,2023-02-28
+GCF_016906955.1,Phacochoerus africanus,Common warthog,Artiodactyla,Suidae,Phacochoerus,141887063,10602503,20.9,100000.0,-0.14295239489997202,20276,2021-02-19
+GCF_000003025.6,Sus scrofa,pig,Artiodactyla,Suidae,Sus,88231837,48231277,27.0,130000.0,-0.04970683452435787,20666,2017-02-07
+GCF_025265405.1,Mesoplodon densirostris,Blainville's beaked whale,Artiodactyla,Ziphiidae,Mesoplodon,125805690,48253041,,,,19759,2022-09-19
+GCF_949752795.1,Hyperoodon ampullatus,northern bottlenose whale,Artiodactyla,Ziphiidae,Hyperoodon,117448692,3126546,37.0,6500000.0,-0.1808419369099954,19045,2023-03-31
+GCF_048418805.1,Vulpes vulpes,red fox,Carnivora,Canidae,Vulpes,139969695,55675583,21.3,4131.7,0.08355446913821374,19905,2025-03-05
+GCF_018345385.1,Vulpes lagopus,Arctic fox,Carnivora,Canidae,Vulpes,131537142,33460300,16.3,5200.0,-0.048390422856353865,20695,2021-05-12
+GCF_053574225.1,Canis aureus,golden jackal,Carnivora,Canidae,Canis,68033816,56644425,18.8,11000.0,-0.03774278996930325,20620,2025-11-21
+GCF_048164855.1,Canis lupus baileyi,Mexican gray wolf,Carnivora,Canidae,Canis,65569260,31962680,,,,20020,2025-02-27
+GCF_011100685.1,Canis lupus familiaris,dog,Carnivora,Canidae,Canis,64299765,14840767,,,,21175,2020-03-10
+GCF_003254725.2,Canis lupus dingo,dingo,Carnivora,Canidae,Canis,64250934,40716615,,,,20775,2020-09-11
+GCF_005444595.1,Canis lupus familiaris,dog,Carnivora,Canidae,Canis,64204256,4722218,,,,20593,2019-05-30
+GCF_014441545.1,Canis lupus familiaris,dog,Carnivora,Canidae,Canis,64037277,12024593,,,,20949,2020-09-03
+GCF_000002285.5,Canis lupus familiaris,dog,Carnivora,Canidae,Canis,63738581,27487084,,,,20087,2020-10-06
+GCF_018350155.1,Leopardus geoffroyi,Geoffroy's cat,Carnivora,Felidae,Leopardus,152606360,104474415,23.0,4000.0,0.11912172642960006,20127,2021-05-13
+GCF_028018385.1,Neofelis nebulosa,Clouded leopard,Carnivora,Felidae,Neofelis,150204169,51579577,19.8,19500.0,-0.05445293851482669,20501,2023-01-31
+GCF_016509475.1,Prionailurus bengalensis,leopard cat,Carnivora,Felidae,Prionailurus,148587958,82622880,17.0,5000.0,-0.0274424921800116,20003,2021-01-06
+GCF_018350175.1,Felis catus,domestic cat,Carnivora,Felidae,Felis,148491486,90731473,30.0,3900.0,0.23624941165482127,20453,2021-05-13
+GCF_046562885.1,Panthera onca,jaguar,Carnivora,Felidae,Panthera,148304554,45599555,28.0,81150.0,-0.0016330209859110045,19237,2025-01-08
+GCF_018350215.1,Panthera leo,lion,Carnivora,Felidae,Panthera,147402474,77781637,27.0,175000.0,-0.0700685248581383,19491,2021-05-13
+GCF_007474595.2,Lynx canadensis,Canada lynx,Carnivora,Felidae,Lynx,147275701,7503561,26.8,10100.0,0.12208129324274863,19742,2020-07-14
+GCF_018350195.1,Panthera tigris,tiger,Carnivora,Felidae,Panthera,146942463,74391967,26.3,119700.0,-0.055460471134791245,20232,2021-05-13
+GCF_022837055.1,Prionailurus viverrinus,fishing cat,Carnivora,Felidae,Prionailurus,144906162,68766634,17.2,10650.0,-0.07415722299644645,20111,2022-04-08
+GCF_027475565.1,Acinonyx jubatus,cheetah,Carnivora,Felidae,Acinonyx,144444042,96827784,20.5,53500.0,-0.10849893762275387,19999,2022-12-28
+GCF_028533385.1,Panthera onca,jaguar,Carnivora,Felidae,Panthera,138099990,53866,28.0,81150.0,-0.0016330209859110045,21071,2023-02-09
+GCF_023721935.1,Panthera uncia,snow leopard,Carnivora,Felidae,Panthera,112063229,179517,,,,20201,2022-06-16
+GCF_006229205.1,Suricata suricatta,meerkat,Carnivora,Herpestidae,Suricata,141453419,75409,20.6,776.0,0.1835938482066346,19608,2019-07-03
+GCF_020171115.1,Neogale vison,American mink,Carnivora,Mustelidae,Neogale,220349319,220349319,,,,20422,2021-09-29
+GCF_030435805.1,Mustela lutreola,European mink,Carnivora,Mustelidae,Mustela,154078643,83356672,8.4,590.0,-0.18722306822092338,20701,2023-07-13
+GCF_902655055.1,Lutra lutra,Eurasian river otter,Carnivora,Mustelidae,Lutra,149004807,30403456,18.2,6750.0,-0.0183771507577295,20887,2020-07-31
+GCF_022355385.1,Mustela nigripes,black-footed ferret,Carnivora,Mustelidae,Mustela,145433501,148763,9.4,1021.0,-0.1759408754527002,20269,2022-02-24
+GCF_922984935.1,Meles meles,Eurasian badger,Carnivora,Mustelidae,Meles,132955750,75210923,18.6,13000.0,-0.05383087788330032,21063,2021-12-19
+GCF_009829155.1,Mustela erminea,ermine,Carnivora,Mustelidae,Mustela,130149454,36329944,12.5,110.3,0.10027636340489265,20934,2020-01-03
+GCF_009762305.2,Zalophus californianus,California sea lion,Carnivora,Otariidae,Zalophus,147124152,32626160,35.7,180000.0,0.04930622572117782,21397,2020-07-14
+GCF_964656455.1,Halichoerus grypus,gray seal,Carnivora,Phocidae,Halichoerus,156124300,3750431,42.9,268000.0,0.1018302901688839,19199,2025-01-02
+GCF_002201575.2,Neomonachus schauinslandi,Hawaiian monk seal,Carnivora,Phocidae,Neomonachus,150810825,181061,,,,19838,2021-10-20
+GCF_021288785.2,Mirounga angustirostris,Northern elephant seal,Carnivora,Phocidae,Mirounga,139676048,76189,,,,20358,2022-12-21
+GCF_002007445.2,Ailuropoda melanoleuca,giant panda,Carnivora,Ursidae,Ailuropoda,129245720,127687,36.8,117500.0,0.09170229072376124,20837,2020-04-20
+GCF_023065955.2,Ursus arctos,brown bear,Carnivora,Ursidae,Ursus,71981430,35674000,40.0,277500.0,0.06904686812691185,20319,2023-05-22
+GCF_036850765.1,Saccopteryx bilineata,greater sac-winged bat,Chiroptera,Emballonuridae,Saccopteryx,300074216,20156883,6.0,7.9,-0.0378933753987728,19291,2024-02-26
+GCF_036850995.1,Saccopteryx leptura,lesser sac-winged bat,Chiroptera,Emballonuridae,Saccopteryx,224759591,17812205,,,,19426,2024-02-26
+GCF_004126475.2,Phyllostomus discolor,pale spear-nosed bat,Chiroptera,Phyllostomidae,Phyllostomus,171742863,6892556,9.0,43.4,0.021501734616591883,19754,2020-05-12
+GCF_022682495.2,Desmodus rotundus,common vampire bat,Chiroptera,Phyllostomidae,Desmodus,160127860,6739964,29.2,33.2,0.5509938466690814,19269,2022-03-24
+GCF_036562045.2,Rhinolophus sinicus,Chinese rufous horseshoe bat,Chiroptera,Rhinolophidae,Rhinolophus,166556632,42906106,,,,18293,2024-06-26
+GCF_004115265.2,Rhinolophus ferrumequinum,greater horseshoe bat,Chiroptera,Rhinolophidae,Rhinolophus,88025743,31900497,30.5,22.875,0.5954273963003337,19652,2019-05-16
+GCF_027574615.1,Eptesicus fuscus,big brown bat,Chiroptera,Vespertilionidae,Eptesicus,102817582,49033427,19.0,23.0,0.38950786069523347,20078,2023-01-09
+GCF_963259705.1,Myotis daubentonii,Daubenton's bat,Chiroptera,Vespertilionidae,Myotis,102234773,3062752,28.0,8.5,0.626098981994496,21049,2023-08-20
+GCF_951640355.1,Cnephaeus nilssonii,northern bat,Chiroptera,Vespertilionidae,Cnephaeus,98018206,2474537,,,,19697,2023-05-18
+GCF_030445035.2,Dasypus novemcinctus,nine-banded armadillo,Cingulata,Dasypodidae,Dasypus,127081865,13963394,22.3,5500.0,0.08388471468578951,21697,2023-07-13
+GCF_048593235.1,Sminthopsis crassicaudata,fat-tailed dunnart,Dasyuromorphia,Dasyuridae,Sminthopsis,656909261,4359487,5.0,15.0,-0.16099587702163398,19709,2025-03-17
+GCF_016432865.1,Antechinus flavipes,yellow-footed antechinus,Dasyuromorphia,Dasyuridae,Antechinus,636717922,51843704,3.9,45.0,-0.34415607187690667,20412,2021-01-06
+GCF_902635505.1,Sarcophilus harrisii,Tasmanian devil,Dasyuromorphia,Dasyuridae,Sarcophilus,611347268,62339597,13.0,6500.0,-0.16191997892376797,19966,2019-11-07
+GCF_027409185.1,Cynocephalus volans,Philippine flying lemur,Dermoptera,Cynocephalidae,Cynocephalus,165781880,69195939,,,,21694,2022-12-28
+GCF_016433145.1,Gracilinanus agilis,Agile Gracile Mouse Opossum,Didelphimorphia,Didelphidae,Gracilinanus,683521856,73170,6.1,22.0,-0.10087096534644224,21142,2021-01-06
+GCF_027887165.1,Monodelphis domestica,gray short-tailed opossum,Didelphimorphia,Didelphidae,Monodelphis,538302405,3910714,5.1,105.0,-0.2856902950070399,21694,2023-01-18
+GCF_000002295.2,Monodelphis domestica,gray short-tailed opossum,Didelphimorphia,Didelphidae,Monodelphis,59809810,108014,5.1,105.0,-0.2856902950070399,20903,2007-01-25
+GCF_028372415.1,Notamacropus eugenii,tammar wallaby,Diprotodontia,Macropodidae,Notamacropus,489668034,15255043,,,,21604,2023-02-06
+GCF_011100635.1,Trichosurus vulpecula,common brushtail,Diprotodontia,Phalangeridae,Trichosurus,442560073,4314688,15.9,2395.0,-0.006074640180931956,22532,2020-03-10
+GCF_950295315.1,Erinaceus europaeus,western European hedgehog,Eulipotyphla,Erinaceidae,Erinaceus,126757761,999919,11.7,750.0,-0.059753081905136396,20879,2023-05-01
+GCF_027595985.1,Sorex araneus,European shrew,Eulipotyphla,Soricidae,Sorex,374364821,4024507,3.2,9.0,-0.3198244148719831,20687,2023-01-09
+GCF_024139225.1,Suncus etruscus,white-toothed pygmy shrew,Eulipotyphla,Soricidae,Suncus,131952995,5042816,3.2,2.1,-0.22013743049142498,19819,2022-07-06
+GCF_964237555.1,Oryctolagus cuniculus,rabbit,Lagomorpha,Leporidae,Oryctolagus,144279705,2030165,9.0,1800.0,-0.23366592778743323,21895,2024-08-31
+GCF_033115175.1,Lepus europaeus,European hare,Lagomorpha,Leporidae,Lepus,125776599,43409466,10.7,4175.0,-0.21615549608831897,21467,2023-10-31
+GCF_009806435.1,Oryctolagus cuniculus,rabbit,Lagomorpha,Leporidae,Oryctolagus,111644748,337730,9.0,1800.0,-0.23366592778743323,22458,2021-02-04
+GCF_014633375.1,Ochotona princeps,American pika,Lagomorpha,Ochotonidae,Ochotona,75838078,42119,7.0,100.0,-0.14482031125038342,18872,2020-09-21
+GCF_030435755.1,Ochotona princeps,American pika,Lagomorpha,Ochotonidae,Ochotona,73962893,12191025,7.0,100.0,-0.14482031125038342,20332,2023-07-13
+GCF_019393635.1,Dromiciops gliroides,monito del monte,Microbiotheria,Microbiotheriidae,Dromiciops,670775900,38230856,,,,21870,2021-08-03
+GCF_004115215.2,Ornithorhynchus anatinus,platypus,Monotremata,Ornithorhynchidae,Ornithorhynchus,83338043,15146802,22.6,1250.0,0.1911780073303393,18152,2020-11-06
+GCF_015852505.1,Tachyglossus aculeatus,Australian echidna,Monotremata,Tachyglossidae,Tachyglossus,63379719,19859057,49.5,3500.0,0.46114597221008835,18929,2020-12-09
+GCF_037893015.1,Macrotis lagotis,bilby,Peramelemorphia,Peramelidae,Macrotis,343853051,1227456,9.6,1300.0,-0.18334581247951975,21156,2024-04-04
+GCF_021613505.1,Equus quagga,,Perissodactyla,Equidae,Equus,122556673,427941,38.0,280000.0,0.04615612069936548,21070,2022-01-31
+GCF_041296235.1,Equus asinus,donkey,Perissodactyla,Equidae,Equus,101318199,102829910,47.0,164998.0,0.17469696575193572,21414,2024-12-12
+GCF_041296265.1,Equus caballus,horse,Perissodactyla,Equidae,Equus,99223387,99223387,57.0,300000.0,0.2175213771157125,21772,2024-08-16
+GCF_016077325.2,Equus asinus,donkey,Perissodactyla,Equidae,Equus,98589534,25073460,47.0,164998.0,0.17469696575193572,21649,2021-10-14
+GCF_002863925.1,Equus caballus,horse,Perissodactyla,Equidae,Equus,87230776,1502753,57.0,300000.0,0.2175213771157125,20955,2018-01-05
+GCF_037783145.1,Equus przewalskii,Przewalski's horse,Perissodactyla,Equidae,Equus,85145959,25995503,,,,20517,2024-04-01
+GCF_020826845.1,Diceros bicornis minor,,Perissodactyla,Rhinocerotidae,Diceros,65026825,28468213,,,,21434,2021-11-10
+GCF_030020395.1,Manis pentadactyla,Chinese pangolin,Pholidota,Manidae,Manis,149551276,25547713,,,,21077,2023-05-23
+GCF_040802235.1,Manis javanica,Malayan pangolin,Pholidota,Manidae,Manis,141798549,61244301,,,,20586,2024-07-22
+GCF_015220235.1,Choloepus didactylus,southern two-toed sloth,Pilosa,Megalonychidae,Choloepus,146178362,20994632,36.8,6250.0,0.2926711011449392,23549,2020-11-03
+GCF_023851605.1,Tamandua tetradactyla,southern tamandua,Pilosa,Myrmecophagidae,Tamandua,174634624,9869167,19.0,4500.0,0.028079368885165934,21002,2022-06-22
+GCF_049354715.1,Callithrix jacchus,white-tufted-ear marmoset,Primates,Cebidae,Callithrix,141933726,137132494,22.8,255.2,0.30384051919538835,21743,2025-04-08
+GCF_011100555.1,Callithrix jacchus,white-tufted-ear marmoset,Primates,Cebidae,Callithrix,136971485,13222669,22.8,255.2,0.30384051919538835,22355,2021-04-28
+GCF_048565385.1,Saimiri boliviensis,Bolivian squirrel monkey,Primates,Cebidae,Saimiri,129414808,69222429,30.3,615.0,0.3670975481005547,20437,2025-03-12
+GCF_009663435.1,Callithrix jacchus,white-tufted-ear marmoset,Primates,Cebidae,Callithrix,98198953,25227091,22.8,255.2,0.30384051919538835,22252,2020-05-22
+GCF_049350105.2,Macaca mulatta,Rhesus monkey,Primates,Cercopithecidae,Macaca,162285572,162285572,40.0,8235.0,0.30999019486665147,21513,2025-07-24
+GCF_037993035.2,Macaca fascicularis,crab-eating macaque,Primates,Cercopithecidae,Macaca,162126771,162126771,39.0,6362.5,0.3166658574481902,21271,2024-09-18
+GCF_043159975.1,Macaca nemestrina,pig-tailed macaque,Primates,Cercopithecidae,Macaca,154799650,40835442,37.6,7912.5,0.28585458918860307,21128,2024-10-15
+GCF_024542745.1,Macaca thibetana thibetana,,Primates,Cercopithecidae,Macaca,150623419,48622411,,,,21402,2022-08-09
+GCF_012559485.2,Macaca fascicularis,crab-eating macaque,Primates,Cercopithecidae,Macaca,149803873,26251577,39.0,6362.5,0.3166658574481902,21335,2021-10-26
+GCF_007565055.1,Rhinopithecus roxellana,golden snub-nosed monkey,Primates,Cercopithecidae,Rhinopithecus,144559847,5723610,29.5,14750.0,0.13782709027232443,21094,2019-07-29
+GCF_008728515.1,Papio anubis,olive baboon,Primates,Cercopithecidae,Papio,140274886,1464978,,,,21087,2019-10-02
+GCF_002776525.5,Piliocolobus tephrosceles,Ugandan red Colobus,Primates,Cercopithecidae,Piliocolobus,131283114,100421,,,,21528,2019-12-12
+GCF_003255815.1,Theropithecus gelada,gelada,Primates,Cercopithecidae,Theropithecus,130230028,310061,36.0,16200.0,0.21788446844902287,20683,2018-06-19
+GCF_047675955.1,Chlorocebus sabaeus,green monkey,Primates,Cercopithecidae,Chlorocebus,100816256,13913161,,,,20783,2025-02-12
+GCF_000364345.1,Macaca fascicularis,crab-eating macaque,Primates,Cercopithecidae,Macaca,88649475,86040,39.0,6362.5,0.3166658574481902,20596,2013-06-12
+GCF_003339765.1,Macaca mulatta,Rhesus monkey,Primates,Cercopithecidae,Macaca,82346004,46608966,40.0,8235.0,0.30999019486665147,21121,2019-02-13
+GCF_000409795.2,Chlorocebus sabaeus,green monkey,Primates,Cercopithecidae,Chlorocebus,81825804,90449,,,,20991,2014-03-25
+GCF_000165445.2,Microcebus murinus,gray mouse lemur,Primates,Cheirogaleidae,Microcebus,108171978,210702,18.2,64.8,0.2998727036719723,20522,2017-02-06
+GCF_040939455.1,Microcebus murinus,gray mouse lemur,Primates,Cheirogaleidae,Microcebus,105226355,102817952,18.2,64.8,0.2998727036719723,19994,2025-06-05
+GCF_029281585.2,Gorilla gorilla gorilla,western lowland gorilla,Primates,Hominidae,Gorilla,150804130,150804130,,,,22640,2024-01-08
+GCF_009914755.1,Homo sapiens,human,Primates,Hominidae,Homo,150617247,150617247,122.5,62035.0,0.65774413892651,20070,2022-01-24
+GCF_029289425.2,Pan paniscus,pygmy chimpanzee,Primates,Hominidae,Pan,147028407,147028407,55.0,39925.0,0.34015836113861875,22890,2024-01-08
+GCF_028858775.2,Pan troglodytes,chimpanzee,Primates,Hominidae,Pan,146288486,146288486,59.4,44983.5,0.3654105575557711,22561,2024-01-08
+GCF_028885655.2,Pongo abelii,Sumatran orangutan,Primates,Hominidae,Pongo,146197178,146197178,,,,22189,2024-01-05
+GCF_028885625.2,Pongo pygmaeus,Bornean orangutan,Primates,Hominidae,Pongo,143261986,140592248,59.0,64475.0,0.33781741845653457,22085,2024-01-08
+GCF_002880775.1,Pongo abelii,Sumatran orangutan,Primates,Hominidae,Pongo,98475126,11074009,,,,20574,2018-01-19
+GCF_000151905.2,Gorilla gorilla gorilla,western lowland gorilla,Primates,Hominidae,Gorilla,81227029,52934,,,,21391,2014-12-19
+GCF_000001405.40,Homo sapiens,human,Primates,Hominidae,Homo,67794873,57879411,122.5,62035.0,0.65774413892651,20076,2022-02-03
+GCF_000002135.2,Homo sapiens,human,Primates,Hominidae,Homo,58008433,6194666,122.5,62035.0,0.65774413892651,913,2004-09-01
+GCF_002880755.1,Pan troglodytes,chimpanzee,Primates,Hominidae,Pan,53103722,12268567,59.4,44983.5,0.3654105575557711,21522,2018-01-19
+GCF_000306695.2,Homo sapiens,human,Primates,Hominidae,Homo,50362920,143936,122.5,62035.0,0.65774413892651,19751,2013-06-14
+GCF_028878055.3,Symphalangus syndactylus,siamang,Primates,Hylobatidae,Symphalangus,146713733,146713733,43.0,10900.0,0.32219339027175686,22102,2024-01-05
+GCF_000146795.2,Nomascus leucogenys,northern white-cheeked gibbon,Primates,Hylobatidae,Nomascus,52956880,35148,44.1,6000.0,0.374058173204705,20370,2012-12-08
+GCF_020740605.2,Lemur catta,Ring-tailed lemur,Primates,Lemuridae,Lemur,102162704,32529614,37.3,2555.0,0.3598072497908724,19990,2021-11-04
+GCF_041146395.1,Eulemur rufifrons,Bennett's brown lemur,Primates,Lemuridae,Eulemur,100874195,89959899,,,,19514,2024-08-16
+GCF_027406575.1,Nycticebus coucang,slow loris,Primates,Lorisidae,Nycticebus,135917784,41197715,25.8,890.5,0.27191865696469364,22137,2022-12-28
+GCF_024166365.1,Elephas maximus indicus,,Proboscidea,Elephantidae,Elephas,127432672,87987108,,,,21809,2022-07-06
+GCF_030014295.1,Loxodonta africana,African savanna elephant,Proboscidea,Elephantidae,Loxodonta,119600562,82653632,65.0,4800000.0,0.08463791460362868,22303,2023-05-16
+GCF_047511655.1,Castor canadensis,American beaver,Rodentia,Castoridae,Castor,158968201,59379167,23.4,20250.0,0.01551252112158541,20783,2025-02-10
+GCF_003668045.3,Cricetulus griseus,Chinese hamster,Rodentia,Cricetidae,Cricetulus,274391693,2711962,,,,21776,2020-06-11
+GCF_903992535.2,Arvicola amphibius,Eurasian water vole,Rodentia,Cricetidae,Arvicola,158924400,5392280,2.5,120.0,-0.6044673452974508,21424,2021-05-15
+GCF_037038515.1,Microtus pennsylvanicus,meadow vole,Rodentia,Cricetidae,Microtus,125308425,47175454,,,,21461,2024-03-06
+GCF_049852395.1,Peromyscus maniculatus bairdii,prairie deer mouse,Rodentia,Cricetidae,Peromyscus,122208007,32642229,,,,22575,2025-04-22
+GCF_003704035.1,Peromyscus maniculatus bairdii,prairie deer mouse,Rodentia,Cricetidae,Peromyscus,115033041,30111,,,,22079,2020-09-17
+GCF_004664715.2,Peromyscus leucopus,white-footed mouse,Rodentia,Cricetidae,Peromyscus,114273790,3487364,7.9,23.0,0.008381351032846096,22198,2020-10-02
+GCF_903995425.1,Onychomys torridus,southern grasshopper mouse,Rodentia,Cricetidae,Onychomys,112723509,2276141,4.6,22.0,-0.22344296867563518,20942,2020-08-21
+GCF_949786415.1,Peromyscus eremicus,cactus mouse,Rodentia,Cricetidae,Peromyscus,97176920,1332236,7.4,25.0,-0.025725649792440186,22148,2023-04-08
+GCF_950005125.1,Chionomys nivalis,European snow vole,Rodentia,Cricetidae,Chionomys,88844950,30960136,,,,22222,2023-05-01
+GCF_020740685.1,Jaculus jaculus,lesser Egyptian jerboa,Rodentia,Dipodidae,Jaculus,158244790,22104564,7.3,55.0,-0.08564373507765821,20913,2021-11-04
+GCF_023159225.1,Perognathus longimembris pacificus,Pacific pocket mouse,Rodentia,Heteromyidae,Perognathus,72679016,7389774,,,,20883,2022-04-27
+GCF_011064425.1,Rattus rattus,black rat,Rodentia,Muridae,Rattus,158824752,1635336,4.2,200.0,-0.4141495517373518,21597,2020-03-04
+GCF_036323735.1,Rattus norvegicus,Norway rat,Rodentia,Muridae,Rattus,137014596,64250101,3.8,300.0,-0.48538955219358315,23154,2024-01-31
+GCF_015227675.2,Rattus norvegicus,Norway rat,Rodentia,Muridae,Rattus,135012528,29198295,3.8,300.0,-0.48538955219358315,21990,2020-11-10
+GCF_900094665.2,Mus caroli,Ryukyu mouse,Rodentia,Muridae,Mus,122627250,30921,,,,21002,2017-04-28
+GCF_030254825.1,Meriones unguiculatus,Mongolian gerbil,Rodentia,Muridae,Meriones,122584302,50173090,6.3,53.2,-0.1473467270742993,21259,2023-06-12
+GCF_947179515.1,Apodemus sylvaticus,European woodmouse,Rodentia,Muridae,Apodemus,120938251,4449850,6.3,23.4,-0.09108625228123857,22444,2022-10-28
+GCF_008632895.1,Mastomys coucha,southern multimammate mouse,Rodentia,Muridae,Mastomys,118621203,30483,,,,20166,2019-09-24
+GCF_900095145.1,Mus pahari,shrew mouse,Rodentia,Muridae,Mus,111406228,29465,,,,20482,2017-04-28
+GCF_000001635.27,Mus musculus,house mouse,Rodentia,Muridae,Mus,106145001,59462871,4.0,20.5,-0.2793035149459061,22198,2020-06-24
+GCF_011762505.2,Arvicanthis niloticus,Nile rat,Rodentia,Muridae,Arvicanthis,82689117,11143170,6.7,110.0,-0.17037228336789956,21696,2025-01-29
+GCF_903995435.1,Acomys russatus,golden spiny mouse,Rodentia,Muridae,Acomys,66475698,4450755,,,,20811,2020-08-21
+GCF_016881025.1,Ictidomys tridecemlineatus,thirteen-lined ground squirrel,Rodentia,Sciuridae,Ictidomys,193221680,44127,7.9,172.7,-0.12971861548635244,20734,2021-02-17
+GCF_045843805.1,Urocitellus parryii,Arctic ground squirrel,Rodentia,Sciuridae,Urocitellus,184159334,23164455,,,,21555,2024-12-13
+GCF_052094955.1,Ictidomys tridecemlineatus,thirteen-lined ground squirrel,Rodentia,Sciuridae,Ictidomys,157082519,10558370,7.9,172.7,-0.12971861548635244,23086,2025-08-18
+GCF_902686455.1,Sciurus vulgaris,Eurasian red squirrel,Rodentia,Sciuridae,Sciurus,153872958,16333633,14.8,600.0,0.05760807571395232,22317,2019-11-20
+GCF_902686445.1,Sciurus carolinensis,gray squirrel,Rodentia,Sciuridae,Sciurus,148229995,13975867,23.6,533.0,0.26836931157117827,21959,2020-07-31
+GCF_047511675.1,Marmota flaviventris,yellow-bellied marmot,Rodentia,Sciuridae,Marmota,136846803,52587502,21.2,3500.0,0.09287663420527115,21191,2025-02-10
+GCF_048772825.1,Callospermophilus lateralis,golden-mantled ground squirrel,Rodentia,Sciuridae,Callospermophilus,114988597,13623428,10.4,157.6,-0.004044916660339126,20343,2025-03-21
+GCF_048772815.1,Callospermophilus lateralis,golden-mantled ground squirrel,Rodentia,Sciuridae,Callospermophilus,94176142,6579271,10.4,157.6,-0.004044916660339126,21594,2025-03-21
+GCF_964187855.1,Myxine glutinosa,Atlantic hagfish,Myxiniformes,Myxinidae,Myxine,192170830,739991,,,,18316,2024-06-18
+GCF_040869285.1,Myxine glutinosa,Atlantic hagfish,Myxiniformes,Myxinidae,Myxine,156894492,847554,,,,22424,2024-07-30
+GCF_026419915.1,Harpia harpyja,harpy eagle,Accipitriformes,Accipitridae,Harpia,58111031,16799191,16.8,4800.0,-0.29706281885373187,16803,2022-11-27
+GCF_018139145.2,Gymnogyps californianus,California condor,Accipitriformes,Cathartidae,Gymnogyps,85355094,17075888,45.0,11175.0,0.05346986945072252,15144,2022-09-01
+GCF_009819795.1,Aythya fuligula,tufted duck,Anseriformes,Anatidae,Aythya,85905639,17816505,45.2,701.5,0.3088421357018267,15578,2019-12-31
+GCF_013377495.2,Cygnus atratus,black swan,Anseriformes,Anatidae,Cygnus,84552148,28995010,,,,15671,2022-08-03
+GCF_009769625.2,Cygnus olor,mute swan,Anseriformes,Anatidae,Cygnus,81481363,8308965,70.0,8300.0,0.27258629040587623,16150,2021-03-31
+GCF_040182565.1,Anser cygnoides,Swan goose,Anseriformes,Anatidae,Anser,81007908,39655246,,,,18126,2024-06-14
+GCF_047663525.1,Anas platyrhynchos,mallard,Anseriformes,Anatidae,Anas,80154792,80154792,29.1,1048.1,0.08083576152181937,17676,2025-02-12
+GCF_963932015.1,Anas acuta,northern pintail,Anseriformes,Anatidae,Anas,76435830,3416933,27.4,721.0,0.08894396163405838,16993,2024-02-07
+GCF_015476345.1,Anas platyrhynchos,mallard,Anseriformes,Anatidae,Anas,76269206,5679408,29.1,1048.1,0.08083576152181937,16836,2020-11-23
+GCF_003850225.1,Anas platyrhynchos,mallard,Anseriformes,Anatidae,Anas,76129154,36811,29.1,1048.1,0.08083576152181937,15747,2018-11-29
+GCF_020740795.1,Apus apus,common swift,Apodiformes,Apodidae,Apus,115508478,25561769,21.1,37.6,0.2458986421221132,14765,2021-11-04
+GCF_003957555.1,Calypte anna,Anna's hummingbird,Apodiformes,Trochilidae,Calypte,74081004,14522327,8.5,4.4,0.04745914586751232,14711,2019-05-16
+GCF_036169615.1,Heliangelus exortis,,Apodiformes,Trochilidae,Heliangelus,73898144,8413062,,,,15365,2024-01-26
+GCF_907165065.1,Caprimulgus europaeus,Eurasian nightjar,Caprimulgiformes,Caprimulgidae,Caprimulgus,82614289,30622946,11.9,67.0,-0.05572766220274006,15555,2021-05-17
+GCF_028500815.1,Rissa tridactyla,black-legged kittiwake,Charadriiformes,Laridae,Rissa,88208671,15653959,28.5,317.0,0.18127318198912912,16534,2023-02-09
+GCF_964199755.1,Larus michahellis,yellow-legged gull,Charadriiformes,Laridae,Larus,87713602,4216312,,,,16940,2024-07-14
+GCF_963924245.1,Chroicocephalus ridibundus,black-headed gull,Charadriiformes,Laridae,Chroicocephalus,83755488,4003687,32.9,306.0,0.24685767044300944,16778,2024-01-20
+GCF_964106895.1,Numenius arquata,Eurasian curlew,Charadriiformes,Scolopacidae,Numenius,63363742,2605715,31.8,728.0,0.15273591362197236,16115,2024-06-06
+GCF_034638445.1,Ciconia boyciana,Oriental stork,Ciconiiformes,Ciconiidae,Ciconia,102765642,35788150,48.1,4850.5,0.15881476298884611,16546,2023-12-27
+GCF_035582795.1,Mycteria americana,wood stork,Ciconiiformes,Ciconiidae,Mycteria,80020930,36845572,27.0,2500.0,-0.031284101601782854,16519,2024-01-12
+GCF_028858725.1,Colius striatus,speckled mousebird,Coliiformes,Coliidae,Colius,89023854,21931325,11.5,51.0,-0.04559419428947975,15621,2023-02-24
+GCF_036013445.1,Caloenas nicobarica,Nicobar pigeon,Columbiformes,Columbidae,Caloenas,79699707,25101800,20.5,519.0,-0.00695508035841641,17126,2024-01-26
+GCF_037038585.1,Patagioenas fasciata,band-tailed pigeon,Columbiformes,Columbidae,Patagioenas,71669782,48246320,18.5,315.0,-0.005820479811867507,17516,2025-02-07
+GCF_036013475.1,Columba livia,rock pigeon,Columbiformes,Columbidae,Columba,68980706,14042120,35.0,358.7,0.2591814631735927,17095,2024-04-08
+GCF_017976375.1,Cuculus canorus,common cuckoo,Cuculiformes,Cuculidae,Cuculus,78325852,20797936,12.9,111.5,-0.0673172723067621,16774,2021-04-15
+GCF_032191515.1,Phaenicophaeus curvirostris,,Cuculiformes,Cuculidae,Phaenicophaeus,70715910,17162444,,,,16797,2023-09-29
+GCF_023634155.1,Falco peregrinus,peregrine falcon,Falconiformes,Falconidae,Falco,93682670,15744644,25.0,840.0,0.035147072418916014,16083,2022-06-02
+GCF_023634085.1,Falco cherrug,Saker falcon,Falconiformes,Falconidae,Falco,92426045,21245687,15.9,966.0,-0.17419184563455015,16251,2022-06-02
+GCF_017639655.2,Falco naumanni,lesser kestrel,Falconiformes,Falconidae,Falco,91761059,13754753,10.9,152.5,-0.1691503070159952,16079,2021-03-30
+GCF_023638135.1,Falco biarmicus,lanner falcon,Falconiformes,Falconidae,Falco,91472507,24892811,,,,15891,2022-06-02
+GCF_015220075.1,Falco rusticolus,gyrfalcon,Falconiformes,Falconidae,Falco,91094845,15323486,13.5,1406.5,-0.2796523768023209,15894,2020-11-03
+GCF_016699485.2,Gallus gallus,chicken,Galliformes,Phasianidae,Gallus,90861225,18834961,30.0,779.8,0.12113682118255631,18023,2021-01-19
+GCF_016700215.2,Gallus gallus,chicken,Galliformes,Phasianidae,Gallus,90563926,17744542,30.0,779.8,0.12113682118255631,17981,2021-10-01
+GCF_039878825.1,Excalfactoria chinensis,blue-breasted quail,Galliformes,Phasianidae,Excalfactoria,86361526,7816141,,,,15853,2024-05-31
+GCF_951394365.1,Tetrao urogallus,western capercaillie,Galliformes,Phasianidae,Tetrao,71401156,1909808,18.0,2950.0,-0.22252918792198284,14824,2023-06-15
+GCF_023343835.1,Lagopus muta,rock ptarmigan,Galliformes,Phasianidae,Lagopus,71229700,17905263,,,,16078,2022-05-12
+GCF_030936135.1,Gavia stellata,red-throated loon,Gaviiformes,Gaviidae,Gavia,50637386,13765203,24.0,1816.0,-0.05317036552889842,16399,2023-08-30
+GCF_028858705.1,Grus americana,Whooping crane,Gruiformes,Gruidae,Grus,82903739,28324902,40.0,7500.0,0.038827662928847095,17399,2023-02-24
+GCF_011004875.1,Balearica regulorum gibbericeps,East African grey crowned-crane,Gruiformes,Gruidae,Balearica,82577926,23326060,,,,16191,2020-03-05
+GCF_013368605.1,Nyctibius grandis,,Nyctibiiformes,Nyctibiidae,Nyctibius,92359233,23231768,,,,15872,2020-06-23
+GCF_030867145.1,Opisthocomus hoazin,,Opisthocomiformes,Opisthocomidae,Opisthocomus,80946297,14274197,,,,16456,2023-08-24
+GCF_963662255.1,Cinclus cinclus,,Passeriformes,Cinclidae,Cinclus,74357285,3563180,10.6,61.7,-0.09842375475375853,16099,2023-12-11
+GCF_021018805.1,Prinia subflava,tawny-flanked prinia,Passeriformes,Cisticolidae,Prinia,63498583,7918915,,,,16306,2024-01-26
+GCF_020740725.1,Corvus hawaiiensis,hawaiian crow,Passeriformes,Corvidae,Corvus,76278832,23064755,25.0,520.0,0.07905482865968971,16414,2021-11-04
+GCF_009650955.1,Corvus moneduloides,New Caledonian crow,Passeriformes,Corvidae,Corvus,74699841,11524098,,,,16167,2019-11-14
+GCF_000738735.6,Corvus cornix cornix,,Passeriformes,Corvidae,Corvus,73732264,8553235,,,,14435,2022-04-01
+GCF_041296385.1,Aphelocoma coerulescens,scrub jay,Passeriformes,Corvidae,Aphelocoma,68049500,17285536,15.0,78.7,0.030080660498944978,17513,2024-08-16
+GCF_046129695.1,Lonchura striata,white-rumped munia,Passeriformes,Estrildidae,Lonchura,73424396,29140630,10.0,12.3,0.02392121409524295,15844,2024-12-18
+GCF_048771995.1,Taeniopygia guttata,zebra finch,Passeriformes,Estrildidae,Taeniopygia,72089520,65033001,12.0,12.0,0.10536321509177748,16799,2025-03-21
+GCF_005870125.1,Lonchura striata,white-rumped munia,Passeriformes,Estrildidae,Lonchura,71975342,100423,10.0,12.3,0.02392121409524295,15577,2019-06-05
+GCF_003957565.2,Taeniopygia guttata,zebra finch,Passeriformes,Estrildidae,Taeniopygia,70982421,8964551,12.0,12.0,0.10536321509177748,16520,2021-05-04
+GCF_008822105.2,Taeniopygia guttata,zebra finch,Passeriformes,Estrildidae,Taeniopygia,70879221,4378277,12.0,12.0,0.10536321509177748,16197,2020-02-12
+GCF_027477595.1,Haemorhous mexicanus,house finch,Passeriformes,Fringillidae,Haemorhous,77212160,16787335,11.6,21.4,0.03767629650599402,16679,2022-12-29
+GCF_022539315.1,Serinus canaria,Common canary,Passeriformes,Fringillidae,Serinus,72083177,12206373,24.0,24.3,0.34179412523978114,15457,2022-08-25
+GCF_015227805.2,Hirundo rustica,Barn swallow,Passeriformes,Hirundinidae,Hirundo,76187387,2794774,16.0,18.3,0.19166586378259498,15517,2021-11-30
+GCF_051311805.1,Agelaius phoeniceus,red-winged blackbird,Passeriformes,Icteridae,Agelaius,73898474,30085171,20.0,56.7,0.18503774111957227,17098,2025-07-14
+GCF_037042795.1,Molothrus aeneus,bronzed cowbird,Passeriformes,Icteridae,Molothrus,70606200,25845000,,,,16194,2024-03-07
+GCF_012460135.2,Molothrus ater,,Passeriformes,Icteridae,Molothrus,70107701,13273966,16.9,38.1,0.14829341647201155,16046,2022-10-11
+GCF_015832195.1,Motacilla alba alba,,Passeriformes,Motacillidae,Motacilla,72386170,8515530,,,,15594,2020-12-08
+GCF_029582105.1,Oenanthe melanoleuca,,Passeriformes,Muscicapidae,Oenanthe,69618406,7795761,,,,16429,2023-04-06
+GCF_030490865.1,Poecile atricapillus,Black-capped chickadee,Passeriformes,Paridae,Poecile,107919339,8462732,12.4,10.4,0.13270538409704924,17743,2023-07-18
+GCF_001522545.3,Parus major,Great Tit,Passeriformes,Paridae,Parus,71365269,148693,15.4,17.9,0.17709001964206528,15069,2019-01-15
+GCF_027887145.1,Ammospiza caudacuta,,Passeriformes,Passerellidae,Ammospiza,78443464,8252193,,,,16439,2023-01-18
+GCF_035770615.1,Melospiza melodia melodia,,Passeriformes,Passerellidae,Melospiza,77460261,19453098,,,,17176,2024-01-24
+GCF_027579445.1,Ammospiza nelsoni,,Passeriformes,Passerellidae,Ammospiza,74723840,12036358,,,,15799,2023-01-09
+GCF_028018845.1,Melospiza georgiana,,Passeriformes,Passerellidae,Melospiza,74254230,10446106,7.8,16.1,-0.10863286981430287,15448,2023-01-31
+GCF_028769735.1,Zonotrichia leucophrys gambelii,,Passeriformes,Passerellidae,Zonotrichia,71969017,14729340,,,,16563,2023-12-27
+GCF_047830755.1,Zonotrichia albicollis,white-throated sparrow,Passeriformes,Passerellidae,Zonotrichia,64429512,17147933,14.9,21.1,0.14769715137389205,17420,2025-02-18
+GCF_036417665.1,Passer domesticus,house sparrow,Passeriformes,Passeridae,Passer,83066519,20590000,23.0,25.3,0.31961844810811546,18191,2024-02-07
+GCF_009829145.1,Chiroxiphia lanceolata,lance-tailed manakin,Passeriformes,Pipridae,Chiroxiphia,75608808,18496167,,,,15873,2020-01-03
+GCF_036250125.1,Pseudopipra pipra,,Passeriformes,Pipridae,Pseudopipra,75011098,10447158,,,,17114,2024-01-31
+GCF_009819655.1,Sylvia atricapilla,blackcap,Passeriformes,Sylviidae,Sylvia,72978054,7345957,13.8,16.7,0.13580163324707173,15521,2019-12-31
+GCF_047495875.1,Pithys albifrons albifrons,,Passeriformes,Thamnophilidae,Pithys,77071861,11992177,,,,15076,2025-02-07
+GCF_901933205.1,Camarhynchus parvulus,,Passeriformes,Thraupidae,Camarhynchus,70356807,16035651,,,,15747,2019-09-06
+GCF_009819885.2,Catharus ustulatus,Swainson's thrush,Passeriformes,Turdidae,Catharus,68462074,4908935,11.0,27.9,-0.009672913132644956,16929,2020-12-22
+GCF_903797595.1,Erithacus rubecula,European robin,Passeriformes,Turdidae,Erithacus,60684490,5585877,19.3,17.3,0.27824813481829325,16077,2021-05-03
+GCF_026979565.1,Vidua chalybeata,,Passeriformes,Viduidae,Vidua,72553174,15819291,,,,16658,2022-12-21
+GCF_031753505.1,Anomalospiza imberbis,,Passeriformes,Viduidae,Anomalospiza,72455167,12312023,,,,16778,2023-09-22
+GCF_024509145.1,Vidua macroura,Pin-tailed whydah,Passeriformes,Viduidae,Vidua,61801348,7488902,,,,16296,2022-08-03
+GCF_030463565.1,Pelecanus crispus,Dalmatian pelican,Pelecaniformes,Pelecanidae,Pelecanus,86807213,9666746,35.3,9550.0,-0.03758102551373188,16064,2023-07-18
+GCF_964195595.1,Calonectris borealis,Cory's shearwater,Procellariiformes,Procellariidae,Calonectris,86023716,4142416,,,,17007,2024-07-24
+GCF_037157495.1,Lathamus discolor,Swift parrot,Psittaciformes,Psittacidae,Lathamus,126105786,19972387,,,,16234,2024-03-15
+GCF_004027225.2,Strigops habroptila,Kakapo,Psittaciformes,Psittacidae,Strigops,83240647,9454087,60.0,1750.0,0.3481590884982897,16053,2020-03-04
+GCF_012275295.1,Melopsittacus undulatus,budgerigar,Psittaciformes,Psittaculidae,Melopsittacus,104092594,16636420,21.0,30.0,0.2645094196427833,16457,2020-04-13
+GCF_965638725.1,Aptenodytes patagonicus,king penguin,Sphenisciformes,Spheniscidae,Aptenodytes,86569806,10636000,26.0,13036.8,-0.19887778831460667,15928,2025-07-09
+GCF_047716275.1,Strix uralensis,Ural owl,Strigiformes,Strigidae,Strix,90173155,16359274,23.8,784.5,0.02004235522020137,16684,2025-02-12
+GCF_031877795.1,Strix aluco,Tawny owl,Strigiformes,Strigidae,Strix,89389700,11872084,22.4,520.0,0.031362838321814746,16490,2023-09-25
+GCF_965140245.1,Athene noctua,,Strigiformes,Strigidae,Athene,86326089,4050372,11.1,169.0,-0.1706597432967889,16728,2025-02-13
+GCF_963921805.1,Phalacrocorax carbo,great cormorant,Suliformes,Phalacrocoracidae,Phalacrocorax,84621172,4631399,27.2,3628.8,-0.06219373186338073,16906,2024-02-09
+GCF_949628215.1,Phalacrocorax aristotelis,,Suliformes,Phalacrocoracidae,Phalacrocorax,78889319,11420000,30.6,1773.0,0.054533797007106255,16264,2023-04-08
+GCF_044704955.1,Pristiophorus japonicus,,,Pristiophoridae,Pristiophorus,225854410,1893048,,,,22273,2024-11-13
+GCF_965287045.1,Carcharhinus amblyrhynchos,grey reef shark,Carcharhiniformes,Carcharhinidae,Carcharhinus,90619553,6101901,25.0,18535.0,0.12122835764096762,19870,2025-11-06
+GCF_047496885.1,Scyliorhinus torazame,cloudy catshark,Carcharhiniformes,Scyliorhinidae,Scyliorhinus,266286206,3187150,,,,23012,2025-02-07
+GCF_902713615.1,Scyliorhinus canicula,smaller spotted catshark,Carcharhiniformes,Scyliorhinidae,Scyliorhinus,198790641,1862211,12.0,726.0,0.021123487546933495,20574,2020-12-17
+GCF_964213995.1,Mustelus asterias,starry smooth-hound,Carcharhiniformes,Triakidae,Mustelus,109010392,1197343,,,,22288,2024-08-22
+GCF_036365525.1,Heterodontus francisci,horn shark,Heterodontiformes,Heterodontidae,Heterodontus,90140832,3418954,,,,22886,2024-02-06
+GCF_035084215.1,Heptranchias perlo,sharpnose sevengill shark,Hexanchiformes,Hexanchidae,Heptranchias,66821466,4905566,,,,21852,2024-01-05
+GCF_964194155.1,Cetorhinus maximus,,Lamniformes,Cetorhinidae,Cetorhinus,126028485,1961965,32.0,2200000.0,-0.0939242679733272,21262,2024-06-28
+GCF_017639515.1,Carcharodon carcharias,great white shark,Lamniformes,Lamnidae,Carcharodon,169918123,6544962,50.0,1870000.0,0.11086392630635133,19440,2021-03-30
+GCF_047496795.1,Chiloscyllium punctatum,brownbanded bambooshark,Orectolobiformes,Hemiscylliidae,Chiloscyllium,93668967,5342658,,,,19909,2025-02-07
+GCF_020745735.1,Hemiscyllium ocellatum,epaulette shark,Orectolobiformes,Hemiscylliidae,Hemiscyllium,83580160,8845575,,,,19215,2021-11-05
+GCF_004010195.1,Chiloscyllium plagiosum,whitespotted bambooshark,Orectolobiformes,Hemiscylliidae,Chiloscyllium,73167256,40597,,,,19916,2019-01-10
+GCF_021869965.1,Rhincodon typus,whale shark,Orectolobiformes,Rhincodontidae,Rhincodon,70796938,48454,54.0,18700000.0,-0.011110466712732192,20753,2022-02-03
+GCF_030684315.1,Stegostoma tigrinum,,Orectolobiformes,Stegostomatidae,Stegostoma,79021053,6162596,,,,19223,2023-08-08
+GCF_022316705.1,Stegostoma tigrinum,,Orectolobiformes,Stegostomatidae,Stegostoma,76588082,56707,,,,18281,2022-02-17
+GCF_013347855.1,Anguilla anguilla,European eel,Anguilliformes,Anguillidae,Anguilla,57205429,5114673,88.0,3629.45,0.6824316968898336,25903,2020-06-18
+GCF_018555375.3,Anguilla rostrata,American eel,Anguilliformes,Anguillidae,Anguilla,56672075,5074093,50.0,4031.5,0.4311058187294632,25366,2024-03-04
+GCF_963514075.1,Conger conger,European conger,Anguilliformes,Congridae,Conger,64882367,3090688,,,,26618,2023-09-29
+GCF_902500255.1,Thalassophryne amazonica,,Batrachoidiformes,Batrachoididae,Thalassophryne,118421481,2329598,,,,22351,2019-09-30
+GCF_023375975.1,Astyanax mexicanus,Mexican tetra,Characiformes,Acestrorhamphidae,Astyanax,51923808,47087582,,,,26736,2022-05-19
+GCF_029633855.1,Hoplias malabaricus,trahira,Characiformes,Erythrinidae,Hoplias,53138383,3626585,,,,26286,2024-06-25
+GCF_034702125.1,Engraulis encrasicolus,European anchovy,Clupeiformes,Engraulidae,Engraulis,56351229,1448200,,,,27663,2023-12-28
+GCF_049306965.1,Danio rerio,zebrafish,Cypriniformes,Danionidae,Danio,59305174,59305174,,,,27039,2025-04-04
+GCF_903798145.1,Danio aesculapii,,Cypriniformes,Danionidae,Danio,55996547,1517104,,,,24964,2020-06-27
+GCF_949357685.1,Gobio gobio,gudgeon,Cypriniformes,Gobionidae,Gobio,58069932,2576923,,,,26164,2023-03-10
+GCF_043380555.1,Nothobranchius furzeri,turquoise killifish,Cyprinodontiformes,Nothobranchiidae,Nothobranchius,76394082,9298000,,,,24412,2024-10-21
+GCF_902362185.1,Chanos chanos,milkfish,Gonorynchiformes,Chanidae,Chanos,50300218,23134051,15.0,7700.0,-0.12757833318745382,23253,2019-08-14
+GCF_902148855.1,Sphaeramia orbicularis,orbiculate cardinalfish,Kurtiformes,Apogonidae,Sphaeramia,57165184,2360121,,,,24204,2019-07-03
+GCF_018320785.1,Cheilinus undulatus,humphead wrasse,Labriformes,Labridae,Cheilinus,51466935,16477222,,,,23316,2021-05-12
+GCF_029633865.1,Lampris incognitus,smalleye Pacific opah,Lampriformes,Lampridae,Lampris,62607046,917127,,,,20934,2023-04-13
+GCF_951216825.1,Electrona antarctica,,Myctophiformes,Myctophidae,Electrona,53633514,1002537,,,,28804,2023-05-11
+GCF_949606895.1,Notothenia rossii,marbled rockcod,Perciformes,Nototheniidae,Notothenia,89684120,383412,16.0,5500.0,-0.08093136843321536,29256,2023-03-11
+GCF_034236695.1,Oncorhynchus nerka,sockeye salmon,Salmoniformes,Salmonidae,Oncorhynchus,93356810,2842582,8.0,4240.5,-0.36757090974683826,39518,2024-01-08
+GCF_021184085.1,Oncorhynchus gorbuscha,pink salmon,Salmoniformes,Salmonidae,Oncorhynchus,85609528,1451475,3.0,3740.0,-0.7865899788492057,40846,2021-12-15
+GCF_045791955.1,Oncorhynchus clarkii lewisi,westslope cutthroat trout,Salmoniformes,Salmonidae,Oncorhynchus,73539589,4987901,,,,41663,2024-12-06
+GCF_002021735.2,Oncorhynchus kisutch,coho salmon,Salmoniformes,Salmonidae,Oncorhynchus,68265700,1159298,5.0,8360.0,-0.6092501230728024,41349,2019-11-04
+GCF_036934945.1,Oncorhynchus masou masou,cherry salmon,Salmoniformes,Salmonidae,Oncorhynchus,66338746,2468404,,,,40543,2024-03-01
+GCF_045679555.1,Salvelinus alpinus,Arctic char,Salmoniformes,Salmonidae,Salvelinus,59638343,2112528,,,,40864,2024-12-04
+GCF_018398675.1,Coregonus clupeaformis,lake whitefish,Salmoniformes,Salmonidae,Coregonus,57494107,5728271,50.0,10450.0,0.3784025269881779,39779,2021-05-25
+GCF_901001165.2,Salmo trutta,river trout,Salmoniformes,Salmonidae,Salmo,52209666,1703178,,,,42457,2021-04-24
+GCF_020615455.1,Coregonus clupeaformis,lake whitefish,Salmoniformes,Salmonidae,Coregonus,52021072,2177185,50.0,10450.0,0.3784025269881779,42433,2021-11-04
+GCF_029448725.1,Salvelinus fontinalis,brook trout,Salmoniformes,Salmonidae,Salvelinus,50983633,1231776,24.0,4397.25,0.10754183491235758,41382,2023-03-28
+GCF_027579695.1,Neoarius graeffei,lesser salmon catfish,Siluriformes,Ariidae,Neoarius,83992109,14859289,,,,24873,2023-01-09
+GCF_033978785.1,Entelurus aequoreus,snake pipefish,Syngnathiformes,Syngnathidae,Entelurus,75786231,2039131,,,,25442,2023-12-01
+GCF_033978795.1,Nerophis ophidion,straightnose pipefish,Syngnathiformes,Syngnathidae,Nerophis,66953617,4791538,,,,23280,2023-12-01
+GCF_030265065.1,Corythoichthys intestinalis,scribbled pipefish,Syngnathiformes,Syngnathidae,Corythoichthys,59287289,56274649,,,,21732,2023-06-20

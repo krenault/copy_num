@@ -1,3 +1,15 @@
+# Repo root (run scripts from repo root, or set COPY_NUM_ROOT)
+ROOT <- Sys.getenv("COPY_NUM_ROOT", unset = "")
+if (!nzchar(ROOT)) {
+  ROOT <- if (dir.exists("scripts") && dir.exists("data")) {
+    normalizePath(".")
+  } else if (dir.exists("../scripts") && dir.exists("../data")) {
+    normalizePath("..")
+  } else {
+    normalizePath(".")
+  }
+}
+
 ## Katia Renault
 
 
@@ -13,14 +25,14 @@ library(ggtreeExtra)
 library(ape)
 library(phytools)
 
-source("/Users/katiarenault/Documents/Github/copy_num/scripts/FUN_color_mappings.R")
+source(file.path(ROOT, "scripts", "FUN_color_mappings.R"))
 color_mapping <- create_color_mapping(species_data$order)
 
 # Load data
-newick_tree <- "/Users/katiarenault/Documents/Github/copy_num/data/raxml_final_species_tree_revised.nwk"
+newick_tree <- file.path(ROOT, "data", "raxml_final_species_tree_revised.nwk")
 tree <- read.tree(newick_tree)
-metadata <- read.csv("/Users/katiarenault/Documents/Github/copy_num/data/raxml_final_metadata_revised.csv")
-gene_copy_data <- read.csv("/Users/katiarenault/PhD/TOGA/orthology/All_Species_Orthologous_CopyNumber_Annotated.tsv", 
+metadata <- read.csv(file.path(ROOT, "data", "raxml_final_metadata_revised.csv"))
+gene_copy_data <- read.csv("file.path(ROOT, "data")/All_Species_Orthologous_CopyNumber_Annotated.tsv", 
                            row.names = 1, sep = '\t', check.names = FALSE)
 species_in_gene_data <- colnames(gene_copy_data)
 tree_species <- tree$tip.label
@@ -86,8 +98,8 @@ p_with_bars <- p +
   )
 
 print(p_with_bars)
-write.tree(pruned_tree, file = "/Users/katiarenault/Documents/Github/copy_num/data/pruned_species_tree.nwk")
+write.tree(pruned_tree, file = file.path(ROOT, "data", "pruned_species_tree.nwk"))
 cat("Original tree had", length(tree$tip.label), "species\n")
 cat("Pruned tree has", length(pruned_tree$tip.label), "species\n")
 cat("Number of orders represented:", n_orders, "\n")
-ggsave("/Users/katiarenault/Documents/Github/copy_num/plots/phylogenetic_tree_with_longevity.pdf", p_with_bars, width = 25, height = 25)
+ggsave(file.path(ROOT, "plots", "phylogenetic_tree_with_longevity.pdf"), p_with_bars, width = 25, height = 25)

@@ -1,0 +1,8 @@
+accession,organism_name,common_name,species_taxid,infraclass,order,family,genus,scaffold_n50,contig_n50,total_sequence_length,max_lifespan,body_mass,LQ,refseq_category,submission_date
+GCA_027595985.1,Sorex araneus,European shrew,42254,Mammalia,Eulipotyphla,Soricidae,Sorex,374364821,4024507,2405993548,3.2,9.0,-0.3198244148719831,reference genome,2023-01-09
+GCA_050624465.1,Tenrec ecaudatus,tailess tenrec,94439,Mammalia,Afrosoricida,Tenrecidae,Tenrec,165248668,54742630,3333008239,8.7,900.0,-0.2009086937375277,,2025-05-30
+GCA_963992745.1,Bradypus torquatus,Maned three-toed sloth,227087,Mammalia,Pilosa,Bradypodidae,Bradypus,156600181,4748776,3128591653,,,,reference genome,2024-12-06
+GCA_015220235.1,Choloepus didactylus,southern two-toed sloth,27675,Mammalia,Pilosa,Megalonychidae,Choloepus,146178362,20994632,3214686105,36.8,6250.0,0.2926711011449392,reference genome,2020-11-03
+GCA_024139225.1,Suncus etruscus,white-toothed pygmy shrew,109475,Mammalia,Eulipotyphla,Soricidae,Suncus,131952995,5042816,2471666657,3.2,2.1,-0.2201374304914249,reference genome,2022-07-06
+GCA_055769025.1,Suncus murinus,house shrew,9378,Mammalia,Eulipotyphla,Soricidae,Suncus,128092613,108479493,2766318393,3.2,45.9,-0.4314271779535596,reference genome,2026-03-10
+GCA_015852505.1,Tachyglossus aculeatus,Australian echidna,9261,Mammalia,Monotremata,Tachyglossidae,Tachyglossus,63379719,19859057,2213004214,49.5,3500.0,0.4611459722100883,reference genome,2020-12-09

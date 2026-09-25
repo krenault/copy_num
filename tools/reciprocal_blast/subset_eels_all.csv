@@ -1,0 +1,17 @@
+accession,organism_name,common_name,species_taxid,infraclass,order,family,genus,scaffold_n50,contig_n50,total_sequence_length,max_lifespan,body_mass,LQ,refseq_category,submission_date
+GCA_029692085.1,Gymnothorax javanicus,giant moray,473457,Teleostei,Anguilliformes,Muraenidae,Gymnothorax,133528002,24488841,2124863002,,,,reference genome,2023-04-12
+GCA_978019975.1,Kaupichthys nuchalis,collared eel,182426,Teleostei,Anguilliformes,Chlopsidae,Kaupichthys,123633232,77495999,1100318673,,,,reference genome,2026-01-29
+GCA_022702515.1,Ilyophis sp. 1 JC-2022,,2920201,Teleostei,Anguilliformes,Synaphobranchidae,Ilyophis,121130272,3455548,1494882515,,,,,2022-03-28
+GCA_022702415.1,Ilyophis sp. JC_2022_1,,2919650,Teleostei,Anguilliformes,Synaphobranchidae,Ilyophis,115311279,2769000,1469146666,,,,,2022-03-28
+GCA_022702525.1,Ilyophis sp. 2 JC-2022,,2920202,Teleostei,Anguilliformes,Synaphobranchidae,Ilyophis,115311279,2769000,1469146666,,,,,2022-03-28
+GCA_029721435.1,Gymnothorax reevesii,Reeve's moray,473459,Teleostei,Anguilliformes,Muraenidae,Gymnothorax,112885341,53379876,2174377324,,,,reference genome,2023-04-18
+GCA_978019965.1,Muraena helena,Mediterranean moray,46662,Teleostei,Anguilliformes,Muraenidae,Muraena,107794592,55409183,2057112079,,,,reference genome,2026-02-01
+GCA_975146105.1,Myrichthys ocellatus,goldspotted eel,721872,Teleostei,Anguilliformes,Ophichthidae,Myrichthys,95401461,47180267,1515200344,,,,reference genome,2025-10-09
+GCA_978019835.1,Gymnothorax moringa,spotted moray,182438,Teleostei,Anguilliformes,Muraenidae,Gymnothorax,94562300,51686000,1994620691,,,,reference genome,2026-02-01
+GCA_029718625.1,Synaphobranchus kaupii,Kaup's arrowtooth eel,118154,Teleostei,Anguilliformes,Synaphobranchidae,Synaphobranchus,76846976,519789,1503294022,,,,reference genome,2023-04-14
+GCA_050084885.1,Anguilla japonica,Japanese eel,7937,Teleostei,Anguilliformes,Anguillidae,Anguilla,68637738,328041,1225527013,,,,,2025-05-01
+GCA_963514075.1,Conger conger,European conger,82655,Teleostei,Anguilliformes,Congridae,Conger,64882367,3090688,1136402888,,,,reference genome,2023-09-29
+GCA_039654925.2,Anguilla bicolor pacifica,Indian short-finned eel,61126,Teleostei,Anguilliformes,Anguillidae,Anguilla,61071980,16884858,1087593838,,,,reference genome,2024-06-14
+GCA_047653785.1,Conger myriaster,whitespotted conger,7943,Teleostei,Anguilliformes,Congridae,Conger,58402862,16603000,1093778583,,,,reference genome,2025-02-11
+GCA_013347855.1,Anguilla anguilla,European eel,7936,Teleostei,Anguilliformes,Anguillidae,Anguilla,57205429,5114673,979029243,88.0,3629.45,0.6824316968898336,reference genome,2020-06-18
+GCA_018555375.3,Anguilla rostrata,American eel,7938,Teleostei,Anguilliformes,Anguillidae,Anguilla,56672075,5074093,976090453,50.0,4031.5,0.4311058187294632,reference genome,2024-03-04

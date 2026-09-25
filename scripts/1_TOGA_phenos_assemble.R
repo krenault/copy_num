@@ -1,3 +1,15 @@
+# Repo root (run scripts from repo root, or set COPY_NUM_ROOT)
+ROOT <- Sys.getenv("COPY_NUM_ROOT", unset = "")
+if (!nzchar(ROOT)) {
+  ROOT <- if (dir.exists("scripts") && dir.exists("data")) {
+    normalizePath(".")
+  } else if (dir.exists("../scripts") && dir.exists("../data")) {
+    normalizePath("..")
+  } else {
+    normalizePath(".")
+  }
+}
+
 ## Katia Renault
 
 
@@ -11,15 +23,15 @@
 ### Amniote ###
 ###############
 library(dplyr)
-copy_number_animal_data <- read.csv("/Users/katiarenault/PhD/TOGA/unique_species_list.csv", header = TRUE)
-amniote_df <- read.csv("/Users/katiarenault/PhD/Databases/minimal_amniote_df.csv")
+copy_number_animal_data <- read.csv(file.path(ROOT, "data", "unique_species_list.csv"), header = TRUE)
+amniote_df <- read.csv(file.path(ROOT, "data", "external", "minimal_amniote_df.csv"))
 merged_data <- copy_number_animal_data %>%
   left_join(amniote_df %>% dplyr::select(scientific_name, maximum_longevity_y, adult_body_mass_g, order, common_name), 
             by = c("Scientific_name" = "scientific_name"))
 #############
 ### AnAge ###
 #############
-anage_df <- read.delim("/Users/katiarenault/PhD/Databases/anage_data.txt")
+anage_df <- read.delim(file.path(ROOT, "data", "external", "anage_data.txt"))
 anage_df <- anage_df %>% 
   mutate(Genus_species = paste(Genus, Species, sep = "_"))
 merged_data_anage <- copy_number_animal_data %>%
@@ -93,8 +105,8 @@ unique_species_data <- final_data %>%
   slice_tail(n = 1) %>%
   ungroup()
 all_final_data <- final_data %>% filter(!is.na(maximum_longevity_y)) %>% filter(!is.na(adult_body_mass_g))
-write.csv(unique_species_data, "/Users/katiarenault/PhD/TOGA/all_max_lifespan_unique_mammalian_species_metadata.csv")
-write.csv(all_final_data, "/Users/katiarenault/PhD/TOGA/all_max_mass_lifespan_mammalian_species_metadata.csv")
+write.csv(unique_species_data, file.path(ROOT, "data", "all_max_lifespan_unique_mammalian_species_metadata.csv"))
+write.csv(all_final_data, file.path(ROOT, "data", "all_max_mass_lifespan_mammalian_species_metadata.csv"))
 
 ### 410 unique species at the end with both lifespan and body mass info
 ### 415 unique species at the end with lifespan info
@@ -107,7 +119,7 @@ write.csv(all_final_data, "/Users/katiarenault/PhD/TOGA/all_max_mass_lifespan_ma
 ########################################################################################################
 
 library(ape)
-original_tree <- read.tree("/Users/katiarenault/PhD/Databases/RAxML_bipartitions.result_FIN4_raw_rooted_wBoots_4098mam1out_OK.newick")
+original_tree <- read.tree(file.path(ROOT, "data", "RAxML_bipartitions.result_FIN4_raw_rooted_wBoots_4098mam1out_OK.newick"))
 cat("\nOriginal tree information:\n")
 cat("Number of tips in original tree:", length(original_tree$tip.label), "\n")
 modified_tip_names <- sapply(strsplit(original_tree$tip.label, "_"), function(x) {
@@ -136,8 +148,8 @@ final_metadata <- all_final_data %>%
 cat("\nFinal matching verification:\n")
 cat("Number of species in pruned tree:", length(final_tree_species), "\n")
 cat("Number of species in final metadata:", nrow(final_metadata), "\n")
-#write.tree(trimmed_tree, "/Users/katiarenault/Documents/Github/copy_num/data/raxml_final_species_tree_revised.nwk")
-#write.csv(final_metadata, "/Users/katiarenault/Documents/Github/copy_num/data/raxml_final_metadata_revised.csv", row.names = FALSE)
+#write.tree(trimmed_tree, file.path(ROOT, "data", "raxml_final_species_tree_revised.nwk"))
+#write.csv(final_metadata, file.path(ROOT, "data", "raxml_final_metadata_revised.csv"), row.names = FALSE)
 
 
 ########################################################################################################
@@ -146,8 +158,8 @@ cat("Number of species in final metadata:", nrow(final_metadata), "\n")
 # generating plot illustrating body mass and longevity correlation between species
 ########################################################################################################
 
-species_data <- read.csv("/Users/katiarenault/Documents/Github/copy_num/data/raxml_final_metadata_revised.csv")
-source("/Users/katiarenault/Documents/Github/copy_num/scripts/FUN_color_mappings.R")
+species_data <- read.csv(file.path(ROOT, "data", "raxml_final_metadata_revised.csv"))
+source(file.path(ROOT, "scripts", "FUN_color_mappings.R"))
 color_mapping <- create_color_mapping(species_data$order)
 print(color_mapping)
 
@@ -190,4 +202,4 @@ p_mass_longevity <- ggplot(mass_longevity_df, aes(x = log_mass, y = log_longevit
   )
 
 print(p_mass_longevity)
-ggsave("/Users/katiarenault/Documents/GitHub/copy_num/plots/body_mass_longevity.png", p_mass_longevity, width = 11, height = 8)
+ggsave(file.path(ROOT, "plots", "body_mass_longevity.png"), p_mass_longevity, width = 11, height = 8)

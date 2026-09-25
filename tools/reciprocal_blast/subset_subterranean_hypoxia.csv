@@ -1,0 +1,7 @@
+accession,organism_name,common_name,species_taxid,infraclass,order,family,genus,scaffold_n50,contig_n50,total_sequence_length,max_lifespan,body_mass,LQ,refseq_category,submission_date
+GCA_964194135.1,Talpa europaea,European mole,9375,Mammalia,Eulipotyphla,Talpidae,Talpa,136888642,3421604,2060984045,,,,reference genome,2024-06-28
+GCA_964261345.1,Heterocephalus glaber,naked mole-rat,10181,Mammalia,Rodentia,Bathyergidae,Heterocephalus,97315161,3219654,2474733770,31.0,35.0,0.5733560202750494,,2024-09-07
+GCA_049190835.1,Myospalax aspalax,false zokor,213498,Mammalia,Rodentia,Spalacidae,Myospalax,89298488,37952886,3014030832,,,,reference genome,2025-03-31
+GCA_035773235.1,Eospalax fontanierii,,146134,Mammalia,Rodentia,Spalacidae,Eospalax,82041474,59200000,2699079450,,,,reference genome,2024-01-24
+GCA_049190895.1,Myospalax psilurus,,146129,Mammalia,Rodentia,Spalacidae,Myospalax,76917133,23106468,3313470922,,,,reference genome,2025-03-31
+GCA_053478225.1,Fukomys anselli,Ansell's mole-rat,261002,Mammalia,Rodentia,Bathyergidae,Fukomys,72399386,21598940,2274106617,,,,reference genome,2025-11-14

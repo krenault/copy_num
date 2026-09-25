@@ -1,0 +1,37 @@
+accession,organism_name,common_name,species_taxid,infraclass,order,family,genus,scaffold_n50,contig_n50,total_sequence_length,max_lifespan,body_mass,LQ,refseq_category,submission_date
+GCA_047496885.1,Scyliorhinus torazame,cloudy catshark,75743,Selachii,Carcharhiniformes,Scyliorhinidae,Scyliorhinus,266286206,3187150,6451259511,,,,reference genome,2025-02-07
+GCA_036971175.1,Narcine bancroftii,Caribbean electric ray,1343680,Chondrichthyes,Torpediniformes,Narcinidae,Narcine,258892457,5005593,3110263114,,,,,2024-03-06
+GCA_052327205.1,Somniosus microcephalus,Greenland sleeper shark,191813,Selachii,Squaliformes,Somniosidae,Somniosus,240357632,1075145,6448606148,,,,reference genome,2025-08-28
+GCA_902713615.2,Scyliorhinus canicula,smaller spotted catshark,7830,Selachii,Carcharhiniformes,Scyliorhinidae,Scyliorhinus,198790641,1862211,4220389930,12.0,726.0,0.0211234875469334,reference genome,2021-01-28
+GCA_055471215.1,Potamotrygon marinae,,2803083,Chondrichthyes,Myliobatiformes,Potamotrygonidae,Potamotrygon,192842338,12999503,4335674344,,,,reference genome,2026-02-24
+GCA_048418815.1,Hemitrygon akajei,red stingray,2704970,Chondrichthyes,Myliobatiformes,Dasyatidae,Hemitrygon,175234968,8940806,4229631903,,,,reference genome,2025-03-05
+GCA_017639515.1,Carcharodon carcharias,great white shark,13397,Selachii,Lamniformes,Lamnidae,Carcharodon,169918123,6544962,4286294447,50.0,1870000.0,0.1108639263063513,reference genome,2021-03-30
+GCA_030144785.1,Hypanus sabinus,Atlantic stingray,79690,Chondrichthyes,Myliobatiformes,Dasyatidae,Hypanus,162574764,4909400,3635158545,,,,,2023-06-05
+GCA_050613895.1,Squalus suckleyi,Puget Sound dogfish,7798,Selachii,Squaliformes,Squalidae,Squalus,153064829,2529731,4657981142,,,,reference genome,2025-05-29
+GCA_963921235.1,Mobula hypostoma,lesser devil ray,723540,Chondrichthyes,Myliobatiformes,Myliobatidae,Mobula,152437164,23327000,3475679493,,,,reference genome,2024-01-06
+GCA_030035685.1,Mobula birostris,giant manta,1983395,Chondrichthyes,Myliobatiformes,Myliobatidae,Mobula,152352395,8612779,3634101053,,,,,2023-05-22
+GCA_055471155.1,Carcharias taurus,sand tiger shark,30501,Selachii,Lamniformes,Carchariidae,Carcharias,148992785,7024806,4806479161,12.0,87340.0,-0.3021476393275186,reference genome,2026-02-24
+GCA_964194155.1,Cetorhinus maximus,,57982,Selachii,Lamniformes,Cetorhinidae,Cetorhinus,126028485,1961965,3993849873,32.0,2200000.0,-0.0939242679733272,reference genome,2024-06-28
+GCA_030390025.1,Squalus acanthias,spiny dogfish,7797,Selachii,Squaliformes,Squalidae,Squalus,124086705,1715360,3713488297,75.0,5005.0,0.6867072138511452,reference genome,2023-07-03
+GCA_977017645.1,Torpedo marmorata,marbled electric ray,7788,Chondrichthyes,Torpediniformes,Torpedinidae,Torpedo,111696861,3050324,6221090334,20.0,1650.0,0.1875654432344617,reference genome,2025-11-08
+GCA_037974335.1,Prionace glauca,blue shark,7815,Selachii,Carcharhiniformes,Carcharhinidae,Prionace,109841703,5319141,3227473548,20.0,113245.0,-0.0978287097129029,reference genome,2024-04-08
+GCA_964213995.1,Mustelus asterias,starry smooth-hound,112232,Selachii,Carcharhiniformes,Triakidae,Mustelus,109010392,1197343,3679774521,,,,reference genome,2024-08-22
+GCA_036365495.1,Heterodontus francisci,horn shark,7792,Selachii,Heterodontiformes,Heterodontidae,Heterodontus,97904885,3485302,5196885747,,,,,2024-02-06
+GCA_047496795.1,Chiloscyllium punctatum,brownbanded bambooshark,137246,Selachii,Orectolobiformes,Hemiscylliidae,Chiloscyllium,93668967,5342658,5274411202,,,,reference genome,2025-02-07
+GCA_965287045.1,Carcharhinus amblyrhynchos,grey reef shark,263684,Selachii,Carcharhiniformes,Carcharhinidae,Carcharhinus,90619553,6101901,2923561432,25.0,18535.0,0.1212283576409676,reference genome,2025-10-10
+GCA_054367945.1,Fontitrygon garouaensis,,3355173,Chondrichthyes,Myliobatiformes,Dasyatidae,Fontitrygon,87729678,16733971,4164957080,,,,reference genome,2026-01-06
+GCA_020745735.1,Hemiscyllium ocellatum,epaulette shark,170820,Selachii,Orectolobiformes,Hemiscylliidae,Hemiscyllium,83580160,8845575,3983466396,,,,reference genome,2021-11-05
+GCA_055755675.1,Galeorhinus galeus,tope shark,86063,Selachii,Carcharhiniformes,Triakidae,Galeorhinus,80533134,2616942,2685485351,55.0,24585.0,0.4445871631007543,reference genome,2026-03-09
+GCA_030684315.1,Stegostoma tigrinum,,3053191,Selachii,Orectolobiformes,Stegostomatidae,Stegostoma,79021053,6162596,3198515386,,,,reference genome,2023-08-08
+GCA_035221665.1,Okamejei kenojei,ocellate spot skate,432798,Chondrichthyes,Rajiformes,Rajidae,Okamejei,74022218,1743244,2756528269,,,,reference genome,2024-01-12
+GCF_004010195.1,Chiloscyllium plagiosum,whitespotted bambooshark,36176,Selachii,Orectolobiformes,Hemiscylliidae,Chiloscyllium,73167256,40597,3556460701,,,,reference genome,2019-01-10
+GCA_980436725.1,Raja undulata,undulate ray,182855,Chondrichthyes,Rajiformes,Rajidae,Raja,72868749,2806603,2933651393,,,,reference genome,2026-02-28
+GCA_021869965.1,Rhincodon typus,whale shark,259920,Selachii,Orectolobiformes,Rhincodontidae,Rhincodon,70796938,48454,2881325413,54.0,18700000.0,-0.0111104667127321,,2022-02-03
+GCA_963514005.1,Raja brachyura,blonde ray,223862,Chondrichthyes,Rajiformes,Rajidae,Raja,68366687,2048057,2700450552,8.0,7865.0,-0.3157678869656328,reference genome,2023-09-28
+GCA_980434695.1,Raja clavata,thornback ray,7781,Chondrichthyes,Rajiformes,Rajidae,Raja,67959518,3030851,2720684976,12.0,9900.0,-0.1552065699491678,reference genome,2026-02-28
+GCA_980250545.1,Raja montagui,spotted ray,27588,Chondrichthyes,Rajiformes,Rajidae,Raja,66828203,1211366,2761506678,,,,reference genome,2026-02-28
+GCA_010909765.2,Amblyraja radiata,thorny skate,386614,Chondrichthyes,Rajiformes,Rajidae,Amblyraja,62052929,1462921,2558784953,16.0,2337.5,0.0671487135512107,reference genome,2020-02-21
+GCA_965643135.1,Leucoraja naevus,cuckoo ray,223888,Chondrichthyes,Rajiformes,Rajidae,Leucoraja,60279479,2392000,2368896861,,,,reference genome,2025-07-19
+GCA_038087875.1,Malacoraja senta,smooth skate,1072478,Chondrichthyes,Rajiformes,Rajidae,Malacoraja,58719002,150120,1943516005,,,,reference genome,2024-04-17
+GCA_028641065.1,Leucoraja erinaceus,little skate,7782,Chondrichthyes,Rajiformes,Rajidae,Leucoraja,57189699,5310386,2190844947,,,,reference genome,2023-02-22
+GCA_053455715.1,Rhinoraja longicauda,white-bellied softnose skate,667116,Chondrichthyes,Rajiformes,Arhynchobatidae,Rhinoraja,53501714,1663054,2198843048,,,,reference genome,2025-11-13

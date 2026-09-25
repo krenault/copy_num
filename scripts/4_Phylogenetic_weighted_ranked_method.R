@@ -1,3 +1,15 @@
+# Repo root (run scripts from repo root, or set COPY_NUM_ROOT)
+ROOT <- Sys.getenv("COPY_NUM_ROOT", unset = "")
+if (!nzchar(ROOT)) {
+  ROOT <- if (dir.exists("scripts") && dir.exists("data")) {
+    normalizePath(".")
+  } else if (dir.exists("../scripts") && dir.exists("../data")) {
+    normalizePath("..")
+  } else {
+    normalizePath(".")
+  }
+}
+
 ########################################### 
 # SIMPLE PHYLOGENETIC RANKING - ROBUST ALTERNATIVE
 # This approach will analyze ALL your genes with phylogenetic correction
@@ -22,7 +34,7 @@ gc()
 
 # Read data (same as before)
 cat("Reading input files...\n")
-gene_copy_data <- read.csv("/Users/katiarenault/PhD/TOGA/orthology/All_Species_Orthologous_CopyNumber_Annotated.tsv",
+gene_copy_data <- read.csv("file.path(ROOT, "data")/All_Species_Orthologous_CopyNumber_Annotated.tsv",
                            row.names = "t_symbol", sep = '\t')
 
 # For testing: Use subset (remove this line for full analysis)
@@ -30,7 +42,7 @@ gene_copy_data <- read.csv("/Users/katiarenault/PhD/TOGA/orthology/All_Species_O
 #gene_copy_data <- head(gene_copy_data, 1000)
 gene_copy_data <- gene_copy_data %>% dplyr::select(-t_gene)
 
-metadata <- read.csv("/Users/katiarenault/PhD/TOGA/revised_results/data/raxml_final_metadata_revised.csv")
+metadata <- read.csv("file.path(ROOT, "data")/raxml_final_metadata_revised.csv")
 
 # Data cleaning and preparation (same as before)
 cat("Cleaning species names and aggregating individuals...\n")
@@ -91,7 +103,7 @@ cat(sprintf("Analyzing %d species that appear in both datasets\n", length(common
 # Load phylogenetic tree
 cat("Loading phylogenetic tree...\n")
 phylo_tree <- tryCatch({
-  read.tree("/Users/katiarenault/PhD/TOGA/revised_results/data/raxml_final_species_tree_revised.nwk")
+  read.tree("file.path(ROOT, "data")/raxml_final_species_tree_revised.nwk")
 }, error = function(e) {
   cat("WARNING: Could not load tree file. Using equal weights.\n")
   NULL
@@ -531,7 +543,7 @@ write_output <- function(data, filename) {
 # Save main results
 results_written <- write_output(
   simple_results_df,
-  "/Users/katiarenault/PhD/TOGA/revised_results/results/simple_phylo_ranking_results_w_or.csv"
+  file.path(ROOT, "results", "max_longevity_simple_phylo_ranking_results_w_or.csv")
 )
 # 
 # # Run GSEA if we have results
@@ -543,26 +555,26 @@ results_written <- write_output(
 #   pathway_files <- list()
 #   
 #   tryCatch({
-#     pathways.hallmark <- gmtPathways("/Users/katiarenault/PhD/GSEA/h.all.v2023.2.Hs.symbols.gmt")
+#     pathways.hallmark <- gmtPathways("file.path(ROOT, "data", "gsea")/h.all.v2023.2.Hs.symbols.gmt")
 #     pathway_files <- c(pathway_files, pathways.hallmark)
 #     cat("  Loaded Hallmark pathways:", length(pathways.hallmark), "\n")
 #   }, error = function(e) cat("  Could not load Hallmark pathways\n"))
 #   
 #   tryCatch({
-#     pathways.kegg <- gmtPathways("/Users/katiarenault/PhD/GSEA/c2.cp.kegg_medicus.v2023.2.Hs.symbols.gmt")
+#     pathways.kegg <- gmtPathways("file.path(ROOT, "data", "gsea")/c2.cp.kegg_medicus.v2023.2.Hs.symbols.gmt")
 #     pathway_files <- c(pathway_files, pathways.kegg)
 #     cat("  Loaded KEGG pathways:", length(pathways.kegg), "\n")
 #   }, error = function(e) cat("  Could not load KEGG pathways\n"))
 #   
 #   # Add these pathway databases for better coverage:
 #   tryCatch({
-#     pathways.go_bp <- gmtPathways("/Users/katiarenault/PhD/GSEA/c5.go.bp.v2023.2.Hs.symbols.gmt")
+#     pathways.go_bp <- gmtPathways("file.path(ROOT, "data", "gsea")/c5.go.bp.v2023.2.Hs.symbols.gmt")
 #     pathway_files <- c(pathway_files, pathways.go_bp)
 #     cat("  Loaded GO Biological Process pathways:", length(pathways.go_bp), "\n")
 #   }, error = function(e) cat("  Could not load GO BP pathways\n"))
 #   
 #   tryCatch({
-#     pathways.reactome <- gmtPathways("/Users/katiarenault/PhD/GSEA/c2.cp.reactome.v2023.2.Hs.symbols.gmt")
+#     pathways.reactome <- gmtPathways("file.path(ROOT, "data", "gsea")/c2.cp.reactome.v2023.2.Hs.symbols.gmt")
 #     pathway_files <- c(pathway_files, pathways.reactome)
 #     cat("  Loaded Reactome pathways:", length(pathways.reactome), "\n")
 #   }, error = function(e) cat("  Could not load Reactome pathways\n"))
@@ -571,7 +583,7 @@ results_written <- write_output(
 #     cat("Total pathways loaded:", length(pathway_files), "\n")
 #     
 #     # Run GSEA
-#     output_dir <- "/Users/katiarenault/PhD/TOGA/revised_results/results/"
+#     output_dir <- file.path(ROOT, "results")
 #     gsea_results <- run_enhanced_gsea(rankings, pathway_files, output_dir, nperm = 10000)
 #     
 #     # Summary
@@ -653,10 +665,10 @@ cat("  - gsea_results: GSEA results for each ranking\n")
 ## GSEA ###
 ###########
 
-cors_pathways <- read.csv('/Users/katiarenault/PhD/TOGA/revised_results/results/simple_phylo_ranking_results_w_or.csv')
-pathways.reactome <- gmtPathways("/Users/katiarenault/Desktop/PhD/Human_GSEA/h.all.v2023.2.Hs.symbols.gmt")
-pathways.hallmark <- gmtPathways("/Users/katiarenault/Desktop/PhD/Human_GSEA/c2.cp.kegg_medicus.v2023.2.Hs.symbols.gmt")
-pathways.kegg <- gmtPathways("/Users/katiarenault/Desktop/PhD/Human_GSEA/c2.cp.reactome.v2023.2.Hs.symbols.gmt")
+cors_pathways <- read.csv(file.path(ROOT, "results", "max_longevity_simple_phylo_ranking_results_w_or.csv"))
+pathways.reactome <- gmtPathways(file.path(Sys.getenv("GSEA_DIR", unset = file.path(ROOT, "data", "gsea")), "h.all.v2023.2.Hs.symbols.gmt"))
+pathways.hallmark <- gmtPathways(file.path(Sys.getenv("GSEA_DIR", unset = file.path(ROOT, "data", "gsea")), "c2.cp.kegg_medicus.v2023.2.Hs.symbols.gmt"))
+pathways.kegg <- gmtPathways(file.path(Sys.getenv("GSEA_DIR", unset = file.path(ROOT, "data", "gsea")), "c2.cp.reactome.v2023.2.Hs.symbols.gmt"))
 #pathways.go <- gmtPathways("/Nori_1/krenault/hibernator_rer_converge/data/c5.go.v2023.2.Hs.symbols.gmt")
 pathways.hallmark <- c(pathways.kegg, pathways.hallmark, pathways.reactome)
 
@@ -671,7 +683,7 @@ positive_stats_vector <- setNames(positive_significant_genes$phylo_weighted_effe
 positive_fgsea_results <- fgsea(pathways = pathways.hallmark, stats = positive_stats_vector)
 positive_fgsea_results <- data.frame(positive_fgsea_results)
 positive_fgsea_results <- positive_fgsea_results %>% select(-leadingEdge)
-write.csv(positive_fgsea_results, '/Users/katiarenault/PhD/TOGA/revised_results/results/simple_phylo_ranking_results_pathways_w_or.csv')
+write.csv(positive_fgsea_results, file.path(ROOT, "results", "max_longevity_simple_phylo_ranking_results_pathways_w_or.csv"))
 ########################
 ## Plotting results ###
 ########################
@@ -681,7 +693,7 @@ library(ggplot2)
 library(dplyr)
 
 # Read the data
-file_path <- "/Users/katiarenault/PhD/TOGA/revised_results/results/simple_phylo_ranking_results_w_or.csv"
+file_path <- file.path(ROOT, "results", "max_longevity_simple_phylo_ranking_results_w_or.csv")
 gene_data <- read.csv(file_path)
 
 # Highlight significant genes (adj_p_value < 0.05) and scale size by n_outliers

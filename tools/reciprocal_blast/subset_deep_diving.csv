@@ -1,0 +1,8 @@
+accession,organism_name,common_name,species_taxid,infraclass,order,family,genus,scaffold_n50,contig_n50,total_sequence_length,max_lifespan,body_mass,LQ,refseq_category,submission_date
+GCA_052327205.1,Somniosus microcephalus,Greenland sleeper shark,191813,Selachii,Squaliformes,Somniosidae,Somniosus,240357632,1075145,6448606148,,,,reference genome,2025-08-28
+GCA_021288785.3,Mirounga angustirostris,Northern elephant seal,9716,Mammalia,Carnivora,Phocidae,Mirounga,139676048,76189,2366166981,,,,,2022-12-21
+GCA_054177405.2,Leptonychotes weddellii,Weddell seal,9713,Mammalia,Carnivora,Phocidae,Leptonychotes,131171632,46856,2401725666,,,,,2025-12-24
+GCA_025265405.1,Mesoplodon densirostris,Blainville's beaked whale,48708,Mammalia,Artiodactyla,Ziphiidae,Mesoplodon,125805690,48253041,2683375131,,,,reference genome,2022-09-19
+GCA_002837175.5,Physeter macrocephalus,sperm whale,9755,Mammalia,Artiodactyla,Physeteridae,Physeter,122182240,42877,2496209109,77.0,28500000.0,0.0361972773831069,reference genome,2023-02-28
+GCA_964341445.1,Mesoplodon mirus,True's beaked whale,52113,Mammalia,Artiodactyla,Ziphiidae,Mesoplodon,115717908,3298322,3442403058,,,,reference genome,2024-11-28
+GCA_964148845.1,Mesoplodon bidens,Sowerby's beaked whale,48745,Mammalia,Artiodactyla,Ziphiidae,Mesoplodon,109547138,3262972,2732770104,,,,reference genome,2024-06-06

@@ -1,3 +1,15 @@
+# Repo root (run scripts from repo root, or set COPY_NUM_ROOT)
+ROOT <- Sys.getenv("COPY_NUM_ROOT", unset = "")
+if (!nzchar(ROOT)) {
+  ROOT <- if (dir.exists("scripts") && dir.exists("data")) {
+    normalizePath(".")
+  } else if (dir.exists("../scripts") && dir.exists("../data")) {
+    normalizePath("..")
+  } else {
+    normalizePath(".")
+  }
+}
+
 ##################################
 ## Ranked method gene highlight ##
 ##################################
@@ -58,7 +70,7 @@ identify_top_outliers <- function(x, y, n_outliers = 10) {
 
 # Load data
 # PGLS results to get gene list
-file_path <- "/Users/katiarenault/Documents/GitHub/copy_num/results/max_longevity_simple_phylo_ranking_results_w_or.csv"
+file_path <- file.path(ROOT, "results", "max_longevity_simple_phylo_ranking_results_w_or.csv")
 pgls_results <- read.csv(file_path)
 
 # DEBUG: Print column names to identify the correct gene column
@@ -66,7 +78,7 @@ cat("Column names in pgls_results:\n")
 print(colnames(pgls_results))
 cat("\n")
 
-gene_copy_data <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/data/All_Species_Orthologous_CopyNumber_Annotated.tsv", row.names = "t_gene", sep = '\t')
+gene_copy_data <- read.csv(file.path(ROOT, "data", "All_Species_Orthologous_CopyNumber_Annotated.tsv"), row.names = "t_gene", sep = '\t')
 rownames(gene_copy_data) <- gene_copy_data$t_symbol
 gene_copy_data <- gene_copy_data %>% dplyr::select(-t_symbol)
 
@@ -77,7 +89,7 @@ gene_copy_data <- gene_copy_data %>% dplyr::select(-t_symbol)
 # gene_copy_data <- gene_copy_data[!grepl("^OR", rownames(gene_copy_data)), ]
 
 # Read metadata
-metadata <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/data/raxml_final_metadata_revised.csv")
+metadata <- read.csv(file.path(ROOT, "data", "raxml_final_metadata_revised.csv"))
 
 # Clean up gene copy data if needed
 if("X" %in% colnames(gene_copy_data)) {
@@ -288,7 +300,7 @@ for (i in 1:length(gene_plots)) {
 
 # Save individual plots (uncomment to save)
 # for (gene in names(gene_plots)) {
-#   filename <- paste0("/Users/katiarenault/PhD/TOGA/results/preliminary_april/pgls_copy_num/",
+#   filename <- paste0("plots/",
 #                      gene, "_copy_vs_lifespan.pdf")
 #   ggsave(filename, gene_plots[[gene]], width = 12, height = 8)
 # }
@@ -305,7 +317,7 @@ if (length(gene_plots) > 1) {
   print(combined_plot)
   
   # Save combined plot (uncomment to save)
-  # ggsave("/Users/katiarenault/PhD/TOGA/results/preliminary_april/pgls_copy_num/genes_combined_plots.pdf",
+  # ggsave("plots/genes_combined_plots.pdf",
   #        combined_plot, width = 16, height = 12)
 }
 
@@ -370,7 +382,7 @@ identify_top_outliers <- function(x, y, n_outliers = 5) {
 
 # Load data
 # PGLS results to get gene list
-file_path <- "/Users/katiarenault/Documents/GitHub/copy_num/results/max_longevity_zero_filtered_poisson_pglmm_20250702_110253.csv"
+file_path <- file.path(ROOT, "results", "max_longevity_zero_filtered_poisson_pglmm_20250702_110253.csv")
 pgls_results <- read.csv(file_path)
 
 # DEBUG: Print column names to identify the correct gene column
@@ -378,7 +390,7 @@ cat("Column names in pgls_results:\n")
 print(colnames(pgls_results))
 cat("\n")
 
-gene_copy_data <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/data/All_Species_Orthologous_CopyNumber_Annotated.tsv",
+gene_copy_data <- read.csv(file.path(ROOT, "data", "All_Species_Orthologous_CopyNumber_Annotated.tsv"),
                            row.names = "t_symbol", sep = '\t')
 gene_copy_data <- gene_copy_data %>% dplyr::select(-t_gene)
 
@@ -393,7 +405,7 @@ cat("  Removing", length(or_genes), "OR genes\n")
 gene_copy_data <- gene_copy_data[!grepl("^ZNF", rownames(gene_copy_data)), ]
 
 # Read metadata
-metadata <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/data/raxml_final_metadata_revised.csv")
+metadata <- read.csv(file.path(ROOT, "data", "raxml_final_metadata_revised.csv"))
 
 # Clean up gene copy data if needed
 if("X" %in% colnames(gene_copy_data)) {
@@ -606,7 +618,7 @@ for (i in 1:length(gene_plots)) {
 
 # Save individual plots (uncomment to save)
 # for (gene in names(gene_plots)) {
-#   filename <- paste0("/Users/katiarenault/PhD/TOGA/results/preliminary_april/pgls_copy_num/",
+#   filename <- paste0("plots/",
 #                      gene, "_copy_vs_lifespan.pdf")
 #   ggsave(filename, gene_plots[[gene]], width = 12, height = 8)
 # }
@@ -623,6 +635,6 @@ if (length(gene_plots) > 1) {
   print(combined_plot)
   
   # Save combined plot (uncomment to save)
-  # ggsave("/Users/katiarenault/PhD/TOGA/results/preliminary_april/pgls_copy_num/genes_combined_plots.pdf",
+  # ggsave("plots/genes_combined_plots.pdf",
   #        combined_plot, width = 16, height = 12)
 }

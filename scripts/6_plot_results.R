@@ -1,7 +1,19 @@
+# Repo root (run scripts from repo root, or set COPY_NUM_ROOT)
+ROOT <- Sys.getenv("COPY_NUM_ROOT", unset = "")
+if (!nzchar(ROOT)) {
+  ROOT <- if (dir.exists("scripts") && dir.exists("data")) {
+    normalizePath(".")
+  } else if (dir.exists("../scripts") && dir.exists("../data")) {
+    normalizePath("..")
+  } else {
+    normalizePath(".")
+  }
+}
+
 ## Katia Renault
 ## Visualizing results from copy number PGLMM analysis
 
-source("/Users/katiarenault/Documents/Github/copy_num/scripts/FUN_color_mappings.R")
+source(file.path(ROOT, "scripts", "FUN_color_mappings.R"))
 color_mapping <- create_color_mapping(species_data$order)
 ########################################################################################################
 # 1. Gene result plot
@@ -12,8 +24,8 @@ library(dplyr)
 library(readr)
 library(ggrepel)
 
-#volcano_data <- read.csv('/Users/katiarenault/Documents/GitHub/copy_num/results/max_longevity_zero_filtered_poisson_pglmm_20250702_110253.csv')
-volcano_data <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/results/mlres_zero_filtered_poisson_pglmm_20250707_075917.csv")
+#volcano_data <- read.csv(file.path(ROOT, "results", "max_longevity_zero_filtered_poisson_pglmm_20250702_110253.csv"))
+volcano_data <- read.csv(file.path(ROOT, "results", "mlres_zero_filtered_poisson_pglmm_20250707_075917.csv"))
 
 volcano_data$p_value <- as.numeric(volcano_data$p_value_longevity)
 volcano_data$FDR <- volcano_data$adjusted_p_longevity
@@ -79,7 +91,7 @@ volcano_plot <- ggplot(volcano_data, aes(x = estimate, y = log_p)) +
 
 print(volcano_plot)
 table(volcano_data$significance_level, useNA = "ifany")
-ggsave("/Users/katiarenault/Documents/GitHub/copy_num/plots/mlres_volcano.png",
+ggsave(file.path(ROOT, "plots", "mlres_volcano.png"),
        volcano_plot, width = 12, height = 8, dpi = 300)
 
 
@@ -87,11 +99,11 @@ ggsave("/Users/katiarenault/Documents/GitHub/copy_num/plots/mlres_volcano.png",
 # 2. Pathways result plot
 ########################################################################################################
 
-cors_pathways <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/results/mlres_zero_filtered_poisson_pglmm_20250707_075917.csv")
-#cors_pathways <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/results/max_longevity_zero_filtered_poisson_pglmm_20250702_110253.csv")
-pathways.reactome <- gmtPathways("/Users/katiarenault/Desktop/PhD/Human_GSEA/h.all.v2023.2.Hs.symbols.gmt")
-pathways.hallmark <- gmtPathways("/Users/katiarenault/Desktop/PhD/Human_GSEA/c2.cp.kegg_medicus.v2023.2.Hs.symbols.gmt")
-pathways.kegg <- gmtPathways("/Users/katiarenault/Desktop/PhD/Human_GSEA/c2.cp.reactome.v2023.2.Hs.symbols.gmt")
+cors_pathways <- read.csv(file.path(ROOT, "results", "mlres_zero_filtered_poisson_pglmm_20250707_075917.csv"))
+#cors_pathways <- read.csv(file.path(ROOT, "results", "max_longevity_zero_filtered_poisson_pglmm_20250702_110253.csv"))
+pathways.reactome <- gmtPathways(file.path(Sys.getenv("GSEA_DIR", unset = file.path(ROOT, "data", "gsea")), "h.all.v2023.2.Hs.symbols.gmt"))
+pathways.hallmark <- gmtPathways(file.path(Sys.getenv("GSEA_DIR", unset = file.path(ROOT, "data", "gsea")), "c2.cp.kegg_medicus.v2023.2.Hs.symbols.gmt"))
+pathways.kegg <- gmtPathways(file.path(Sys.getenv("GSEA_DIR", unset = file.path(ROOT, "data", "gsea")), "c2.cp.reactome.v2023.2.Hs.symbols.gmt"))
 #pathways.go <- gmtPathways("/Nori_1/krenault/hibernator_rer_converge/data/c5.go.v2023.2.Hs.symbols.gmt")
 pathways.hallmark <- c(pathways.kegg, pathways.hallmark, pathways.reactome)
 
@@ -106,10 +118,10 @@ positive_stats_vector <- setNames(positive_significant_genes$estimate_longevity,
 positive_fgsea_results <- fgsea(pathways = pathways.hallmark, stats = positive_stats_vector)
 positive_fgsea_results <- data.frame(positive_fgsea_results)
 positive_fgsea_results <- positive_fgsea_results %>% select(-leadingEdge)
-#write.csv(positive_fgsea_results, "/Users/katiarenault/Documents/GitHub/copy_num/results/mlres_zero_filtered_poisson_pglmm_20250707_075917_pathways.csv")
+#write.csv(positive_fgsea_results, file.path(ROOT, "results", "mlres_zero_filtered_poisson_pglmm_20250707_075917_pathways.csv"))
 
-volcano_data <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/results/mlres_zero_filtered_poisson_pglmm_20250707_075917_pathways.csv")
-#volcano_data <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/results/max_longevity_zero_filtered_poisson_pglmm_20250702_110253_pathways.csv")
+volcano_data <- read.csv(file.path(ROOT, "results", "mlres_zero_filtered_poisson_pglmm_20250707_075917_pathways.csv"))
+#volcano_data <- read.csv(file.path(ROOT, "results", "max_longevity_zero_filtered_poisson_pglmm_20250702_110253_pathways.csv"))
 volcano_data <- volcano_data %>% mutate(
   pathway = stringr::str_replace_all(pathway, "_", " "))
 volcano_data$p_value <- as.numeric(volcano_data$pval)
@@ -224,7 +236,7 @@ print(labeled_pathways)
 
 cat("\nSummary of significance levels:\n")
 table(volcano_data$significance_level, useNA = "ifany")
-ggsave("/Users/katiarenault/Documents/GitHub/copy_num/plots/mlres_pathway_volcano.png",
+ggsave(file.path(ROOT, "plots", "mlres_pathway_volcano.png"),
        volcano_plot, width = 12, height = 8, dpi = 300)
 
 
@@ -450,8 +462,8 @@ plot_gene_results_top_bottom <- function(gene_data_file, keywords = NULL, n_gene
   
   return(p)
 }
-gene_data_file <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/results/max_longevity_zero_filtered_poisson_pglmm_20250702_110253.csv")
+gene_data_file <- read.csv(file.path(ROOT, "results", "max_longevity_zero_filtered_poisson_pglmm_20250702_110253.csv"))
 p_combined <- plot_gene_results_top_bottom(gene_data_file, n_genes = 20)
 print(p_combined)
-ggsave("/Users/katiarenault/Documents/GitHub/copy_num/plots/max_longevity_top_genes.png",
+ggsave(file.path(ROOT, "plots", "max_longevity_top_genes.png"),
        p_combined, width = 12, height = 8, dpi = 300)

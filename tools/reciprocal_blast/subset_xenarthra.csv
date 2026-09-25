@@ -1,0 +1,5 @@
+accession,organism_name,common_name,species_taxid,infraclass,order,family,genus,scaffold_n50,contig_n50,total_sequence_length,max_lifespan,body_mass,LQ,refseq_category,submission_date
+GCA_023851605.1,Tamandua tetradactyla,southern tamandua,48850,Mammalia,Pilosa,Myrmecophagidae,Tamandua,174634624,9869167,3205724741,19.0,4500.0,0.0280793688851659,reference genome,2022-06-22
+GCA_963992745.1,Bradypus torquatus,Maned three-toed sloth,227087,Mammalia,Pilosa,Bradypodidae,Bradypus,156600181,4748776,3128591653,,,,reference genome,2024-12-06
+GCA_015220235.1,Choloepus didactylus,southern two-toed sloth,27675,Mammalia,Pilosa,Megalonychidae,Choloepus,146178362,20994632,3214686105,36.8,6250.0,0.2926711011449392,reference genome,2020-11-03
+GCA_030445035.2,Dasypus novemcinctus,nine-banded armadillo,9361,Mammalia,Cingulata,Dasypodidae,Dasypus,127081865,13963394,3610534858,22.3,5500.0,0.0838847146857895,reference genome,2023-07-13

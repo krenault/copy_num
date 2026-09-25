@@ -1,3 +1,15 @@
+# Repo root (run scripts from repo root, or set COPY_NUM_ROOT)
+ROOT <- Sys.getenv("COPY_NUM_ROOT", unset = "")
+if (!nzchar(ROOT)) {
+  ROOT <- if (dir.exists("scripts") && dir.exists("data")) {
+    normalizePath(".")
+  } else if (dir.exists("../scripts") && dir.exists("../data")) {
+    normalizePath("..")
+  } else {
+    normalizePath(".")
+  }
+}
+
 ## Katia Renault
 ## Summarizing counts of genes to identify genes whose copy number correlates with longevity of species
 
@@ -12,7 +24,7 @@
 library(dplyr)
 library(tidyr)
 library(R.utils)
-base_dir <- "/Users/katiarenault/PhD/TOGA/orthology"
+base_dir <- "file.path(ROOT, "data")"
 find_ortholog_files <- function(dir) {
   list.files(dir, pattern = "orthologsClassification.tsv.gz$", full.names = TRUE, recursive = TRUE)
 }
@@ -143,7 +155,7 @@ library(tidyr)
 library(ape)
 library(phangorn)
 library(R.utils)
-base_dir <- "/Users/katiarenault/PhD/TOGA/loss"
+base_dir <- "file.path(ROOT, "data")"
 # function to find gzipped TSV files
 find_tsv_files <- function(dir) {
   all_files <- list.files(dir, pattern = "\\.tsv\\.gz$", full.names = TRUE, recursive = TRUE)
@@ -321,9 +333,9 @@ if (length(dfcn) > 0) {
 
 library(dplyr)
 library(readr)
-ortholog <- read.csv("/Users/katiarenault/PhD/TOGA/orthology/All_Species_Orthologous_CopyNumber_Annotated.tsv",
+ortholog <- read.csv("file.path(ROOT, "data")/All_Species_Orthologous_CopyNumber_Annotated.tsv",
                      sep="\t", stringsAsFactors=FALSE)
-copynumber <- read.csv("/Users/katiarenault/PhD/TOGA/loss/All_Species_Orthologous_Intactness_Annotated.csv",
+copynumber <- read.csv("file.path(ROOT, "data")/All_Species_Orthologous_Intactness_Annotated.csv",
                        stringsAsFactors=FALSE)
 # rows: match ortholog$t_symbol to copynumber$Gene
 common_genes <- intersect(ortholog$t_symbol, copynumber$Gene)

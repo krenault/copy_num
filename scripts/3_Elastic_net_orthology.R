@@ -1,3 +1,15 @@
+# Repo root (run scripts from repo root, or set COPY_NUM_ROOT)
+ROOT <- Sys.getenv("COPY_NUM_ROOT", unset = "")
+if (!nzchar(ROOT)) {
+  ROOT <- if (dir.exists("scripts") && dir.exists("data")) {
+    normalizePath(".")
+  } else if (dir.exists("../scripts") && dir.exists("../data")) {
+    normalizePath("..")
+  } else {
+    normalizePath(".")
+  }
+}
+
 ## Katia Renault
 ## Prediction of species lifespan based on gene copy number  
 
@@ -23,13 +35,13 @@ library(tibble)
 # 9207
 set.seed(seed)
 
-gene_copy_data <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/data/All_Species_Orthologous_CopyNumber_Annotated.tsv", row.names = "t_gene", sep = '\t')
+gene_copy_data <- read.csv(file.path(ROOT, "data", "All_Species_Orthologous_CopyNumber_Annotated.tsv"), row.names = "t_gene", sep = '\t')
 rownames(gene_copy_data) <- gene_copy_data$t_symbol
 gene_copy_data <- gene_copy_data[!grepl("^ZNF", rownames(gene_copy_data)), ]
 gene_copy_data <- gene_copy_data[!grepl("^SPAN", rownames(gene_copy_data)), ]
 gene_copy_data <- gene_copy_data %>% dplyr::select(-t_symbol)
 
-metadata <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/data/raxml_final_metadata_revised.csv")
+metadata <- read.csv(file.path(ROOT, "data", "raxml_final_metadata_revised.csv"))
 gene_copy_t <- as.data.frame(t(gene_copy_data))
 gene_copy_t$species <- sub("_\\d+$", "", rownames(gene_copy_t))
 gene_copy_by_species <- gene_copy_t %>%
@@ -241,7 +253,7 @@ all_genes_df <- data.frame(
 
 all_genes_sorted <- all_genes_df[order(all_genes_df$Abs_Coefficient, decreasing = TRUE), ]
 all_genes_sorted$Rank <- 1:nrow(all_genes_sorted)
-#write.csv(all_genes_sorted, paste0("/Users/katiarenault/Documents/GitHub/copy_num/results/all_predictive_genes_25_features_seed_", seed, ".csv"), row.names = FALSE)
+#write.csv(all_genes_sorted, paste0(file.path(ROOT, "results", "all_predictive_genes_25_features_seed_"), seed, ".csv"), row.names = FALSE)
 
 
 test_plot_data <- data.frame(
@@ -252,7 +264,7 @@ test_plot_data <- data.frame(
 )
 
 #### Color mapping ####
-source("/Users/katiarenault/Documents/Github/copy_num/scripts/FUN_color_mappings.R")
+source(file.path(ROOT, "scripts", "FUN_color_mappings.R"))
 color_mapping <- create_color_mapping(species_data$order)
 colnames(test_plot_data)[colnames(test_plot_data) == "order"] <- "Order"
 
@@ -319,9 +331,9 @@ for (i in 1:length(top_selected)) {
   direction <- ifelse(coef > 0, "positive", "negative")
   cat(sprintf("%2d. %s: %.4f (%s effect)\n", i, gene, coef, direction))
 }
-#ggsave("/Users/katiarenault/Documents/GitHub/copy_num/plots/test_set_performance.png",
+#ggsave(file.path(ROOT, "plots", "test_set_performance.png"),
  #      p_test, width = 12, height = 8, dpi = 300)
-#ggsave("/Users/katiarenault/Documents/GitHub/copy_num/plots/elastic_net_predictive_genes.png",
+#ggsave(file.path(ROOT, "plots", "elastic_net_predictive_genes.png"),
  #      p_genes, width = 12, height = 8, dpi = 300)
 
 ########################################################################################################
@@ -673,7 +685,7 @@ p_predictors <- ggplot(top_important_predictors,
 print(p_comparison)
 print(p_predictors)
 
-#ggsave("/Users/katiarenault/Documents/GitHub/copy_num/plots/model_comparison_plot.png", p_comparison, width = 12, height = 6)
-#ggsave("/Users/katiarenault/Documents/GitHub/copy_num/plots/top_predictors_with_mass.png", p_predictors, width = 8, height = 10)
-#write.csv(comparison_df, "/Users/katiarenault/Documents/GitHub/copy_num/results/model_comparison_metrics.csv", row.names = FALSE)
-#write.csv(top_important_predictors, "/Users/katiarenault/Documents/GitHub/copy_num/results/top_predictors_with_mass.csv", row.names = FALSE)
+#ggsave(file.path(ROOT, "plots", "model_comparison_plot.png"), p_comparison, width = 12, height = 6)
+#ggsave(file.path(ROOT, "plots", "top_predictors_with_mass.png"), p_predictors, width = 8, height = 10)
+#write.csv(comparison_df, file.path(ROOT, "results", "model_comparison_metrics.csv"), row.names = FALSE)
+#write.csv(top_important_predictors, file.path(ROOT, "results", "top_predictors_with_mass.csv"), row.names = FALSE)

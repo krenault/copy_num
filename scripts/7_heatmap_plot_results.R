@@ -1,7 +1,19 @@
+# Repo root (run scripts from repo root, or set COPY_NUM_ROOT)
+ROOT <- Sys.getenv("COPY_NUM_ROOT", unset = "")
+if (!nzchar(ROOT)) {
+  ROOT <- if (dir.exists("scripts") && dir.exists("data")) {
+    normalizePath(".")
+  } else if (dir.exists("../scripts") && dir.exists("../data")) {
+    normalizePath("..")
+  } else {
+    normalizePath(".")
+  }
+}
+
 ## Katia Renault
 ## Visualizing results from copy number PGLMM analysis
 
-source("/Users/katiarenault/Documents/Github/copy_num/scripts/FUN_color_mappings.R")
+source(file.path(ROOT, "scripts", "FUN_color_mappings.R"))
 color_mapping <- create_color_mapping(species_data$order)
 ########################################################################################################
 # 1. Top pathways/heatmap 
@@ -15,8 +27,8 @@ library(ggplot2)
 # A. Prepare data
 ###########################################
 load_pathway_data <- function() {
-  signatures_dir <- "/Users/katiarenault/Desktop/PhD/TOGA/results/Mammalia/human_gene_fgsea"
-  pgls_dir <- "/Users/katiarenault/Documents/GitHub/copy_num/results"
+  signatures_dir <- "file.path(ROOT, "data", "gsea")"
+  pgls_dir <- file.path(ROOT, "results")
   signatures_files <- list.files(signatures_dir, pattern = "\\.csv$", full.names = TRUE)
   pgls_files <- list.files(pgls_dir, pattern = "\\pathways.csv$", full.names = TRUE)
   all_files <- c(signatures_files, pgls_files)

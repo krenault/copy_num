@@ -1,0 +1,15 @@
+.DS_Store
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+**/__pycache__/
+**/.venv/
+**/venv/
+**/*.pyc
+tools/reciprocal_blast/genomes/
+tools/reciprocal_blast/results/
+*.log
+.claude/
+data/external/
+data/gsea/

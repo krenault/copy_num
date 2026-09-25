@@ -1,0 +1,9 @@
+accession,organism_name,common_name,species_taxid,infraclass,order,family,genus,scaffold_n50,contig_n50,total_sequence_length,max_lifespan,body_mass,LQ,refseq_category,submission_date
+GCA_014858855.1,Bufo gargarizans,Asiatic toad,30331,Amphibia,Anura,Bufonidae,Bufo,539822115,1738317,4545465442,,,,reference genome,2020-10-21
+GCA_037367245.1,Phrynocephalus guinanensis,,740940,Lepidosauria,Squamata,Agamidae,Phrynocephalus,132691761,2541092,1813735221,,,,reference genome,2024-03-20
+GCA_005887515.3,Bos grunniens,domestic yak,30521,Mammalia,Artiodactyla,Bovidae,Bos,114386978,44716738,2831460571,26.3,667000.0,-0.1731296438029839,,2019-06-10
+GCA_009493655.1,Bos grunniens x Bos taurus,dzo,331036,Mammalia,Artiodactyla,Bovidae,Bos,104392194,71681919,2668877089,,,,,2019-11-04
+GCA_040182635.1,Pantholops hodgsonii,chiru,59538,Mammalia,Artiodactyla,Bovidae,Pantholops,92232156,84561976,3139646730,,,,reference genome,2024-06-17
+GCA_048564905.1,Vicugna pacos,alpaca,30538,Mammalia,Artiodactyla,Camelidae,Vicugna,75404351,40278543,2572244716,25.8,62000.0,-0.0187335854406935,reference genome,2025-03-12
+GCA_025583725.1,Anser indicus,Bar-headed goose,8846,Neognathae,Anseriformes,Anatidae,Anser,65774817,5739385,1129455536,,,,reference genome,2022-10-06
+GCA_028534125.1,Lama glama,llama,9844,Mammalia,Artiodactyla,Camelidae,Lama,57409894,93318,2351761190,28.9,140000.0,-0.0252491422902849,,2023-02-09

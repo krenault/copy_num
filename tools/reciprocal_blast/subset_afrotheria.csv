@@ -1,0 +1,10 @@
+accession,organism_name,common_name,species_taxid,infraclass,order,family,genus,scaffold_n50,contig_n50,total_sequence_length,max_lifespan,body_mass,LQ,refseq_category,submission_date
+GCA_054668785.1,Orycteropus afer,aardvark,9818,Mammalia,Tubulidentata,Orycteropodidae,Orycteropus,655437740,166734673,4714243411,29.8,60000.0,0.046109071230993,,2026-01-23
+GCA_043290065.1,Rhynchocyon petersi,black and rufous elephant shrew,320637,Mammalia,Macroscelidea,Macroscelididae,Rhynchocyon,546604020,13791435,5331151070,,,,reference genome,2024-10-17
+GCA_050624465.1,Tenrec ecaudatus,tailess tenrec,94439,Mammalia,Afrosoricida,Tenrecidae,Tenrec,165248668,54742630,3333008239,8.7,900.0,-0.2009086937375277,,2025-05-30
+GCA_030035585.1,Dugong dugon,dugong,29137,Mammalia,Sirenia,Dugongidae,Dugong,140670990,57632671,3158488110,73.0,360000.0,0.3124803788588286,reference genome,2023-05-18
+GCA_028571685.1,Heterohyrax brucei,yellow-spotted hyrax,77598,Mammalia,Hyracoidea,Procaviidae,Heterohyrax,139648372,78495281,3488059404,,,,reference genome,2023-02-10
+GCA_033060105.1,Elephas maximus,Asiatic elephant,9783,Mammalia,Proboscidea,Elephantidae,Elephas,130469234,77194844,3377773971,65.5,3178000.0,0.1162127275278612,,2023-10-26
+GCA_024166365.1,Elephas maximus indicus,,99487,Mammalia,Proboscidea,Elephantidae,Elephas,127432672,87987108,3401247148,,,,reference genome,2022-07-06
+GCA_046562895.1,Trichechus inunguis,Amazon manatee,9777,Mammalia,Sirenia,Trichechidae,Trichechus,123530250,25109643,3320339069,40.0,480000.0,0.0315113258708641,reference genome,2025-01-08
+GCA_032717405.1,Loxodonta africana,African savanna elephant,9785,Mammalia,Proboscidea,Elephantidae,Loxodonta,122926248,64227854,3104041151,65.0,4800000.0,0.0846379146036286,,2023-10-17

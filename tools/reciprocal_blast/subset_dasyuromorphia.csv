@@ -1,0 +1,7 @@
+accession,organism_name,common_name,species_taxid,infraclass,order,family,genus,scaffold_n50,contig_n50,total_sequence_length,max_lifespan,body_mass,LQ,refseq_category,submission_date
+GCA_048593235.1,Sminthopsis crassicaudata,fat-tailed dunnart,9301,Mammalia,Dasyuromorphia,Dasyuridae,Sminthopsis,656909261,4359487,3239981553,5.0,15.0,-0.1609958770216339,reference genome,2025-03-17
+GCA_048593225.1,Sarcophilus harrisii,Tasmanian devil,9305,Mammalia,Dasyuromorphia,Dasyuridae,Sarcophilus,645083750,4514036,3244907618,13.0,6500.0,-0.1619199789237679,,2025-03-17
+GCA_016432865.2,Antechinus flavipes,yellow-footed antechinus,38775,Mammalia,Dasyuromorphia,Dasyuridae,Antechinus,636717922,51843704,3192643918,3.9,45.0,-0.3441560718769066,reference genome,2021-01-06
+GCA_048593245.1,Dasyurus maculatus,spotted-tailed quoll,9281,Mammalia,Dasyuromorphia,Dasyuridae,Dasyurus,634296252,147374197,3066144370,6.8,5500.0,-0.4319112356561349,reference genome,2025-03-17
+GCA_007646695.3,Thylacinus cynocephalus,Tasmanian wolf,9275,Mammalia,Dasyuromorphia,Thylacinidae,Thylacinus,629085701,15023,3376725167,,,,,2022-04-04
+GCA_020854095.1,Dasyurus viverrinus,eastern quoll,9279,Mammalia,Dasyuromorphia,Dasyuridae,Dasyurus,628486596,13753271,3139221772,6.8,1090.0,-0.3210393760194648,reference genome,2021-11-12

@@ -1,7 +1,19 @@
+# Repo root (run scripts from repo root, or set COPY_NUM_ROOT)
+ROOT <- Sys.getenv("COPY_NUM_ROOT", unset = "")
+if (!nzchar(ROOT)) {
+  ROOT <- if (dir.exists("scripts") && dir.exists("data")) {
+    normalizePath(".")
+  } else if (dir.exists("../scripts") && dir.exists("../data")) {
+    normalizePath("..")
+  } else {
+    normalizePath(".")
+  }
+}
+
 ## Katia Renault
 ## Visualizing data using various methods
 
-source("/Users/katiarenault/Documents/Github/copy_num/scripts/FUN_color_mappings.R")
+source(file.path(ROOT, "scripts", "FUN_color_mappings.R"))
 color_mapping <- create_color_mapping(species_data$order)
 ########################################################################################################
 # 1. PCA
@@ -11,21 +23,21 @@ library(ggplot2)
 library(FactoMineR)
 library(factoextra)
 library(ggrepel)
-gene_copy_data <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/data/All_Species_Orthologous_CopyNumber_Annotated.tsv", row.names = "t_gene", sep = '\t')
+gene_copy_data <- read.csv(file.path(ROOT, "data", "All_Species_Orthologous_CopyNumber_Annotated.tsv"), row.names = "t_gene", sep = '\t')
 rownames(gene_copy_data) <- gene_copy_data$t_symbol
 gene_copy_data <- gene_copy_data %>% select(-t_symbol)
 
 #available_species <- final_metadata$Scientific_name
 #gene_copy_data <- gene_copy_data[, colnames(gene_copy_data) %in% available_species]
-#write.csv(gene_copy_data, "/Users/katiarenault/PhD/TOGA/revised_results/data/gene_copy_data_revised.csv")
-#t2t_species <- read.csv('/Users/katiarenault/Downloads/overview.table (16).tsv', sep = '\t')
+#write.csv(gene_copy_data, "file.path(ROOT, "data")/gene_copy_data_revised.csv")
+#t2t_species <- read.csv('"path/to/local/file"', sep = '\t')
 #t2t_species <- t2t_species %>% filter(contig.N50..bp. > 1000000)
 #t2t_species$Species <- gsub(" ", "_", t2t_species$Species)
 #t2t_species_available <- t2t_species$Species
 #gene_copy_data <- gene_copy_data[, colnames(gene_copy_data) %in% t2t_species_available]
 
 gene_copy_data <- t(gene_copy_data)  
-final_metadata <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/data/raxml_final_metadata_revised.csv")
+final_metadata <- read.csv(file.path(ROOT, "data", "raxml_final_metadata_revised.csv"))
 final_metadata <- final_metadata %>% filter(order == "Primates" | order == "Rodentia" | order == "Chiroptera" | order == "Artiodactyla" | order == "Carnivora"  )
 final_metadata <- final_metadata %>% filter(order == "Primates" | order == "Rodentia" | order == "Chiroptera" | order == "Artiodactyla")
 
@@ -168,9 +180,9 @@ library(umap)
 library(ggrepel)
 
 # Load and prepare data
-gene_copy_data <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/data/All_Species_Orthologous_CopyNumber_Annotated.tsv",  sep = '\t')
+gene_copy_data <- read.csv(file.path(ROOT, "data", "All_Species_Orthologous_CopyNumber_Annotated.tsv"),  sep = '\t')
 gene_copy_data <- gene_copy_data %>% select(-t_symbol)
-metadata <- read_csv("/Users/katiarenault/Documents/GitHub/copy_num/data/raxml_final_metadata_revised.csv")
+metadata <- read_csv(file.path(ROOT, "data", "raxml_final_metadata_revised.csv"))
 #metadata <- metadata %>% filter(order == "Primates" | order == "Carnivora" | order == "Chiroptera" | order == "Artiodactyla")
 
 gene_matrix <- gene_copy_data %>%
@@ -217,7 +229,7 @@ umap_plot <- ggplot(umap_df, aes(x = UMAP1, y = UMAP2, color = order, label = Sp
 # geom_text_repel(data = umap_df %>% group_by(order) %>% slice(1), 
 #                aes(label = order), size = 3, show.legend = FALSE)
 print(umap_plot)
-ggsave("/Users/katiarenault/Documents/GitHub/copy_num/plots/umap_gene_copy_by_order.png",
+ggsave(file.path(ROOT, "plots", "umap_gene_copy_by_order.png"),
        umap_plot, width = 12, height = 8, dpi = 300)
 ####### Interactive ####### 
 library(plotly)
@@ -262,9 +274,9 @@ library(Rtsne)
 library(tidyverse)
 
 # Load and prepare data
-gene_copy_data <- read.csv("/Users/katiarenault/Documents/GitHub/copy_num/data/All_Species_Orthologous_CopyNumber_Annotated.tsv",  sep = '\t')
+gene_copy_data <- read.csv(file.path(ROOT, "data", "All_Species_Orthologous_CopyNumber_Annotated.tsv"),  sep = '\t')
 gene_copy_data <- gene_copy_data %>% select(-t_symbol)
-metadata <- read_csv("/Users/katiarenault/Documents/GitHub/copy_num/data/raxml_final_metadata_revised.csv")
+metadata <- read_csv(file.path(ROOT, "data", "raxml_final_metadata_revised.csv"))
 #metadata <- metadata %>% filter(order == "Primates" | order == "Carnivora" | order == "Chiroptera" | order == "Artiodactyla")
 
 gene_matrix <- gene_copy_data %>%

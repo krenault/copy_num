@@ -4,7 +4,7 @@
 BASE_URL="https://genome.senckenberg.de/download/TOGA/human_hg38_reference"
 
 # Output directory
-OUTPUT_DIR="/Users/katiarenault/PhD/TOGA/orthology"
+OUTPUT_DIR="file.path(ROOT, "data")"
 mkdir -p "$OUTPUT_DIR"
 
 # File to store unique species names

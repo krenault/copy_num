@@ -1,3 +1,15 @@
+# Repo root (run scripts from repo root, or set COPY_NUM_ROOT)
+ROOT <- Sys.getenv("COPY_NUM_ROOT", unset = "")
+if (!nzchar(ROOT)) {
+  ROOT <- if (dir.exists("scripts") && dir.exists("data")) {
+    normalizePath(".")
+  } else if (dir.exists("../scripts") && dir.exists("../data")) {
+    normalizePath("..")
+  } else {
+    normalizePath(".")
+  }
+}
+
 
 
 # Gene Copy Number Ancestral Reconstruction using Marginal MCMC
@@ -19,8 +31,8 @@ library(foreach)
 library(doParallel)
 
 # Load your data
-metadata <- read.csv("/Users/katiarenault/PhD/TOGA/revised_results/data/raxml_final_metadata_revised.csv")
-gene_copy_data <- read.csv("/Users/katiarenault/PhD/TOGA/orthology/All_Species_Orthologous_CopyNumber_Annotated.tsv",
+metadata <- read.csv("file.path(ROOT, "data")/raxml_final_metadata_revised.csv")
+gene_copy_data <- read.csv("file.path(ROOT, "data")/All_Species_Orthologous_CopyNumber_Annotated.tsv",
                            row.names = "t_symbol", sep = '\t')
 
 # Filter genes (remove those with >50% zeros)
@@ -30,7 +42,7 @@ gene_copy_data <- gene_copy_data[apply(gene_copy_data, 1, function(x) sum(x == 0
 metadata$maximum_longevity_y <- log(metadata$maximum_longevity_y)
 
 # Load tree
-tree <- read.tree("/Users/katiarenault/PhD/TOGA/revised_results/data/raxml_final_species_tree_revised.nwk")
+tree <- read.tree("file.path(ROOT, "data")/raxml_final_species_tree_revised.nwk")
 
 # Function to prepare data for ancestral reconstruction
 prepare_gene_data <- function(gene_copy_data, tree, gene_name) {
